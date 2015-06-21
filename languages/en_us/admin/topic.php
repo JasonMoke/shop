@@ -2,8 +2,7 @@
 
 /**
  * SHOP 专题管理语言包
-
- * @author:     webboy <laupeng@163.com>
+ * @author:     Jason
  * @version:    v2.0
  * ---------------------------------------------
 */

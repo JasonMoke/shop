@@ -2,7 +2,6 @@
 
 /**
  * SHOP ips支付系统插件
-
  * @author:     xuan yan <xuanyan1983@gmail.com>
  * @version:    v1.0
  * ---------------------------------------------

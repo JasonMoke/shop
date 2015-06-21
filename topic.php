@@ -2,8 +2,7 @@
 
 /**
  * SHOP 专题前台
-
- * @author:     webboy <laupeng@163.com>
+ * @author:     Jason
  * @version:    v2.1
  * ---------------------------------------------
  */

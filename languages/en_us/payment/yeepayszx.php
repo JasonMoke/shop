@@ -10,8 +10,7 @@
  * This is a free/open source software；it mean that you can modify, use and
  * republish the program code, on the premise of that your behavior is not for
  * commercial purposes.
- * ============================================================================
- * @author:     web boy <laupeng@163.com>
+ * ============================================================================ * @author:     web boy <laupeng@163.com>
  * @version:    v2.1
  * ---------------------------------------------
  */

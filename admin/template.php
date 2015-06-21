@@ -2,7 +2,6 @@
 
 /**
  * SHOP 管理中心模版管理程序
-
  * @author:     Weber Liu <weberliu@hotmail.com>
  * @version:    v2.1
  * --------------------------------------------- * $Author: Jason $

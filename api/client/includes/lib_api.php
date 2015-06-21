@@ -82,8 +82,7 @@
 
     /**
      * 生成随机的数字串
-     *
-     * @author: weber liu
+     * * @author: weber liu
      * @return string
      */
     function random_filename()

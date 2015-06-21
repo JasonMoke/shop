@@ -10,8 +10,7 @@
  * This is a free/open source software；it means that you can modify, use and 
  * republish the program code, on the premise of that your behavior is not for 
  * commercial purposes.
- * ============================================================================
- * @author:     liupeng <laupeng@gmail.com>
+ * ============================================================================ * @author:     liupeng <laupeng@gmail.com>
  * @version:    v2.1
  * ---------------------------------------------
  */

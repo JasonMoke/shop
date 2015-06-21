@@ -1,12 +1,12 @@
 <?php
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 /**
- * ECSHOP 基础类
+ * SHOP 基础类
  */
-class EcsEcshop {
+class EcsSHOP {
 
     var $db_name = '';
     var $prefix = 'ecs_';
@@ -37,7 +37,7 @@ class EcsEcshop {
     }
 
     /**
-     * ECSHOP 密码编译方法;
+     * SHOP 密码编译方法;
      *
      * @access  public
      * @param   string      $pass       需要编译的原始密码
@@ -49,7 +49,7 @@ class EcsEcshop {
     }
 
     /**
-     * 获得 ECSHOP 当前环境的 HTTP 协议方式
+     * 获得 SHOP 当前环境的 HTTP 协议方式
      *
      * @access  public
      *

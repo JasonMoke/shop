@@ -5,7 +5,7 @@
   </div>
   <div class="panel-body">
     <form action="{url('add')}" method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
-      <table id="general-table" class="table table-hover ectouch-table">
+      <table id="general-table" class="table table-hover Touch-table">
         <tr>
           <td width="200">{$lang['brand_name']}:</td>
           <td><div class="col-md-4">
@@ -25,7 +25,7 @@
               </div>
               {if $info['brand_logo']}
               <div class="col-md-1">
-                <a href="javascript:;" class="glyphicon glyphicon-picture ectouch-fs16" style="text-decoration:none;" onClick="showImg('brand_logo_layer', '{$lang['brand_logo']}')" title="View"></a>
+                <a href="javascript:;" class="glyphicon glyphicon-picture Touch-fs16" style="text-decoration:none;" onClick="showImg('brand_logo_layer', '{$lang['brand_logo']}')" title="View"></a>
 				<div id="brand_logo_layer" style="display:none"> <img src="{$info['brand_logo']}" border="0" style="max-width:320px; max-height:320px;" /> </div>
               </div>
               {/if}
@@ -38,7 +38,7 @@
               </div>
               {if $info['brand_banner']}
               <div class="col-md-1">
-                <a href="javascript:;" class="glyphicon glyphicon-picture ectouch-fs16" style="text-decoration:none;" onClick="showImg('brand_banner_layer', '{$lang['brand_banner']}')" title="View"></a>
+                <a href="javascript:;" class="glyphicon glyphicon-picture Touch-fs16" style="text-decoration:none;" onClick="showImg('brand_banner_layer', '{$lang['brand_banner']}')" title="View"></a>
 				<div id="brand_banner_layer" style="display:none"> <img src="{$info['brand_banner']}" border="0" style="max-width:320px; max-height:320px;" /> </div>
               </div>
               {/if}

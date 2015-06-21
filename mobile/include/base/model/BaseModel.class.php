@@ -1,20 +1,20 @@
 <?php
 
 /**
- * ECTouch Open Source Project
+ * Touch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
  * ----------------------------------------------------------------------------
  * 文件名称：BaseModel.class.php
  * ----------------------------------------------------------------------------
- * 功能描述：ECTOUCH 基础模型
+ * 功能描述：Touch 基础模型
  * ----------------------------------------------------------------------------
- * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ * Licensed (  )
  * ----------------------------------------------------------------------------
  */
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 class BaseModel extends Model {
 
@@ -129,7 +129,7 @@ class BaseModel extends Model {
             }
 
             if (empty($arr['integrate_code'])) {
-                $arr['integrate_code'] = 'ecshop'; // 默认的会员整合插件为 ecshop
+                $arr['integrate_code'] = 'SHOP'; // 默认的会员整合插件为 SHOP
             }
 			
             write_static_cache('touch_shop_config', $arr);

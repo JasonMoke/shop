@@ -1,7 +1,7 @@
 <?php
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 /**
  * 邮件发送类,基于PHPMailer类
@@ -23,7 +23,7 @@ class Email {
         self::$config['SMTP_AUTH'] = isset($config['SMTP_AUTH']) ? $config['SMTP_AUTH'] : true; //启用SMTP验证功能，一般需要开启
         self::$config['SMTP_CHARSET'] = isset($config['SMTP_CHARSET']) ? $config['SMTP_CHARSET'] : 'utf-8'; //发送的邮件内容编码	
         self::$config['SMTP_FROM_TO'] = isset($config['SMTP_FROM_TO']) ? $config['SMTP_FROM_TO'] : '10000@qq.com'; //发件人邮件地址
-        self::$config['SMTP_FROM_NAME'] = isset($config['SMTP_FROM_NAME']) ? $config['SMTP_FROM_NAME'] : 'ECTouch'; //发件人姓名
+        self::$config['SMTP_FROM_NAME'] = isset($config['SMTP_FROM_NAME']) ? $config['SMTP_FROM_NAME'] : 'Touch'; //发件人姓名
         self::$config['SMTP_DEBUG'] = isset($config['SMTP_DEBUG']) ? $config['SMTP_DEBUG'] : false; //是否显示调试信息	
     }
 

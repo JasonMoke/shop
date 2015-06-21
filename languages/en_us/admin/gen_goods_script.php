@@ -1,17 +1,16 @@
 <?php
 /**
- * ECSHOP Create display product JS coding language file
+ * SHOP Create display product JS coding language file
  * ============================================================================
  * All right reserved (C) 2005-2011 Beijing Yi Shang Interactive Technology
  * Development Ltd.
- * Web site: http://www.ecshop.com
+ * Web site: http://www.SHOP.com
  * ----------------------------------------------------------------------------
  * This is a free/open source software；it means that you can modify, use and
  * republish the program code, on the premise of that your behavior is not for
  * commercial purposes.
- * ============================================================================
- * $Author: liubo $
- * $Id: gen_goods_script.php 17217 2011-01-19 06:29:08Z liubo $
+ * ============================================================================ * $Author: Jason $
+ * $Id: gen_goods_script.php 17217 2011-01-19 06:29:08Z Jason $
  */
 $_LANG['label_category'] = 'Category:';
 $_LANG['label_brand'] = 'Brand:';

@@ -1,16 +1,9 @@
 <?php
 
 /**
- * ECSHOP 管理中心模版相关公用函数库
- * ============================================================================
- * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.ecshop.com；
- * ----------------------------------------------------------------------------
- * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
- * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ============================================================================
- * $Author: liubo $
- * $Id: lib_template.php 17217 2011-01-19 06:29:08Z liubo $
+ * SHOP 管理中心模版相关公用函数库
+ * $Author: Jason $
+ * $Id: lib_template.php 17217 2011-01-19 06:29:08Z Jason $
 */
 
 if (!defined('IN_ECS'))
@@ -341,8 +334,7 @@ function get_template_info($template_name, $template_style='')
         $template_uri       = explode(': ', $arr[2]);
         $template_desc      = explode(': ', $arr[3]);
         $template_version   = explode(': ', $arr[4]);
-        $template_author    = explode(': ', $arr[5]);
-        $author_uri         = explode(': ', $arr[6]);
+        $template_author    = explode(': ', $arr[5]); * $Author_uri         = explode(': ', $arr[6]);
         $logo_filename      = explode(': ', $arr[7]);
         $template_type      = explode(': ', $arr[8]);
 

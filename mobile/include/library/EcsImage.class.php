@@ -1,10 +1,10 @@
 <?php
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 /**
- * ECSHOP 后台对上传文件的处理类(实现图片上传，图片缩小， 增加水印)
+ * SHOP 后台对上传文件的处理类(实现图片上传，图片缩小， 增加水印)
  * 需要定义以下常量
  *  define('ERR_INVALID_IMAGE',             1);
  *  define('ERR_NO_GD',                     2);

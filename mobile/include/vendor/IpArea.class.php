@@ -1,11 +1,11 @@
 <?php
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 /**
   获取ip地址的地理位置信息
-  需要ip数据库的支持，ip数据库请自行到EcTouch官网http://www.ectouch.cn下载
+  需要ip数据库的支持，ip数据库请自行到Touch官网http://www.Touch.cn下载
   或使用淘宝在线IP库，详见common.php文件中的get_ip_info()
  */
 class IpArea {

@@ -1,17 +1,16 @@
 <?php
 
 /**
- * ECSHOP Suppliers manage language file
+ * SHOP Suppliers manage language file
  * ============================================================================
  * All right reserved (C) 2005-2011 Beijing Yi Shang Interactive Technology
  * Development Ltd.
- * Web site: http://www.ecshop.com
+ * Web site: http://www.SHOP.com
  * ----------------------------------------------------------------------------
  * This is a free/open source software；it means that you can modify, use and
  * republish the program code, on the premise of that your behavior is not for
  * commercial purposes.
- * ============================================================================
- * $Author: zblikai $
+ * ============================================================================ * $Author: zblikai $
  * $Id: statistic.php 15646 2009-02-23 08:33:00Z zblikai $
 */
 

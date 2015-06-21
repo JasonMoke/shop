@@ -1,19 +1,19 @@
 <?php
 
 /**
- * ECTouch Open Source Project
+ * Touch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
  * ----------------------------------------------------------------------------
  * 文件名称：ActivityControoller.class.php
  * ----------------------------------------------------------------------------
  * 功能描述：优惠活动控制器
  * ----------------------------------------------------------------------------
- * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ * Licensed (  )
  * ----------------------------------------------------------------------------
  */
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 class ActivityController extends CommonController {
 
@@ -64,7 +64,7 @@ class ActivityController extends CommonController {
         foreach ($list as $key => $activity) {
             $this->assign('activity', $activity);
             $sayList [] = array(
-                'single_item' => ECTouch::view()->fetch('library/asynclist_info.lbi')
+                'single_item' => Touch::view()->fetch('library/asynclist_info.lbi')
             );
         }
         die(json_encode($sayList));
@@ -134,7 +134,7 @@ class ActivityController extends CommonController {
         foreach ($goodslist as $key => $value) {
             $this->assign('act_goods', $value);
             $sayList [] = array(
-                'single_item' => ECTouch::view()->fetch('library/asynclist_info.lbi')
+                'single_item' => Touch::view()->fetch('library/asynclist_info.lbi')
             );
         }
         die(json_encode($sayList));

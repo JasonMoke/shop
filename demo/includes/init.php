@@ -36,16 +36,16 @@ else
     die('Can\'t find config.php!');
 }
 
-require(ROOT_PATH . 'includes/cls_ecshop.php');
+require(ROOT_PATH . 'includes/cls_SHOP.php');
 require(ROOT_PATH . 'includes/cls_mysql.php');
-/* 鍒涘缓 ECSHOP 瀵硅薄 */
+/* 鍒涘缓 SHOP 瀵硅薄 */
 $ecs = new ECS($db_name, $prefix);
 
 /* 鐗堟湰瀛楃?闆嗗彉閲
 $ec_version_charset = 'gbk';
 */
 
-$mysql_charset = $ecshop_charset = '';
+$mysql_charset = $SHOP_charset = '';
 /* 鑷?姩鑾峰彇鏁版嵁琛ㄧ殑瀛楃?闆 */
 $tmp_link = @mysql_connect($db_host, $db_user, $db_pass);
 if (!$tmp_link)
@@ -69,7 +69,7 @@ else
 }
 if (defined('EC_CHARSET'))
 {
-    $ecshop_charset = EC_CHARSET;
+    $SHOP_charset = EC_CHARSET;
 }
 /*
 if (empty($tmp_charset))
@@ -93,7 +93,7 @@ if ($ec_version_charset != EC_CHARSET)
 */
 
 /* 鍒濆?鍖栨暟鎹?簱绫 */
-$db = new cls_mysql($db_host, $db_user, $db_pass, $db_name, $ecshop_charset);
+$db = new cls_mysql($db_host, $db_user, $db_pass, $db_name, $SHOP_charset);
 
 /* 鍒涘缓閿欒?澶勭悊瀵硅薄 */
 require(ROOT_PATH . 'includes/cls_error.php');

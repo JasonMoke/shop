@@ -1,16 +1,9 @@
 <?php
 
 /**
- * ECSHOP API 公用初始化文件
- * ============================================================================
- * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.ecshop.com；
- * ----------------------------------------------------------------------------
- * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
- * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ============================================================================
- * $Author: liubo $
- * $Id: init.php 17217 2011-01-19 06:29:08Z liubo $
+ * SHOP API 公用初始化文件
+ * $Author: Jason $
+ * $Id: init.php 17217 2011-01-19 06:29:08Z Jason $
 */
 
 if (!defined('IN_ECS'))
@@ -25,7 +18,7 @@ if (__FILE__ == '')
     die('Fatal error code: 0');
 }
 
-/* 取得当前ecshop所在的根目录 */
+/* 取得当前SHOP所在的根目录 */
 define('ROOT_PATH', str_replace('api', '', str_replace('\\', '/', dirname(__FILE__))));
 
 /* 初始化设置 */
@@ -72,7 +65,7 @@ if ('/' == substr($php_self, -1))
 define('PHP_SELF', $php_self);
 
 require(ROOT_PATH . 'includes/inc_constant.php');
-require(ROOT_PATH . 'includes/cls_ecshop.php');
+require(ROOT_PATH . 'includes/cls_SHOP.php');
 require(ROOT_PATH . 'includes/lib_base.php');
 require(ROOT_PATH . 'includes/lib_common.php');
 require(ROOT_PATH . 'includes/lib_time.php');
@@ -93,7 +86,7 @@ if (!get_magic_quotes_gpc())
     $_REQUEST  = addslashes_deep($_REQUEST);
 }
 
-/* 创建 ECSHOP 对象 */
+/* 创建 SHOP 对象 */
 $ecs = new ECS($db_name, $prefix);
 $data_dir = $ecs->data_dir();
 

@@ -1,20 +1,20 @@
 <?php
 
 /**
- * ECTouch Open Source Project
+ * Touch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
  * ----------------------------------------------------------------------------
  * 文件名称：CommonControoller.class.php
  * ----------------------------------------------------------------------------
  * 功能描述：公共控制器
  * ----------------------------------------------------------------------------
- * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ * Licensed (  )
  * ----------------------------------------------------------------------------
  */
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 class CommonController extends BaseController
 {
@@ -28,7 +28,7 @@ class CommonController extends BaseController
     public function __construct()
     {
         parent::__construct();
-        $this->ecshop_init();
+        $this->SHOP_init();
         // 微信oauth处理
         if(class_exists('WechatController')){
             if (method_exists('WechatController', 'do_oauth')) {
@@ -71,7 +71,7 @@ class CommonController extends BaseController
         self::$view->display($tpl, $cache_id);
     }
 
-    protected function ecshop_init()
+    protected function SHOP_init()
     {
         header('Cache-control: private');
         header('Content-type: text/html; charset=utf-8');
@@ -161,11 +161,11 @@ class CommonController extends BaseController
         defined('__TPL__') or define('__TPL__', __ROOT__ . '/themes/' . C('template'));
         $stylename = C('stylename');
         if (! empty($stylename)) {
-            $this->assign('ectouch_css_path', __ROOT__ . '/themes/' . C('template') . '/css/ectouch_' . C('stylename') . '.css');
+            $this->assign('Touch_css_path', __ROOT__ . '/themes/' . C('template') . '/css/Touch_' . C('stylename') . '.css');
         } else {
-            $this->assign('ectouch_css_path', __ROOT__ . '/themes/' . C('template') . '/css/ectouch.css');
+            $this->assign('Touch_css_path', __ROOT__ . '/themes/' . C('template') . '/css/Touch.css');
         }
     }
 }
 
-class_alias('CommonController', 'ECTouch');
+class_alias('CommonController', 'Touch');

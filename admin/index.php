@@ -1,15 +1,8 @@
 <?php
 /**
- * ECSHOP 控制台首页
- * ============================================================================
- * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.ecshop.com；
- * ----------------------------------------------------------------------------
- * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
- * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ============================================================================
- * $Author: liubo $
- * $Id: index.php 17217 2011-01-19 06:29:08Z liubo $
+ * SHOP 控制台首页
+ * $Author: Jason $
+ * $Id: index.php 17217 2011-01-19 06:29:08Z Jason $
 */
 
 define('IN_ECS', true);
@@ -540,7 +533,7 @@ elseif ($_REQUEST['act'] == 'main_api')
         $apiget = "ver= $ecs_version &lang= $ecs_lang &release= $ecs_release &php_ver= $php_ver &mysql_ver= $mysql_ver &ocount= $ocount &oamount= $oamount &gcount= $gcount &charset= $ecs_charset &usecount= $ecs_user &template= $ecs_template &style= $ecs_style &url= $shop_url &patch= $patch_file ";
 
         $t = new transport;
-        $api_comment = $t->request('http://ecshop.ecmoban.com/checkver.php', $apiget);
+        $api_comment = $t->request('http://SHOP.ecmoban.com/checkver.php', $apiget);
 
         $f=ROOT_PATH . 'data/config.php'; 
         file_put_contents($f,str_replace("'API_TIME', '".API_TIME."'","'API_TIME', '".date('Y-m-d H:i:s',time())."'",file_get_contents($f)));
@@ -1064,7 +1057,7 @@ elseif ($_REQUEST['act'] == 'third')
 }
 
 /*------------------------------------------------------ */
-//-- 关于 ECSHOP
+//-- 关于 SHOP
 /*------------------------------------------------------ */
 
 elseif ($_REQUEST['act'] == 'about_us')
@@ -1241,9 +1234,9 @@ elseif ($_REQUEST['act'] == 'license')
         switch ($license['flag'])
         {
             case 'login_succ':
-                if (isset($license['request']['info']['service']['ecshop_b2c']['cert_auth']['auth_str']))
+                if (isset($license['request']['info']['service']['SHOP_b2c']['cert_auth']['auth_str']))
                 {
-                    make_json_result(process_login_license($license['request']['info']['service']['ecshop_b2c']['cert_auth']));
+                    make_json_result(process_login_license($license['request']['info']['service']['SHOP_b2c']['cert_auth']));
                 }
                 else
                 {
@@ -1261,9 +1254,9 @@ elseif ($_REQUEST['act'] == 'license')
                 switch ($_license['flag'])
                 {
                     case 'login_succ':
-                        if (isset($_license['request']['info']['service']['ecshop_b2c']['cert_auth']['auth_str']) && $_license['request']['info']['service']['ecshop_b2c']['cert_auth']['auth_str'] != '')
+                        if (isset($_license['request']['info']['service']['SHOP_b2c']['cert_auth']['auth_str']) && $_license['request']['info']['service']['SHOP_b2c']['cert_auth']['auth_str'] != '')
                         {
-                            make_json_result(process_login_license($license['request']['info']['service']['ecshop_b2c']['cert_auth']));
+                            make_json_result(process_login_license($license['request']['info']['service']['SHOP_b2c']['cert_auth']));
                         }
                         else
                         {

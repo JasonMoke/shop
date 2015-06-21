@@ -1,14 +1,7 @@
 <?php
 
 /**
- * ECSHOP paypal快速结帐
- * ============================================================================
- * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.ecshop.com；
- * ----------------------------------------------------------------------------
- * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
- * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ============================================================================
+ * SHOP paypal快速结帐
  * $Author: liuhui $
  * $Id: paypal_ec.php 16489 2009-08-03 10:14:03Z liuhui $
  */
@@ -54,7 +47,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['is_online']  = '1';
 
     /* 作者 */
-    $modules[$i]['author']  = 'ECSHOP TEAM';
+    $modules[$i]['author']  = 'SHOP TEAM';
 
     /* 网址 */
     $modules[$i]['website'] = 'http://www.paypal.com';
@@ -124,7 +117,7 @@ class paypal_ec
         $returnURL =urlencode($url.'/respond.php?code=paypal_ec&currencyCodeType='.$currencyCodeType.'&paymentType='.$paymentType.'&paymentAmount='.$paymentAmount.'&invoice='.$data_order_id);
         $cancelURL =urlencode("$url/SetExpressCheckout.php?paymentType=$paymentType" );
 
-        $nvpstr="&Amt=".$paymentAmount."&PAYMENTACTION=".$paymentType."&ReturnUrl=".$returnURL."&CANCELURL=".$cancelURL ."&CURRENCYCODE=".$currencyCodeType ."&ButtonSource=ECSHOP_cart_EC_C2";
+        $nvpstr="&Amt=".$paymentAmount."&PAYMENTACTION=".$paymentType."&ReturnUrl=".$returnURL."&CANCELURL=".$cancelURL ."&CURRENCYCODE=".$currencyCodeType ."&ButtonSource=SHOP_cart_EC_C2";
 
         $resArray=$this->hash_call("SetExpressCheckout",$nvpstr);
 

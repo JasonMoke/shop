@@ -6,7 +6,7 @@
   </div>
   <div class="panel-body">
     <form action="{url('edit')}" method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
-      <table id="general-table" class="table table-hover ectouch-table">
+      <table id="general-table" class="table table-hover Touch-table">
         <tr>
           <td width="200">{$lang['cat_name']}:</td>
           <td><div class="col-md-4">
@@ -54,7 +54,7 @@
               </div>
               {if $cat_info['cat_image']}
               <div class="col-md-1">
-                <a href="javascript:;" class="glyphicon glyphicon-picture ectouch-fs16" style="text-decoration:none;" onClick="showImg('cat_image_layer', '{$lang['cat_image']}')" title="View"></a>
+                <a href="javascript:;" class="glyphicon glyphicon-picture Touch-fs16" style="text-decoration:none;" onClick="showImg('cat_image_layer', '{$lang['cat_image']}')" title="View"></a>
 				<div id="cat_image_layer" style="display:none"> <img src="{$cat_info['cat_image']}" border="0" style="max-width:320px; max-height:320px;" /> </div>
               </div>
               {/if}

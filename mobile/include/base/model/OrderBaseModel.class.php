@@ -1,20 +1,20 @@
 <?php
 
 /**
- * ECTouch Open Source Project
+ * Touch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
  * ----------------------------------------------------------------------------
  * 文件名称：OrderBaseModel.class.php
  * ----------------------------------------------------------------------------
- * 功能描述：ECTOUCH 订单基础模型
+ * 功能描述：Touch 订单基础模型
  * ----------------------------------------------------------------------------
- * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ * Licensed (  )
  * ----------------------------------------------------------------------------
  */
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 class OrderBaseModel extends BaseModel {
 
@@ -91,7 +91,7 @@ class OrderBaseModel extends BaseModel {
                         return false;
                     }
                 }
-                ECTouch::view()->assign('virtual_card', $virtual_card);
+                Touch::view()->assign('virtual_card', $virtual_card);
             }
         }
 
@@ -185,17 +185,17 @@ class OrderBaseModel extends BaseModel {
         }
 
         /* 发送邮件 */
-        ECTouch::view()->assign('virtual_card', $cards);
-        ECTouch::view()->assign('order', $order);
-        ECTouch::view()->assign('goods', $goods);
+        Touch::view()->assign('virtual_card', $cards);
+        Touch::view()->assign('order', $order);
+        Touch::view()->assign('goods', $goods);
 
-        ECTouch::view()->assign('send_time', date('Y-m-d H:i:s'));
-        ECTouch::view()->assign('shop_name', C('shop_name'));
-        ECTouch::view()->assign('send_date', date('Y-m-d'));
-        ECTouch::view()->assign('sent_date', date('Y-m-d'));
+        Touch::view()->assign('send_time', date('Y-m-d H:i:s'));
+        Touch::view()->assign('shop_name', C('shop_name'));
+        Touch::view()->assign('send_date', date('Y-m-d'));
+        Touch::view()->assign('sent_date', date('Y-m-d'));
 
         $tpl = model('Base')->get_mail_template('virtual_card');
-        $content = ECTouch::view()->fetch('str:' . $tpl['template_content']);
+        $content = Touch::view()->fetch('str:' . $tpl['template_content']);
         send_mail($order['consignee'], $order['email'], $tpl['template_subject'], $content, $tpl['is_html']);
 
         return true;

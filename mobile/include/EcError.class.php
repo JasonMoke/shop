@@ -1,20 +1,20 @@
 <?php
 
 /**
- * ECTouch Open Source Project
+ * Touch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
  * ----------------------------------------------------------------------------
  * 文件名称：EcError.class.php
  * ----------------------------------------------------------------------------
  * 功能描述：错误类
  * ----------------------------------------------------------------------------
- * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ * Licensed (  )
  * ----------------------------------------------------------------------------
  */
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 class EcError extends Exception {
 
@@ -191,7 +191,7 @@ if (($this->errorCode > 0) && ($this->errorCode != 404) && C('DEBUG')) {
 echo '
 </div>
 <div class="copyright">
-<p><a title="官方网站" href="http://www.ectouch.cn">ECTouch</a><sup>'.VERSION.'_'.RELEASE.'</sup></p>
+<p><a title="官方网站" href="http://www.Touch.cn">Touch</a><sup>'.VERSION.'_'.RELEASE.'</sup></p>
 <p style="text-align:right">[ 商创网络科技 专注移动电商 ]</p>
 </div>
 </body>

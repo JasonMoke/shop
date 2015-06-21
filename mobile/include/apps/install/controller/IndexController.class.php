@@ -1,20 +1,20 @@
 <?php
 
 /**
- * ECTouch Open Source Project
+ * Touch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
  * ----------------------------------------------------------------------------
  * 文件名称：IndexController.class.php
  * ----------------------------------------------------------------------------
- * 功能描述：ECTOUCH 安装控制器
+ * 功能描述：Touch 安装控制器
  * ----------------------------------------------------------------------------
- * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ * Licensed (  )
  * ----------------------------------------------------------------------------
  */
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 class IndexController extends Controller {
 
@@ -123,10 +123,10 @@ class IndexController extends Controller {
         $appid = $this->appid();
         $config_file = './data/version.php';
         require $config_file;
-        $content = "<?php\ndefine('APPNAME', '".APPNAME."');\ndefine('VERSION', '".VERSION."');\ndefine('RELEASE', '".RELEASE."');\ndefine('ECTOUCH_AUTH_KEY', '".$appid."');";
+        $content = "<?php\ndefine('APPNAME', '".APPNAME."');\ndefine('VERSION', '".VERSION."');\ndefine('RELEASE', '".RELEASE."');\ndefine('Touch_AUTH_KEY', '".$appid."');";
         @file_put_contents($config_file, $content);
         @fopen($this->lockFile, 'w');
-        if (ECTOUCH_AUTH_KEY == '') {
+        if (Touch_AUTH_KEY == '') {
             $site_info = site_info($appid);
             $this->cloud->data($site_info)->act('post.install');
         }

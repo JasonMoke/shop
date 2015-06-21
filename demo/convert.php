@@ -4,19 +4,19 @@
 $charset = 'utf-8';
 $tools_version = "v1.0";
 $mysql_version = '';
-$ecshop_version = '';
+$SHOP_version = '';
 $mysql_charset = '';
-$ecshop_charset = '';
+$SHOP_charset = '';
 $convert_charset = array('utf-8' => 'gbk', 'gbk' => 'utf-8');
 $convert_tables_file = 'data/convert_tables.php';
 $rpp = 500; // 姣忔?澶勭悊鐨勮?褰曟暟
 
-/* ECShop鐨勭珯鐐圭洰褰 */
+/* SHOP鐨勭珯鐐圭洰褰 */
 define('ROOT_PATH', str_replace('\\', '/', substr(__FILE__, 0, -19)));
 define('IN_ECS', true);
 
 require(ROOT_PATH . 'data/config.php');
-require(ROOT_PATH . 'includes/cls_ecshop.php');
+require(ROOT_PATH . 'includes/cls_SHOP.php');
 require(ROOT_PATH . 'includes/cls_mysql.php');
 require(ROOT_PATH . 'includes/lib_common.php');
 require(ROOT_PATH . 'includes/lib_base.php');
@@ -27,8 +27,8 @@ if (defined('EC_CHARSET')) {
 } else {
     $ec_charset = '';
 }
-$ecshop_version = str_replace('v', '', VERSION);
-$ecshop_charset = $ec_charset;
+$SHOP_version = str_replace('v', '', VERSION);
+$SHOP_charset = $ec_charset;
 $db = new cls_mysql($db_host, $db_user, $db_pass, $db_name, '', 0, 1);
 $mysql_version = $db->version;
 $mysql_charset = get_mysql_charset();
@@ -36,35 +36,35 @@ $mysql_charset = get_mysql_charset();
 $step = getgpc('step');
 $step = empty($step) ? 1 : $step;
 
-if ($ecshop_version < '2.6.0') {
+if ($SHOP_version < '2.6.0') {
     $step = 'halt';
 }
 
 ob_start();
 instheader();
 if ($step == 1) {
-    if (!empty($ecshop_charset) && !empty($mysql_charset) && $ecshop_charset == $mysql_charset) {
+    if (!empty($SHOP_charset) && !empty($mysql_charset) && $SHOP_charset == $mysql_charset) {
         $ext_msg = '<span style="color:red;font-size:14px;font-weight:bold">鎮ㄧ殑绋嬪簭缂栫爜涓庢暟鎹?簱缂栫爜涓€鑷达紝鏃犻渶杩涜?杞?崲銆侟/span><br /><a href="index.php"><font size="2"><b>&gt;&gt;&nbsp;濡傛灉鎮ㄩ渶瑕佹墽琛屽崌绾х▼搴忥紝璇风偣杩欓噷杩涜?鍗囩骇</b></font></a>';
-    } elseif(empty($ecshop_charset) && !empty($mysql_charset)) {
+    } elseif(empty($SHOP_charset) && !empty($mysql_charset)) {
         $ext_msg = '<form name="convert_form" method="post" action="?step=start"><b>鐢变簬鏈?兘纭?畾鎮ㄧ殑绋嬪簭缂栫爜锛岃?缂栫爜鐢辨偍鎵嬪姩纭?畾銆侟/b><br />
                     <b>鎮ㄧ殑鏁版嵁搴撶紪鐮佷负锛欬span style="color:blue">'. $mysql_charset .'</span> 锛岀‘璁ゆ偍鐨勭▼搴忕紪鐮佹槸锛欬span style="color:red">'. $convert_charset[$mysql_charset] .'</span> 鎵嶈兘杩涜?杞?崲</b><br /><br />
-        <a href="###" id="runturn"><font size="2"><b>&gt;&gt;&nbsp;濡傛灉鎮ㄥ凡纭??瀹屾垚涓婇潰鐨勮?鏄?璇风偣杩欓噷杩涜?杞?崲</b></font></a><input type="hidden" name="ecshop_charset" value="'. $convert_charset[$mysql_charset] .'" />&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php"><font size="2">&gt;&gt;&nbsp;濡傛灉鎮ㄧ‘璁ょ▼搴忎笌鏁版嵁搴撶殑缂栫爜涓€鑷达紝璇风偣杩欓噷杩涜?鍗囩骇</font></a></form>';
-        $ecshop_charset = '<span style="color:red">鏈?煡</span>';
-    } elseif(empty($mysql_charset) && !empty($ecshop_charset)) {
+        <a href="###" id="runturn"><font size="2"><b>&gt;&gt;&nbsp;濡傛灉鎮ㄥ凡纭??瀹屾垚涓婇潰鐨勮?鏄?璇风偣杩欓噷杩涜?杞?崲</b></font></a><input type="hidden" name="SHOP_charset" value="'. $convert_charset[$mysql_charset] .'" />&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php"><font size="2">&gt;&gt;&nbsp;濡傛灉鎮ㄧ‘璁ょ▼搴忎笌鏁版嵁搴撶殑缂栫爜涓€鑷达紝璇风偣杩欓噷杩涜?鍗囩骇</font></a></form>';
+        $SHOP_charset = '<span style="color:red">鏈?煡</span>';
+    } elseif(empty($mysql_charset) && !empty($SHOP_charset)) {
         $ext_msg = '<form name="convert_form" method="post" action="?step=start"><b>鐢变簬鏈?兘纭?畾鎮ㄧ殑鏁版嵁搴撶紪鐮侊紝璇ョ紪鐮佺敱鎮ㄦ墜鍔ㄧ‘瀹氥€侟/b><br />
-                    <b>鎮ㄧ殑绋嬪簭缂栫爜涓猴細<span style="color:blue">'. $ecshop_charset .'</span> 锛岀‘璁ゆ偍鐨勬暟鎹?簱缂栫爜鏄?細<span style="color:red">'. $convert_charset[$ecshop_charset] .'</span> 鎵嶈兘杩涜?杞?崲</b><br /><br />
-        <a href="###" id="runturn"><font size="2"><b>&gt;&gt;&nbsp;濡傛灉鎮ㄥ凡纭??瀹屾垚涓婇潰鐨勮?鏄?璇风偣杩欓噷杩涜?杞?崲</b></font></a><input type="hidden" name="mysql_charset" value="'. $convert_charset[$ecshop_charset] .'" />&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php"><font size="2">&gt;&gt;&nbsp;濡傛灉鎮ㄧ‘璁ょ▼搴忎笌鏁版嵁搴撶殑缂栫爜涓€鑷达紝璇风偣杩欓噷杩涜?鍗囩骇</font></a></form>';
+                    <b>鎮ㄧ殑绋嬪簭缂栫爜涓猴細<span style="color:blue">'. $SHOP_charset .'</span> 锛岀‘璁ゆ偍鐨勬暟鎹?簱缂栫爜鏄?細<span style="color:red">'. $convert_charset[$SHOP_charset] .'</span> 鎵嶈兘杩涜?杞?崲</b><br /><br />
+        <a href="###" id="runturn"><font size="2"><b>&gt;&gt;&nbsp;濡傛灉鎮ㄥ凡纭??瀹屾垚涓婇潰鐨勮?鏄?璇风偣杩欓噷杩涜?杞?崲</b></font></a><input type="hidden" name="mysql_charset" value="'. $convert_charset[$SHOP_charset] .'" />&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php"><font size="2">&gt;&gt;&nbsp;濡傛灉鎮ㄧ‘璁ょ▼搴忎笌鏁版嵁搴撶殑缂栫爜涓€鑷达紝璇风偣杩欓噷杩涜?鍗囩骇</font></a></form>';
         $mysql_charset = '<span style="color:red">鏈?煡</span>';
-    } elseif(empty($ecshop_charset) && empty($mysql_charset)) {
+    } elseif(empty($SHOP_charset) && empty($mysql_charset)) {
         $charset_option = '';
         foreach($convert_charset as $c_charset) {
             $charset_option .= '<option value="'.$c_charset.'">'.$c_charset.'</option>';
         }
         $ext_msg = '<form name="convert_form" method="post" action="?step=start"><b>鐢变簬鏈?兘纭?畾鎮ㄧ殑绋嬪簭涓庢暟鎹?簱缂栫爜锛岃?缂栫爜鐢辨偍鎵嬪姩纭?畾銆侟/b><br />
-                    <b>鎮ㄧ殑绋嬪簭缂栫爜涓猴細<select name="ecshop_charset" id="ecshop_charset">'. $charset_option .'</select> 锛屾偍鐨勬暟鎹?簱缂栫爜涓猴細<select name="mysql_charset" id="mysql_charset">'. $charset_option .'</select></b><br /><b></b><br /><br />
+                    <b>鎮ㄧ殑绋嬪簭缂栫爜涓猴細<select name="SHOP_charset" id="SHOP_charset">'. $charset_option .'</select> 锛屾偍鐨勬暟鎹?簱缂栫爜涓猴細<select name="mysql_charset" id="mysql_charset">'. $charset_option .'</select></b><br /><b></b><br /><br />
         <a href="###" id="runturn"><font size="2"><b>&gt;&gt;&nbsp;濡傛灉鎮ㄥ凡纭??瀹屾垚涓婇潰鐨勮?鏄?璇风偣杩欓噷杩涜?杞?崲</b></font></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php"><font size="2"><b>&gt;&gt;&nbsp;濡傛灉鎮ㄧ‘璁ょ▼搴忎笌鏁版嵁搴撶殑缂栫爜涓€鑷达紝璇风偣杩欓噷杩涜?鍗囩骇</font></a></form>';
         $mysql_charset = '<span style="color:red">鏈?煡</span>';
-        $ecshop_charset = '<span style="color:red">鏈?煡</span>';
+        $SHOP_charset = '<span style="color:red">鏈?煡</span>';
     }else {
         $ext_msg ='<a href="?step=start"><font size="2"><b>&gt;&gt;&nbsp;濡傛灉鎮ㄥ凡纭??瀹屾垚涓婇潰鐨勮?鏄?璇风偣杩欓噷杩涜?杞?崲</b></font></a>';
     }
@@ -78,13 +78,13 @@ if ($step == 1) {
             document.forms["convert_form"].submit();
         }
     }
-    if (_o("ecshop_charset") && _o("mysql_charset")) {
-        if (_o("ecshop_charset").options[0].value == "gbk") {
+    if (_o("SHOP_charset") && _o("mysql_charset")) {
+        if (_o("SHOP_charset").options[0].value == "gbk") {
             _o("mysql_charset").options[1].selected = true;
         } else {
             _o("mysql_charset").options[0].selected = true;
         }
-        _o("ecshop_charset").onchange = function() {
+        _o("SHOP_charset").onchange = function() {
             if (this.value == "gbk") {
                 _o("mysql_charset").options[1].selected = true;
             } else {
@@ -93,16 +93,16 @@ if ($step == 1) {
         }
         _o("mysql_charset").onchange = function() {
             if (this.value == "gbk") {
-                _o("ecshop_charset").options[1].selected = true;
+                _o("SHOP_charset").options[1].selected = true;
             } else {
-                _o("ecshop_charset").options[0].selected = true;
+                _o("SHOP_charset").options[0].selected = true;
             }
         }
     }
 </script>
 ';
     echo <<<EOT
-<h4>鏈?浆鎹㈢▼搴忓彧鑳介拡ECShop2.6.0鎴栬€呬互涓婄増鏈?▼搴忕殑杞?崲<br /></h4>
+<h4>鏈?浆鎹㈢▼搴忓彧鑳介拡SHOP2.6.0鎴栬€呬互涓婄増鏈?▼搴忕殑杞?崲<br /></h4>
 杞?崲涔嬪墠<b>鍔″繀澶囦唤鏁版嵁搴撹祫鏂橖/b>锛岄伩鍏嶈浆鎹㈠け璐ョ粰鎮ㄥ甫鏉ユ崯澶变笌涓嶄究<br /><br />
 
 <p>杞?崲绋嬪簭浣跨敤璇存槑锛欬/p>
@@ -116,8 +116,8 @@ if ($step == 1) {
 
 <p>鎮ㄥ綋鍓嶇▼搴忎笌鏁版嵁搴撶殑淇℃伅锛欬/p>
 <ul>
-    <li>绋嬪簭鐗堟湰锛?ecshop_version</li>
-    <li>绋嬪簭缂栫爜锛?ecshop_charset</li>
+    <li>绋嬪簭鐗堟湰锛?SHOP_version</li>
+    <li>绋嬪簭缂栫爜锛?SHOP_charset</li>
     <li>MySQL鐗堟湰锛?mysql_version</li>
     <li>MySQL缂栫爜锛?mysql_charset</li>
 </ul>
@@ -130,9 +130,9 @@ EOT;
 EOT;
     instfooter();
 } elseif ($step == 'start') {
-    $ecshop_charset = isset($_POST['ecshop_charset'])? $_POST['ecshop_charset'] : $ecshop_charset;
+    $SHOP_charset = isset($_POST['SHOP_charset'])? $_POST['SHOP_charset'] : $SHOP_charset;
     $mysql_charset = isset($_POST['mysql_charset'])? $_POST['mysql_charset'] : $mysql_charset;
-    if ($ecshop_charset == $mysql_charset) {
+    if ($SHOP_charset == $mysql_charset) {
         $ext_msg = '<span style="color:red;font-size:14px;font-weight:bold">鎮ㄧ殑绋嬪簭缂栫爜涓庢暟鎹?簱缂栫爜涓€鑷达紝鏃犻渶杩涜?杞?崲銆侟/span><br /><a href="index.php"><font size="2"><b>&gt;&gt;&nbsp;濡傛灉鎮ㄩ渶瑕佹墽琛屽崌绾х▼搴忥紝璇风偣杩欓噷杩涜?鍗囩骇</b></font></a>';
         showmessage($ext_msg);
     }
@@ -147,7 +147,7 @@ EOT;
     if (empty($act)) {
         $backup_count = backup_tables($tables_keys);
         $extra = '
-        <input type="hidden" name="ecshop_charset" value="'. $ecshop_charset .'" />
+        <input type="hidden" name="SHOP_charset" value="'. $SHOP_charset .'" />
         <input type="hidden" name="mysql_charset" value="'. $mysql_charset .'" />
         <input type="hidden" name="act" value="convert" />
         <input type="hidden" name="table_name" value="'.$tables_keys[0].'" />';
@@ -163,7 +163,7 @@ function instheader() {
 
     echo "<html><head>".
         "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=$charset\">".
-        "<title>ECShop 鏁版嵁搴撶紪鐮佽浆鎹㈠伐鍏?tools_version</title>".
+        "<title>SHOP 鏁版嵁搴撶紪鐮佽浆鎹㈠伐鍏?tools_version</title>".
         "<style type=\"text/css\">
         a {
             color: #3A4273;
@@ -251,14 +251,14 @@ function instheader() {
         "<body bgcolor=\"#298296\" text=\"#000000\"><div id=\"append_parent\"></div>".
         "<table width=\"95%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" bgcolor=\"#FFFFFF\" align=\"center\"><tr><td>".
               "<table width=\"98%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\"><tr>".
-              "<td class=\"install\" height=\"30\" valign=\"bottom\"><font color=\"#FF0000\">&gt;&gt;</font> ECShop 鏁版嵁搴撶紪鐮佽浆鎹㈠伐鍏?tools_version".
+              "<td class=\"install\" height=\"30\" valign=\"bottom\"><font color=\"#FF0000\">&gt;&gt;</font> SHOP 鏁版嵁搴撶紪鐮佽浆鎹㈠伐鍏?tools_version".
               "</td></tr><tr><td><hr noshade align=\"center\" width=\"100%\" size=\"1\"></td></tr><tr><td colspan=\"2\">";
 }
 
 function instfooter() {
     echo "</td></tr><tr><td><hr noshade align=\"center\" width=\"100%\" size=\"1\"></td></tr>".
             "<tr><td align=\"center\">".
-                "<b style=\"font-size: 11px\">Powered by <a href=\"http://www.ecshop.com\" target=\"_blank\"><span style=\"color:#FF6100\">ECShop</span>".
+                "<b style=\"font-size: 11px\">Powered by <a href=\"http://www.SHOP.com\" target=\"_blank\"><span style=\"color:#FF6100\">SHOP</span>".
               "</a></b>&nbsp; &copy; 2005-2011 涓婃捣鍟嗘淳缃戠粶绉戞妧鏈夐檺鍏?徃銆侟br /><br />".
               "</td></tr></table></td></tr></table>".
         "</body></html>";
@@ -381,12 +381,12 @@ function convert_table($table) {
         showmessage('鏁版嵁琛ㄥ悕涓嶈兘涓虹┖锛岃浆鎹?腑姝?紝濡傞渶閲嶆柊杞?崲璇峰厛杩樺師鏁版嵁搴撳悗鍐嶆?鎵ц?鏈?▼搴忥紒');
     }
     display('姝ｅ湪杞?崲 '. $table .' 鏁版嵁琛?紝璇峰嬁鍏抽棴鏈?〉闈㈡垨鍒锋柊銆?);
-    global $ecshop_charset, $mysql_charset, $mysql_version;
+    global $SHOP_charset, $mysql_charset, $mysql_version;
     global $db, $prefix;
     global $convert_tables, $convert_tables_file, $tables_keys, $rpp;
 
     $s_charset = str_replace('-', '', $mysql_charset);
-    $d_charset = str_replace('-', '', $ecshop_charset);
+    $d_charset = str_replace('-', '', $SHOP_charset);
     if ($convert_tables[$table] == 1) {
         $query = $db->query("SHOW CREATE TABLE `{$table}_bak`", 'SILENT');
         if ($query) {
@@ -417,7 +417,7 @@ function convert_table($table) {
             $insert_query = "INSERT INTO `{$table}`(`";
             foreach($row as $k => $v) {
                 $_key[] = $k;
-                $_value[] = addslashes(ecs_iconv($mysql_charset, $ecshop_charset, $v));
+                $_value[] = addslashes(ecs_iconv($mysql_charset, $SHOP_charset, $v));
             }
             $_key = implode("`,`", $_key);
             $_value = implode("','", $_value);
@@ -435,12 +435,12 @@ function convert_table($table) {
             write_tables($convert_tables, $convert_tables_file, 'convert_tables');
             if (count($convert_tables) < 1) {
                 @unlink(ROOT_PATH.$convert_tables_file);
-                @setcookie('ECCC', $ecshop_charset, 0);
+                @setcookie('ECCC', $SHOP_charset, 0);
                 showmessage('<br /><span style="font-size:14px;font-size:weight">杞?崲缁撴潫锛?/span><br /><a href="index.php"><font size="2"><b>&gt;&gt;&nbsp;濡傛灉鎮ㄩ渶瑕佹墽琛屽崌绾х▼搴忥紝璇风偣杩欓噷杩涜?鍗囩骇</b></font></a>');
             } else {
                 array_shift($tables_keys);
                 $extra = '
-                <input type="hidden" name="ecshop_charset" value="'. $ecshop_charset .'" />
+                <input type="hidden" name="SHOP_charset" value="'. $SHOP_charset .'" />
                 <input type="hidden" name="mysql_charset" value="'. $mysql_charset .'" />
                 <input type="hidden" name="act" value="convert" />
                 <input type="hidden" name="table_name" value="'.$tables_keys[0].'" />';
@@ -449,7 +449,7 @@ function convert_table($table) {
         } else {
             $next_start = $start + $rpp;
             $extra = '
-            <input type="hidden" name="ecshop_charset" value="'. $ecshop_charset .'" />
+            <input type="hidden" name="SHOP_charset" value="'. $SHOP_charset .'" />
             <input type="hidden" name="mysql_charset" value="'. $mysql_charset .'" />
             <input type="hidden" name="act" value="convert" />
             <input type="hidden" name="start" value="'.$next_start.'" />

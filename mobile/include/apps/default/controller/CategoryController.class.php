@@ -1,19 +1,19 @@
 <?php
 
 /**
- * ECTouch Open Source Project
+ * Touch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
  * ----------------------------------------------------------------------------
  * 文件名称：CategoryControoller.class.php
  * ----------------------------------------------------------------------------
  * 功能描述：商品分类控制器
  * ----------------------------------------------------------------------------
- * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ * Licensed (  )
  * ----------------------------------------------------------------------------
  */
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 class CategoryController extends CommonController {
 
@@ -103,7 +103,7 @@ class CategoryController extends CommonController {
         foreach ($goodslist as $key => $goods) {
             $this->assign('goods', $goods);
             $sayList[] = array(
-                'single_item' => ECTouch::view()->fetch('library/asynclist_info.lbi')
+                'single_item' => Touch::view()->fetch('library/asynclist_info.lbi')
             );
         }
         die(json_encode($sayList));
@@ -129,7 +129,7 @@ class CategoryController extends CommonController {
             /**
              * 处理关键字查询次数
              */
-            $sql = 'INSERT INTO ' . $this->model->pre . "keywords (date , searchengine,keyword ,count) VALUES ('" . local_date('Y-m-d') . "', '" . ECTouch . "', '" . addslashes(str_replace('%', '', $val)) . "', '1')";
+            $sql = 'INSERT INTO ' . $this->model->pre . "keywords (date , searchengine,keyword ,count) VALUES ('" . local_date('Y-m-d') . "', '" . Touch . "', '" . addslashes(str_replace('%', '', $val)) . "', '1')";
             $condition = 'keyword = "' . addslashes(str_replace('%', '', $val)) . '"';
             $set = $this->model->table('keywords')
                     ->where($condition)
@@ -445,7 +445,7 @@ class CategoryController extends CommonController {
     public function top_all() {
         /* 页面的缓存ID */
         $cache_id = sprintf('%X', crc32($_SERVER['REQUEST_URI'] . C('lang')));
-        if (!ECTouch::view()->is_cached('category_all.dwt', $cache_id)) {
+        if (!Touch::view()->is_cached('category_all.dwt', $cache_id)) {
             $category = model('CategoryBase')->get_categories_tree();
             $this->assign('title', L('catalog'));
             $this->assign('category', $category);
@@ -465,7 +465,7 @@ class CategoryController extends CommonController {
         $cat_id = I('get.id');
         /* 页面的缓存ID */
         $cache_id = sprintf('%X', crc32($_SERVER['REQUEST_URI'] . C('lang')));
-        if (!ECTouch::view()->is_cached('category_all.dwt', $cache_id)) {
+        if (!Touch::view()->is_cached('category_all.dwt', $cache_id)) {
             // 获得请求的分类 ID
             if ($cat_id > 0) {
                 $category = model('CategoryBase')->get_child_tree($cat_id);

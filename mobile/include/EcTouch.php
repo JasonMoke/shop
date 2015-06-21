@@ -1,20 +1,20 @@
 <?php
 
 /**
- * ECTouch Open Source Project
+ * Touch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
  * ----------------------------------------------------------------------------
- * 文件名称：EcTouch.php
+ * 文件名称：Touch.php
  * ----------------------------------------------------------------------------
- * 功能描述：ECTouch公共入口文件
+ * 功能描述：Touch公共入口文件
  * ----------------------------------------------------------------------------
- * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ * Licensed (  )
  * ----------------------------------------------------------------------------
  */
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 if (version_compare(PHP_VERSION, '5.2.0', '<')) die('require PHP > 5.2.0 !');
 defined('BASE_PATH') or define('BASE_PATH', dirname(__FILE__) . '/');

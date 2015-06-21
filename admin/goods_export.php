@@ -1,17 +1,10 @@
 <?php
 
 /**
- * ECSHOP
- * ============================================================================
- * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.ecshop.com；
- * ----------------------------------------------------------------------------
- * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
- * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ============================================================================
- *
- * $Author: liubo $
- * $Id: goods_export.php 17217 2011-01-19 06:29:08Z liubo $
+ * SHOP
+
+ * * $Author: Jason $
+ * $Id: goods_export.php 17217 2011-01-19 06:29:08Z Jason $
 */
 
 define('IN_ECS', true);
@@ -29,7 +22,7 @@ if ($_REQUEST['act'] == 'goods_export')
     $smarty->assign('goods_type_list',  goods_type_list(0));
     $goods_fields = my_array_merge($_LANG['custom'], get_attributes());
     $data_format_array = array(
-                                'ecshop'    => $_LANG['export_ecshop'],
+                                'SHOP'    => $_LANG['export_SHOP'],
                                 'taobao V4.3'    => $_LANG['export_taobao_v43'],
                                 'taobao V4.6'    => $_LANG['export_taobao_v46'],
                                 'taobao'    => $_LANG['export_taobao'],
@@ -221,7 +214,7 @@ elseif ($_REQUEST['act'] == 'import_taobao')
 {
     $smarty->display('import_taobao.htm');
 }
-elseif($_REQUEST['act'] == 'act_export_ecshop')
+elseif($_REQUEST['act'] == 'act_export_SHOP')
 {
     /* 检查权限 */
     admin_priv('goods_export');
@@ -260,7 +253,7 @@ elseif($_REQUEST['act'] == 'act_export_ecshop')
     $goods_value['is_on_sale'] = 1;
     $goods_value['is_alone_sale'] = 1;
     $goods_value['is_real'] = 1;
-    $content = '"' . implode('","', $_LANG['ecshop']) . "\"\n";
+    $content = '"' . implode('","', $_LANG['SHOP']) . "\"\n";
 
     while ($row = $db->fetchRow($res))
     {

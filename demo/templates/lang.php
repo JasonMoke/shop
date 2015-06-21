@@ -37,7 +37,7 @@
 <form target="_parent" action="" method="post">
 <fieldset>
     <legend dir="ltr"><?php echo $lang['ui_title']; ?></legend>
-    <input type="radio" id="ui_1" name="ui" value="ecshop" checked="checked" /><label for="ui_1"><?php echo $lang['ui_ecshop']; ?></label>
+    <input type="radio" id="ui_1" name="ui" value="SHOP" checked="checked" /><label for="ui_1"><?php echo $lang['ui_SHOP']; ?></label>
     <!--<input type="radio" id="ui_2" name="ui" value="ucenter" /><label for="ui_2"><?php echo $lang['ui_ucenter']; ?></label>-->
 </fieldset>
 <fieldset>

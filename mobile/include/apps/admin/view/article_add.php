@@ -11,7 +11,7 @@
     <form  action="{url('add')}" method="post" enctype="multipart/form-data" name="theForm" onsubmit="return validate();">
       <div class="tab-content">
         <div class="tab-pane active" id="general">
-          <table width="90%" id="general-table" class="table table-hover ectouch-table">
+          <table width="90%" id="general-table" class="table table-hover Touch-table">
             <tr>
               <td width="200">{$lang['title']}</td>
               <td><div class="col-md-4">
@@ -77,7 +77,7 @@
           </table>
         </div>
         <div class="tab-pane" id="detail">
-		  <table width="90%" class="table table-hover ectouch-table">
+		  <table width="90%" class="table table-hover Touch-table">
             <tr>
               <td><div class="col-md-9"> 
                   <script id="container" name="content" type="text/plain" style="width:810px; height:360px;"></script> 

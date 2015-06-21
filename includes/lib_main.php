@@ -1,16 +1,9 @@
 <?php
 
 /**
- * ECSHOP 前台公用函数库
- * ============================================================================
- * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.ecshop.com；
- * ----------------------------------------------------------------------------
- * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
- * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ============================================================================
- * $Author: liubo $
- * $Id: lib_main.php 17217 2011-01-19 06:29:08Z liubo $
+ * SHOP 前台公用函数库
+ * $Author: Jason $
+ * $Id: lib_main.php 17217 2011-01-19 06:29:08Z Jason $
 */
 
 if (!defined('IN_ECS'))
@@ -153,7 +146,7 @@ function assign_ur_here($cat = 0, $str = '')
     }
 
     /* 初始化“页面标题”和“当前位置” */
-    $page_title = $GLOBALS['_CFG']['shop_title'] . ' - ' . 'Powered by ECShop';
+    $page_title = $GLOBALS['_CFG']['shop_title'] . ' - ' . 'Powered by SHOP';
     $ur_here    = '<a href=".">' . $GLOBALS['_LANG']['home'] . '</a>';
 
     /* 根据文件名分别处理中间的部分 */
@@ -1740,11 +1733,11 @@ function set_affiliate()
             {
                 $c = 1;
             }
-            setcookie('ecshop_affiliate_uid', intval($_GET['u']), gmtime() + 3600 * $config['config']['expire'] * $c);
+            setcookie('SHOP_affiliate_uid', intval($_GET['u']), gmtime() + 3600 * $config['config']['expire'] * $c);
         }
         else
         {
-            setcookie('ecshop_affiliate_uid', intval($_GET['u']), gmtime() + 3600 * 24); // 过期时间为 1 天
+            setcookie('SHOP_affiliate_uid', intval($_GET['u']), gmtime() + 3600 * 24); // 过期时间为 1 天
         }
     }
 }
@@ -1760,16 +1753,16 @@ function set_affiliate()
  **/
 function get_affiliate()
 {
-    if (!empty($_COOKIE['ecshop_affiliate_uid']))
+    if (!empty($_COOKIE['SHOP_affiliate_uid']))
     {
-        $uid = intval($_COOKIE['ecshop_affiliate_uid']);
+        $uid = intval($_COOKIE['SHOP_affiliate_uid']);
         if ($GLOBALS['db']->getOne('SELECT user_id FROM ' . $GLOBALS['ecs']->table('users') . "WHERE user_id = '$uid'"))
         {
             return $uid;
         }
         else
         {
-            setcookie('ecshop_affiliate_uid', '', 1);
+            setcookie('SHOP_affiliate_uid', '', 1);
         }
     }
 
@@ -2043,7 +2036,7 @@ function license_info()
         }
         $url_domain=url_domain();
         $host = 'http://' . $host .$url_domain ;
-        $license = '<a href="http://www.ecshop.com/license.php?product=ecshop_b2c&url=' . urlencode($host) . '" target="_blank"
+        $license = '<a href="http://www.SHOP.com/license.php?product=SHOP_b2c&url=' . urlencode($host) . '" target="_blank"
 >&nbsp;&nbsp;Licensed</a>';
         return $license;
     }

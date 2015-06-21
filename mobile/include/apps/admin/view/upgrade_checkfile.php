@@ -1,7 +1,7 @@
 {include file="pageheader"}
 
 <div class="row" style="margin:0">
-  <div class="ectouch-mb5">
+  <div class="Touch-mb5">
   	<a href="{url('index')}" class="btn btn-info">{$lang['upgrade']}</a>
     <a href="{url('checkfile')}" class="btn btn-success">{$lang['checkfile']}</a>
   </div>
@@ -9,7 +9,7 @@
 
 <p class="bg-success" style="padding: 10px;line-height: 24px;">{$lang['check_file_notice']}</p>
 
-<table class="table table-hover ectouch-table" style="border:1px #ddd solid; margin-bottom:10px;">
+<table class="table table-hover Touch-table" style="border:1px #ddd solid; margin-bottom:10px;">
   <tr class="active">
       <th>{$lang['modifyedfile']}</th>
       <th width="33%">{$lang['lostfile']}</th>
@@ -23,7 +23,7 @@
 </table>
 
 <?php if(!empty($diff)) {?>
-<table class="table table-hover ectouch-table" style="border:1px #ddd solid; margin-bottom:10px;">
+<table class="table table-hover Touch-table" style="border:1px #ddd solid; margin-bottom:10px;">
   <tr class="warning">
     <th>{$lang['modifyedfile']}</th>
     <th width="20%">{$lang['lastmodifytime']}</th>
@@ -44,7 +44,7 @@
 <?php }?>
 
 <?php if(!empty($unknowfile)) {?>
-<table class="table table-hover ectouch-table" style="border:1px #ddd solid; margin-bottom:10px;">
+<table class="table table-hover Touch-table" style="border:1px #ddd solid; margin-bottom:10px;">
   <tr class="info">
     <th>{$lang['unknowfile']}</th>
     <th width="20%">{$lang['lastmodifytime']}</th>
@@ -65,7 +65,7 @@
 <?php }?>
 
 <?php if(!empty($lostfile)) {?>
-<table class="table table-hover ectouch-table" style="border:1px #ddd solid; margin-bottom:10px;">
+<table class="table table-hover Touch-table" style="border:1px #ddd solid; margin-bottom:10px;">
   <tr class="danger">
 	<th>{$lang['lostfile']}</th>
   </tr>

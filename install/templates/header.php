@@ -1,5 +1,5 @@
 <div id="logos">
-  <div id="logos-inside"> <img src="../admin/images/ecshop_logo.gif" alt="ECSHOP" /> </div>
+  <div id="logos-inside"> <img src="../admin/images/SHOP_logo.gif" alt="SHOP" /> </div>
 <div id="lang-menu">
   <div id="lang-menu-inside">
     <?php echo $lang['select_installer_lang'];?><img src="images/cn.gif" alt="<?php echo $lang['simplified_chinese'];?>" />

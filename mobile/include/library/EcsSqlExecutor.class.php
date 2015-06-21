@@ -1,10 +1,10 @@
 <?php
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 /**
- * ECSHOP SQL语句执行类。在调用该类方法之前，请参看相应方法的说明。
+ * SHOP SQL语句执行类。在调用该类方法之前，请参看相应方法的说明。
  */
 class EcsSqlExecutor {
 

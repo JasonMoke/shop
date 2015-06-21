@@ -1,23 +1,22 @@
 <?php
 
 /**
- * ECSHOP Control panel start page language file
+ * SHOP Control panel start page language file
  * ============================================================================
  * All right reserved (C) 2005-2011 Beijing Yi Shang Interactive Technology
  * Development Ltd.
- * Web site: http://www.ecshop.com
+ * Web site: http://www.SHOP.com
  * ----------------------------------------------------------------------------
  * This is a free/open source software;it mean that you can modify, use and
  * republish the program code, on the premise of that your behavior is not for
  * commercial purposes.
- * ============================================================================
- * $Author: liubo $
- * $Id: index.php 17217 2011-01-19 06:29:08Z liubo $
+ * ============================================================================ * $Author: Jason $
+ * $Id: index.php 17217 2011-01-19 06:29:08Z Jason $
 */
 
 $_LANG['shop_guide'] = 'Shop guide';
 $_LANG['set_navigator'] = 'Set navigator';
-$_LANG['about'] ='About ECSHOP';
+$_LANG['about'] ='About SHOP';
 $_LANG['preview'] ='Preview';
 $_LANG['menu'] ='Menu';
 $_LANG['help'] ='Help';
@@ -97,7 +96,7 @@ $_LANG['php_version'] ='PHP version:';
 $_LANG['mysql_version'] ='MySQL version:';
 $_LANG['gd_version'] ='GD version:';
 $_LANG['zlib'] ='Zlib support:';
-$_LANG['ecs_version'] ='ECShop version:';
+$_LANG['ecs_version'] ='SHOP version:';
 $_LANG['install_date'] ='Install date:';
 $_LANG['ip_version'] ='IP database version:';
 $_LANG['max_filesize'] ='Limit size of upload file:';
@@ -132,8 +131,8 @@ $_LANG['caches_cleared'] = 'The page cache has be cleared successfully.';
 /*------------------------------------------------------ */
 //-- About us
 /*------------------------------------------------------ */
-$_LANG['team_member'] ='ECSHOP team member';
-$_LANG['before_team_member'] = 'ECSHOP Contributor';
+$_LANG['team_member'] ='SHOP team member';
+$_LANG['before_team_member'] = 'SHOP Contributor';
 
 $_LANG['director'] ='Director';
 $_LANG['programmer'] ='Programmer';

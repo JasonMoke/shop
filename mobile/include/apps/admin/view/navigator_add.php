@@ -5,7 +5,7 @@
   </div>
   <div class="panel-body">
     <form action="{url('add')}" method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
-      <table id="general-table" class="table table-hover ectouch-table">
+      <table id="general-table" class="table table-hover Touch-table">
         <tr>
           <td width="200">{$lang['item_name']}:</td>
           <td><div class="col-md-4">

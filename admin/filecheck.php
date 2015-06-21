@@ -1,14 +1,7 @@
 <?php
 
 /**
- * ECSHOP 文件校验
- * ============================================================================
- * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.ecshop.com；
- * ----------------------------------------------------------------------------
- * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
- * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ============================================================================
+ * SHOP 文件校验
  * $Author: sunxiaodong $
  * $Id: filecheck.php 15457 2008-12-16 10:42:26Z sunxiaodong $
 */
@@ -20,7 +13,7 @@ require(dirname(__FILE__) . '/includes/init.php');
 /* 检查权限 */
 admin_priv('file_check');
 
-if (!$ecshopfiles = @file('./ecshopfiles.md5'))
+if (!$SHOPfiles = @file('./SHOPfiles.md5'))
 {
     sys_msg($_LANG['filecheck_nofound_md5file'], 1);
 }
@@ -64,7 +57,7 @@ elseif ($step == 3)
     checkfiles('uc_client/lib/', '\.php');
     */
 
-    foreach ($ecshopfiles as $line)
+    foreach ($SHOPfiles as $line)
     {
         $file = trim(substr($line, 34));
         $md5datanew[$file] = substr($line, 0, 32);

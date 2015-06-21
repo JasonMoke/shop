@@ -1,15 +1,15 @@
 <?php
 
 /**
- * ECTouch Open Source Project
+ * Touch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
  * ----------------------------------------------------------------------------
  * 文件名称：TemplateController.class.php
  * ----------------------------------------------------------------------------
  * 功能描述：模板管理控制器
  * ----------------------------------------------------------------------------
- * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ * Licensed (  )
  * ----------------------------------------------------------------------------
  */
 class TemplateController extends AdminController
@@ -109,9 +109,9 @@ class TemplateController extends AdminController
             }
         }
         
-        $css_path = ROOT_PATH . 'themes/' . $template_name . '/css/ectouch.css';
+        $css_path = ROOT_PATH . 'themes/' . $template_name . '/css/Touch.css';
         if ($template_style != '') {
-            $css_path = ROOT_PATH . 'themes/' . $template_name . "/css/ectouch_$template_style.css";
+            $css_path = ROOT_PATH . 'themes/' . $template_name . "/css/Touch_$template_style.css";
         }
         if (file_exists($css_path) && ! empty($template_name)) {
             $arr = array_slice(file($css_path), 0, 10);
@@ -120,8 +120,7 @@ class TemplateController extends AdminController
             $template_uri = explode(': ', $arr[2]);
             $template_desc = explode(': ', $arr[3]);
             $template_version = explode(': ', $arr[4]);
-            $template_author = explode(': ', $arr[5]);
-            $author_uri = explode(': ', $arr[6]);
+            $template_author = explode(': ', $arr[5]); * $Author_uri = explode(': ', $arr[6]);
             $logo_filename = explode(': ', $arr[7]);
             $template_type = explode(': ', $arr[8]);
             
@@ -172,7 +171,7 @@ class TemplateController extends AdminController
         while ($file = readdir($tpl_style_dir)) {
             
             if ($file != '.' && $file != '..' && is_file($dir . $file) && $file != '.svn' && $file != 'index.htm') {
-                if (preg_match("/^(ectouch|ectouch_)(.*)*/i", $file))                 // 取模板风格缩略图
+                if (preg_match("/^(Touch|Touch_)(.*)*/i", $file))                 // 取模板风格缩略图
                 {
                     $start = strpos($file, '.');
                     $temp = substr($file, 0, $start);

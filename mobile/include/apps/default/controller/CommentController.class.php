@@ -1,19 +1,19 @@
 <?php
 
 /**
- * ECTouch Open Source Project
+ * Touch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
  * ----------------------------------------------------------------------------
  * 文件名称：CommentControoller.class.php
  * ----------------------------------------------------------------------------
  * 功能描述：用户评论控制器
  * ----------------------------------------------------------------------------
- * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ * Licensed (  )
  * ----------------------------------------------------------------------------
  */
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 class CommentController extends CommonController {
 
@@ -65,7 +65,7 @@ class CommentController extends CommonController {
                 } else {
                     if ((intval(C('captcha')) & CAPTCHA_COMMENT) && gd_version() > 0) {
                         /* 检查验证码 */
-                        if ($_SESSION ['ectouch_verify'] !== strtoupper($cmt->captcha)) {
+                        if ($_SESSION ['Touch_verify'] !== strtoupper($cmt->captcha)) {
                             $result ['error'] = 1;
                             $result ['message'] = L('invalid_captcha');
                         } else {
@@ -239,7 +239,7 @@ class CommentController extends CommonController {
             }
             //$result['rank'] = $rank;
             $result['message'] = C('comment_check') ? L('cmt_submit_wait') : L('cmt_submit_done');
-            $result['content'] = ECTouch::$view->fetch("library/comments_list.lbi");
+            $result['content'] = Touch::$view->fetch("library/comments_list.lbi");
         }
         echo json_encode($result);
     }

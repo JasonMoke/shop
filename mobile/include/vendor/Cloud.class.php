@@ -1,20 +1,20 @@
 <?php
 
 /**
- * ECTouch Open Source Project
+ * Touch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
  * ----------------------------------------------------------------------------
  * 文件名称：Cloud.class.php
  * ----------------------------------------------------------------------------
- * 功能描述：ECTouch云平台
+ * 功能描述：Touch云平台
  * ----------------------------------------------------------------------------
- * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ * Licensed (  )
  * ----------------------------------------------------------------------------
  */
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 // =====Api 说明======
 // get.license 获取授权信息，参数 domain=网站域名
@@ -35,7 +35,7 @@ class Cloud {
     private $token = NULL;
 
     //服务器地址
-    const serverHot = 'http://www.ectouch.cn/apis';
+    const serverHot = 'http://www.Touch.cn/apis';
 
     /**
      * 连接云平台系统

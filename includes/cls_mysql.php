@@ -1,16 +1,9 @@
 <?php
 
 /**
- * ECSHOP MYSQL 公用类库
- * ============================================================================
- * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.ecshop.com；
- * ----------------------------------------------------------------------------
- * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
- * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ============================================================================
- * $Author: liubo $
- * $Id: cls_mysql.php 17217 2011-01-19 06:29:08Z liubo $
+ * SHOP MYSQL 公用类库
+ * $Author: Jason $
+ * $Id: cls_mysql.php 17217 2011-01-19 06:29:08Z Jason $
 */
 
 if (!defined('IN_ECS'))
@@ -387,7 +380,7 @@ class cls_mysql
     {
         if ($message)
         {
-            echo "<b>ECSHOP info</b>: $message\n\n<br /><br />";
+            echo "<b>SHOP info</b>: $message\n\n<br /><br />";
             //print('<a href="http://faq.comsenz.com/?type=mysql&dberrno=2003&dberror=Can%27t%20connect%20to%20MySQL%20server%20on" target="_blank">http://faq.comsenz.com/</a>');
         }
         else

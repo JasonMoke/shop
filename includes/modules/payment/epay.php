@@ -1,14 +1,7 @@
 <?php
 
 /**
- * ECSHOP 支付宝插件
- * ============================================================================
- * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.ecshop.com；
- * ----------------------------------------------------------------------------
- * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
- * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ============================================================================
+ * SHOP 支付宝插件
  * $Author: douqinghua $
  * $Id: alipay.php 17217 2011-01-19 06:29:08Z douqinghua $
  */
@@ -45,7 +38,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['is_online']  = '1';
 
     /* 作者 */
-    $modules[$i]['author']  = 'ECSHOP TEAM';
+    $modules[$i]['author']  = 'SHOP TEAM';
 
     /* 网址 */
     $modules[$i]['website'] ='http://www.95epay.cn/merRegister.jsp?countermanName=%E5%BC%A0%E4%BF%8A%E8%BE%89&countermanPhoneNO=13113391311&countermanQQ=2361064531';

@@ -1,16 +1,15 @@
 <?php
 
 /**
- * ECSHOP 整合插件类的基类
+ * SHOP 整合插件类的基类
  * ============================================================================
  * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.ecshop.com
+ * 网站地址: http://www.SHOP.com
  * ----------------------------------------------------------------------------
  * 这是一个免费开源的软件；这意味着您可以在不用于商业目的的前提下对程序代码
  * 进行修改、使用和再发布。
- * ============================================================================
- * $Author: liubo $
- * $Id: integrate.php 17217 2011-01-19 06:29:08Z liubo $
+ * ============================================================================ * $Author: Jason $
+ * $Id: integrate.php 17217 2011-01-19 06:29:08Z Jason $
 */
 
 class integrate
@@ -349,9 +348,9 @@ class integrate
     {
         $post_id = $id;
 
-        if ($this->need_sync || (isset($this->is_ecshop) && $this->is_ecshop))
+        if ($this->need_sync || (isset($this->is_SHOP) && $this->is_SHOP))
         {
-            /* 如果需要同步或是ecshop插件执行这部分代码 */
+            /* 如果需要同步或是SHOP插件执行这部分代码 */
             $sql = "SELECT user_id FROM "  . $GLOBALS['ecs']->table('users') . " WHERE ";
             $sql .= (is_array($post_id)) ? db_create_in($post_id, 'user_name') : "user_name='". $post_id . "' LIMIT 1";
             $col = $GLOBALS['db']->getCol($sql);
@@ -393,9 +392,9 @@ class integrate
             }
         }
 
-        if (isset($this->ecshop) && $this->ecshop)
+        if (isset($this->SHOP) && $this->SHOP)
         {
-            /* 如果是ecshop插件直接退出 */
+            /* 如果是SHOP插件直接退出 */
             return;
         }
 

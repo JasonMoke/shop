@@ -1,15 +1,14 @@
 <?php
 
 /**
- * ECSHOP 网罗天下
+ * SHOP 网罗天下
  * ===========================================================
  * 版权所有 2005-2010 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.ecshop.com；
+ * 网站地址: http://www.SHOP.com；
  * ----------------------------------------------------------
  * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ==========================================================
- * $Author: wangleisvn $
+ * ========================================================== * $Author: wangleisvn $
  * $Id: webcollect.php 16131 2009-05-31 08:21:41Z wangleisvn $
  */
 
@@ -28,7 +27,7 @@ if (!empty($license['certificate_id']) && !empty($license['token']) && !empty($l
 {
     /* 先做登录验证 */
     $certi_login['certi_app'] = 'certi.login'; // 证书方法
-    $certi_login['app_id'] = 'ecshop_b2c'; // 说明客户端来源
+    $certi_login['app_id'] = 'SHOP_b2c'; // 说明客户端来源
     $certi_login['app_instance_id'] = 'cert_auth'; // 应用服务ID
     $certi_login['version'] = VERSION . '#' .  RELEASE; // 网店软件版本号
     $certi_login['certi_url'] = sprintf($GLOBALS['ecs']->url()); // 网店URL
@@ -42,7 +41,7 @@ if (!empty($license['certificate_id']) && !empty($license['token']) && !empty($l
 
     /* 通用的验证变量 */
     $certi['certificate_id'] = $license['certificate_id']; // 网店证书ID
-    $certi['app_id'] = 'ecshop_b2c'; // 说明客户端来源
+    $certi['app_id'] = 'SHOP_b2c'; // 说明客户端来源
     $certi['app_instance_id'] = 'webcollect'; // 应用服务ID
     $certi['version'] = VERSION . '#' .  RELEASE; // 网店软件版本号
     $certi['format'] = 'json'; // 官方返回数据格式

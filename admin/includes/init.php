@@ -1,16 +1,9 @@
 <?php
 
 /**
- * ECSHOP 管理中心公用文件
- * ============================================================================
- * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.ecshop.com；
- * ----------------------------------------------------------------------------
- * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
- * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ============================================================================
- * $Author: liubo $
- * $Id: init.php 17217 2011-01-19 06:29:08Z liubo $
+ * SHOP 管理中心公用文件
+ * $Author: Jason $
+ * $Id: init.php 17217 2011-01-19 06:29:08Z Jason $
 */
 
 if (!defined('IN_ECS'))
@@ -53,7 +46,7 @@ else
     include('../includes/config.php');
 }
 
-/* 取得当前ecshop所在的根目录 */
+/* 取得当前SHOP所在的根目录 */
 if(!defined('ADMIN_PATH'))
 {
     define('ADMIN_PATH','admin');
@@ -80,7 +73,7 @@ else
 }
 
 require(ROOT_PATH . 'includes/inc_constant.php');
-require(ROOT_PATH . 'includes/cls_ecshop.php');
+require(ROOT_PATH . 'includes/cls_SHOP.php');
 require(ROOT_PATH . 'includes/cls_error.php');
 require(ROOT_PATH . 'includes/lib_time.php');
 require(ROOT_PATH . 'includes/lib_base.php');
@@ -111,7 +104,7 @@ if (strpos(PHP_SELF, '.php/') !== false)
     exit();
 }
 
-/* 创建 ECSHOP 对象 */
+/* 创建 SHOP 对象 */
 $ecs = new ECS($db_name, $prefix);
 define('DATA_DIR', $ecs->data_dir());
 define('IMAGE_DIR', $ecs->image_dir());
@@ -236,7 +229,7 @@ if(isset($_GET['ent_id']) && isset($_GET['ent_ac']) &&  isset($_GET['ent_sign'])
         $t = new transport('-1',5);
         $apiget = "act=ent_sign&ent_id= $ent_id & certificate_id=$certificate_id";
 
-        $t->request('http://cloud.ecshop.com/api.php', $apiget);
+        $t->request('http://cloud.SHOP.com/api.php', $apiget);
         $db->query('UPDATE '.$ecs->table('shop_config') . ' SET value = "'. $ent_id .'" WHERE code = "ent_id"');
         $db->query('UPDATE '.$ecs->table('shop_config') . ' SET value = "'. $ent_ac .'" WHERE code = "ent_ac"');
         $db->query('UPDATE '.$ecs->table('shop_config') . ' SET value = "'. $ent_sign .'" WHERE code = "ent_sign"');

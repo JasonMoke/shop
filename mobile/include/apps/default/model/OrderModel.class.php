@@ -1,20 +1,20 @@
 <?php
 
 /**
- * ECTouch Open Source Project
+ * Touch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
  * ----------------------------------------------------------------------------
  * 文件名称：OrderModel.class.php
  * ----------------------------------------------------------------------------
- * 功能描述：ECTOUCH 订单模型
+ * 功能描述：Touch 订单模型
  * ----------------------------------------------------------------------------
- * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ * Licensed (  )
  * ----------------------------------------------------------------------------
  */
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 class OrderModel extends BaseModel {
 
@@ -431,7 +431,7 @@ class OrderModel extends BaseModel {
      * @return  boolean
      */
     function addto_cart($goods_id, $num = 1, $spec = array(), $parent = 0) {
-        ECTouch::err()->clean();
+        Touch::err()->clean();
         $_parent_id = $parent;
 
         /* 取得商品信息 */
@@ -448,7 +448,7 @@ class OrderModel extends BaseModel {
         $goods = $this->row($sql);
 
         if (empty($goods)) {
-            ECTouch::err()->add(L('goods_not_exists'), ERR_NOT_EXISTS);
+            Touch::err()->add(L('goods_not_exists'), ERR_NOT_EXISTS);
 
             return false;
         }
@@ -459,7 +459,7 @@ class OrderModel extends BaseModel {
                     "cart WHERE goods_id='$parent' AND session_id='" . SESS_ID . "' AND extension_code <> 'package_buy'";
             $res = $this->row($sql);
             if ($res['count'] == 0) {
-                ECTouch::err()->add(L('no_basic_goods'), ERR_NO_BASIC_GOODS);
+                Touch::err()->add(L('no_basic_goods'), ERR_NO_BASIC_GOODS);
 
                 return false;
             }
@@ -467,14 +467,14 @@ class OrderModel extends BaseModel {
 
         /* 是否正在销售 */
         if ($goods['is_on_sale'] == 0) {
-            ECTouch::err()->add(L('not_on_sale'), ERR_NOT_ON_SALE);
+            Touch::err()->add(L('not_on_sale'), ERR_NOT_ON_SALE);
 
             return false;
         }
 
         /* 不是配件时检查是否允许单独销售 */
         if (empty($parent) && $goods['is_alone_sale'] == 0) {
-            ECTouch::err()->add(L('cannt_alone_sale'), ERR_CANNT_ALONE_SALE);
+            Touch::err()->add(L('cannt_alone_sale'), ERR_CANNT_ALONE_SALE);
 
             return false;
         }
@@ -494,7 +494,7 @@ class OrderModel extends BaseModel {
         if (C('use_storage') == 1) {
             //检查：商品购买数量是否大于总库存
             if ($num > $goods['goods_number']) {
-                ECTouch::err()->add(sprintf(L('shortage'), $goods['goods_number']), ERR_OUT_OF_STOCK);
+                Touch::err()->add(sprintf(L('shortage'), $goods['goods_number']), ERR_OUT_OF_STOCK);
 
                 return false;
             }
@@ -504,7 +504,7 @@ class OrderModel extends BaseModel {
                 if (!empty($spec)) {
                     /* 取规格的货品库存 */
                     if ($num > $product_info['product_number']) {
-                        ECTouch::err()->add(sprintf(L('shortage'), $product_info['product_number']), ERR_OUT_OF_STOCK);
+                        Touch::err()->add(sprintf(L('shortage'), $product_info['product_number']), ERR_OUT_OF_STOCK);
 
                         return false;
                     }
@@ -640,7 +640,7 @@ class OrderModel extends BaseModel {
                             "AND rec_type = 'CART_GENERAL_GOODS'";
                     $this->query($sql);
                 } else {
-                    ECTouch::err()->add(sprintf(L('shortage'), $num), ERR_OUT_OF_STOCK);
+                    Touch::err()->add(sprintf(L('shortage'), $num), ERR_OUT_OF_STOCK);
 
                     return false;
                 }
@@ -1685,13 +1685,13 @@ class OrderModel extends BaseModel {
             /* 如果有红包，发送邮件 */
             if ($count > 0) {
                 $tpl = model('Base')->get_mail_template('send_bonus');
-                ECTouch::view()->assign('user_name', $user['user_name']);
-                ECTouch::view()->assign('count', $count);
-                ECTouch::view()->assign('money', $money);
-                ECTouch::view()->assign('shop_name', C('shop_name'));
-                ECTouch::view()->assign('send_date', local_date(C('date_format')));
-                ECTouch::view()->assign('sent_date', local_date(C('date_format')));
-                $content = ECTouch::view()->fetch('str:' . $tpl['template_content']);
+                Touch::view()->assign('user_name', $user['user_name']);
+                Touch::view()->assign('count', $count);
+                Touch::view()->assign('money', $money);
+                Touch::view()->assign('shop_name', C('shop_name'));
+                Touch::view()->assign('send_date', local_date(C('date_format')));
+                Touch::view()->assign('sent_date', local_date(C('date_format')));
+                $content = Touch::view()->fetch('str:' . $tpl['template_content']);
                 send_mail($user['user_name'], $user['email'], $tpl['template_subject'], $content, $tpl['is_html']);
             }
         }
@@ -1817,27 +1817,27 @@ class OrderModel extends BaseModel {
      * @return  boolean
      */
     function add_package_to_cart($package_id, $num = 1) {
-        ECTouch::err()->clean();
+        Touch::err()->clean();
 
         /* 取得礼包信息 */
         $package = get_package_info($package_id);
 
         if (empty($package)) {
-            ECTouch::err()->add(L('goods_not_exists'), ERR_NOT_EXISTS);
+            Touch::err()->add(L('goods_not_exists'), ERR_NOT_EXISTS);
 
             return false;
         }
 
         /* 是否正在销售 */
         if ($package['is_on_sale'] == 0) {
-            ECTouch::err()->add(L('not_on_sale'), ERR_NOT_ON_SALE);
+            Touch::err()->add(L('not_on_sale'), ERR_NOT_ON_SALE);
 
             return false;
         }
 
         /* 现有库存是否还能凑齐一个礼包 */
         if (C('use_storage') == '1' && model('Order')->judge_package_stock($package_id)) {
-            ECTouch::err()->add(sprintf(L('shortage'), 1), ERR_OUT_OF_STOCK);
+            Touch::err()->add(sprintf(L('shortage'), 1), ERR_OUT_OF_STOCK);
 
             return false;
         }
@@ -1846,7 +1846,7 @@ class OrderModel extends BaseModel {
 //    if (C('use_storage') == 1 && $num > $package['goods_number'])
 //    {
 //        $num = $goods['goods_number'];
-//        ECTouch::err()->add(sprintf(L('shortage'), $num), ERR_OUT_OF_STOCK);
+//        Touch::err()->add(sprintf(L('shortage'), $num), ERR_OUT_OF_STOCK);
 //
 //        return false;
 //    }
@@ -1888,7 +1888,7 @@ class OrderModel extends BaseModel {
                             " AND rec_type = '" . CART_GENERAL_GOODS . "'";
                     $this->query($sql);
                 } else {
-                    ECTouch::err()->add(sprintf(L('shortage'), $num), ERR_OUT_OF_STOCK);
+                    Touch::err()->add(sprintf(L('shortage'), $num), ERR_OUT_OF_STOCK);
                     return false;
                 }
             } else { //购物车没有此物品，则插入

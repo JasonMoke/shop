@@ -1,28 +1,27 @@
 <?php
 
 /**
- * ECSHOP Install program language file
+ * SHOP Install program language file
  * ============================================================================
  * All right reserved (C) 2005-2011 Beijing Yi Shang Interactive Technology
  * Development Ltd.
- * Web site: http://www.ecshop.com
+ * Web site: http://www.SHOP.com
  * ----------------------------------------------------------------------------
  * This is a free/open source software；it means that you can modify, use and
  * republish the program code, on the premise of that your behavior is not for
  * commercial purposes.
- * ============================================================================
- * $Author: liubo $
- * $Id: en_us.php 17217 2011-01-19 06:29:08Z liubo $
+ * ============================================================================ * $Author: Jason $
+ * $Id: en_us.php 17217 2011-01-19 06:29:08Z Jason $
  */
 
 /* Common language item */
 $_LANG['prev_step'] = 'Previous:';
 $_LANG['next_step'] = 'Next:';
-$_LANG['copyright'] = '&copy; 2005-2012 <a href="http://www.ecshop.com" target="_blank">Shanghai ShopEx Network Technology Co,.Ltd. </a> <br> All right reserved.';
+$_LANG['copyright'] = '&copy; 2005-2012 <a href="http://www.SHOP.com" target="_blank">Shanghai ShopEx Network Technology Co,.Ltd. </a> <br> All right reserved.';
 
 
 /* Welcome page */
-$_LANG['welcome_title'] = 'You are welcome to use the ECShop e-commerce management system!';
+$_LANG['welcome_title'] = 'You are welcome to use the SHOP e-commerce management system!';
 $_LANG['select_installer_lang'] = 'Language :   ';
 $_LANG['simplified_chinese'] = 'Simplified Chinese';
 $_LANG['traditional_chinese'] = 'Traditional Chinese';
@@ -33,7 +32,7 @@ $_LANG['setup_environment'] = 'Configuration installation environment';
 $_LANG['loading'] = 'Loading,please wait...';
 
 /* Check environment page */
-$_LANG['checking_title'] = 'ECShop install program, the 2 step / 3 steps, check enviroment';
+$_LANG['checking_title'] = 'SHOP install program, the 2 step / 3 steps, check enviroment';
 $_LANG['system_environment'] = 'System environment';
 $_LANG['dir_priv_checking'] = 'Check directory authorization';
 $_LANG['template_writable_checking'] = 'Check template writable';
@@ -67,7 +66,7 @@ $_LANG['cannt_modify'] = 'No modifying';
 $_LANG['all_are_writable'] = 'All templates, all writable';
 
 /* Config system */
-$_LANG['setting_title'] = 'ECShop install program, the 3 step / 3 step, config system';
+$_LANG['setting_title'] = 'SHOP install program, the 3 step / 3 step, config system';
 $_LANG['db_account'] = 'Database accounts:';
 $_LANG['db_port'] = 'Port:';
 $_LANG['db_host'] = 'Database host:';
@@ -101,7 +100,7 @@ $_LANG['dc'] = 'Digital camera';
 $_LANG['dv'] = 'Digital vidicon';
 $_LANG['cosmetics'] = 'Cosmetics';
 $_LANG['install_at_once'] = 'Install at once';
-$_LANG['default_friend_link'] = 'ECSHOP e-commerce management system';
+$_LANG['default_friend_link'] = 'SHOP e-commerce management system';
 $_LANG['maifou_friend_link'] = 'maifou';
 $_LANG['wdwd_friend_link']='Free independent online store';
 $_LANG['monitor_title'] = 'Installer Monitor';
@@ -115,7 +114,7 @@ $_LANG['pwd_middle'] = 'Middle';
 $_LANG['pwd_high'] = 'High';
 
 /* Prompting message */
-$_LANG['has_locked_installer'] = '<strong>Install program has locked.</strong><br /><br />If you confirm reinstall ECSHOP, please delete install.lock in data directory.';
+$_LANG['has_locked_installer'] = '<strong>Install program has locked.</strong><br /><br />If you confirm reinstall SHOP, please delete install.lock in data directory.';
 $_LANG['connect_failed'] = 'Connect database failed, please check your database accounts validity.';
 $_LANG['query_failed'] = 'Query database failed, please check your database accounts validity.';
 $_LANG['select_db_failed'] = 'Select database failed, please check your database name validity.';
@@ -131,11 +130,11 @@ $_LANG['cannt_copy_file'] = 'Can\'t copy file.';
 $_LANG['open_installlock_error'] = 'Can\'t create install.lock.';
 $_LANG['write_config_file_failed'] = 'Write config file failed';
 
-$_LANG['install_done_title'] = 'ECSHOP install program, install successfully.';
-$_LANG['install_error_title'] = 'ECSHOP install program, install failed.';
-$_LANG['done'] = 'Congratulation，ECSHOP has installed successfully.<br />Based on security consideration, please delete install directory at once.';
-$_LANG['go_to_view_my_ecshop'] = 'ECSHOP Homepage';
-$_LANG['go_to_view_control_panel'] = 'ECSHOP Control panel';
+$_LANG['install_done_title'] = 'SHOP install program, install successfully.';
+$_LANG['install_error_title'] = 'SHOP install program, install failed.';
+$_LANG['done'] = 'Congratulation，SHOP has installed successfully.<br />Based on security consideration, please delete install directory at once.';
+$_LANG['go_to_view_my_SHOP'] = 'SHOP Homepage';
+$_LANG['go_to_view_control_panel'] = 'SHOP Control panel';
 $_LANG['open_config_file_failed'] = 'Can\'t write in data/config.php, please check whether the file can be wrote.';
 $_LANG['write_config_file_failed'] = 'Error, the file can\'t be wrote.';
 

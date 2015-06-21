@@ -15,7 +15,7 @@
     <form action="{url('edit')}" method="post" name="theForm" enctype="multipart/form-data" class="form-horizontal" role="form">
       <div class="tab-content">
         <div class="tab-pane active" id="general">
-          <table id="general-table" class="table table-hover ectouch-table">
+          <table id="general-table" class="table table-hover Touch-table">
             <tr>
               <td width="200">{$lang['topic_title']}</td>
               <td><div class="col-md-4">
@@ -51,7 +51,7 @@
                     <input type="file" name="topic_img" class="form-control input-sm" />
                   </div>
                   {if $topic['topic_img']}
-                  <div class="col-md-1"> <a href="javascript:;" class="glyphicon glyphicon-picture ectouch-fs16" style="text-decoration:none;" onClick="showImg('topic_img', '{$lang['top_img']}')" title="View"></a>
+                  <div class="col-md-1"> <a href="javascript:;" class="glyphicon glyphicon-picture Touch-fs16" style="text-decoration:none;" onClick="showImg('topic_img', '{$lang['top_img']}')" title="View"></a>
                     <div id="act_banner_layer" style="display:none"> <img src="{$info['act_banner']}" border="0" style="max-width:320px; max-height:320px;" /> </div>
                   </div>
                   {/if} </td>
@@ -85,7 +85,7 @@
                   <input type="file" name="title_pic" class="form-control input-sm" />
                 </div>
                 {if $topic['title_pic']}
-                <div class="col-md-1"> <a href="javascript:;" class="glyphicon glyphicon-picture ectouch-fs16" style="text-decoration:none;" onClick="showImg('title_pic', '{$lang['lable_title_upload']}')" title="View"></a>
+                <div class="col-md-1"> <a href="javascript:;" class="glyphicon glyphicon-picture Touch-fs16" style="text-decoration:none;" onClick="showImg('title_pic', '{$lang['lable_title_upload']}')" title="View"></a>
                   <div id="act_banner_layer" style="display:none"> <img src="{$topic['title_pic']}" border="0" style="max-width:320px; max-height:320px;" /> </div>
                 </div>
                 {/if}</td>
@@ -119,7 +119,7 @@
           </table>
         </div>
         <div class="tab-pane" id="goods">
-          <table width="90%" class="table table-hover ectouch-table">
+          <table width="90%" class="table table-hover Touch-table">
             <tr>
               <td><div class="col-md-4">{$lang['topic_class']}
                   <select name="topic_class_list" id="topic_class_list" onchange="showTargetList()">
@@ -146,7 +146,7 @@
                 </div></td>
             </tr>
             <tr>
-              <td width="100%"><table width="90%" class="table table-hover ectouch-table">
+              <td width="100%"><table width="90%" class="table table-hover Touch-table">
                   <tr height="37">
                     <th>{$lang['all_goods']}</th>
                     <th>{$lang['handler']}</th>
@@ -176,7 +176,7 @@
           <input type="hidden" name="id" value="{$info['act_id']}" />
         </div>
         <div class="tab-pane" id="desc">
-          <table width="90%" class="table table-hover ectouch-table">
+          <table width="90%" class="table table-hover Touch-table">
             <tr>
               <td><div class="col-md-9"> 
                   <script id="container" name="topic_intro" type="text/plain" style="width:810px; height:360px;">{$topic['intro']}</script> 
@@ -186,7 +186,7 @@
           <input type="hidden" name="id" value="{$info['act_id']}" />
         </div>
         <div class="tab-pane" id="advanced">
-          <table width="90%" class="table table-hover ectouch-table">
+          <table width="90%" class="table table-hover Touch-table">
             <tr>
               <td width="200">{$lang['template_file']}</td>
               <td><div class="col-md-4">

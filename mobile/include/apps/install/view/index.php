@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8"/>
-<title>ECTouch - 安装程序</title>
+<title>Touch - 安装程序</title>
 <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
 <meta name="viewport" content="width=device-width"/>
 <link rel="stylesheet" href="__ASSETS__/css/install.css"/>
@@ -10,7 +10,7 @@
 <body>
 <div class="blank68"></div>
 <div class="m-install">
-  <div class="install-head"> ECTouch - 安装程序 </div>
+  <div class="install-head"> Touch - 安装程序 </div>
   <div class="install-model">
     <div class="m-form">
       <form action="<?php echo url('install/index/importing');?>" method="post" id="form">
@@ -51,7 +51,7 @@
             <div class="ipt">
               <label class="u-opt">
                 <input name="agree" type="checkbox" value="1">
-                同意《<a href="http://ectouch.cn/docs/license.txt" target="_blank">使用协议</a>》</label>
+                同意《<a href="http://Touch.cn/docs/license.txt" target="_blank">使用协议</a>》</label>
             </div>
           </div>
           <div class="install-status"></div>
@@ -90,5 +90,5 @@ $(function() {
 	});
 });
 </script>
-<!--Copyright © 2014 ectouch.cn. All Rights Reserved.-->
+<!--Copyright © 2014 Touch.cn. All Rights Reserved.-->
 </html>

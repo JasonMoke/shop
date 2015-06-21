@@ -1,10 +1,10 @@
 <?php
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 /**
- * ECSHOP 模版类
+ * SHOP 模版类
  */
 class EcsTemplate {
 

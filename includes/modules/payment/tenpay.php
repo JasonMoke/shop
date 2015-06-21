@@ -1,16 +1,9 @@
 <?php
 
 /**
- * ECSHOP 财付通插件
- * ============================================================================
- * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.ecshop.com；
- * ----------------------------------------------------------------------------
- * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
- * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ============================================================================
- * $Author: liubo $
- * $Id: tenpay.php 17217 2011-01-19 06:29:08Z liubo $
+ * SHOP 财付通插件
+ * $Author: Jason $
+ * $Id: tenpay.php 17217 2011-01-19 06:29:08Z Jason $
  */
 
 if (!defined('IN_ECS'))
@@ -45,7 +38,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['is_online']  = '1';
 
     /* 作者 */
-    $modules[$i]['author']  = 'ECSHOP TEAM';
+    $modules[$i]['author']  = 'SHOP TEAM';
 
     /* 网址 */
     $modules[$i]['website'] = 'http://www.tenpay.com';
@@ -160,7 +153,7 @@ class tenpay
             'attach'            => $attach,                     // 用户自定义签名
             'sign'              => $sign,                       // MD5签名
             'spbill_create_ip'  => $spbill_create_ip,           //财付通风险防范参数
-            'sys_id'            => '542554970',                 //ecshop C账号 不参与签名
+            'sys_id'            => '542554970',                 //SHOP C账号 不参与签名
             'sp_suggestuser'    => '1202822001'                 //财付通分配的商户号
 
         );

@@ -1,16 +1,9 @@
 <?php
 
 /**
- * ECSHOP 安装程序 之 控制器
- * ============================================================================
- * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.ecshop.com；
- * ----------------------------------------------------------------------------
- * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
- * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ============================================================================
- * $Author: liubo $
- * $Id: index.php 17217 2011-01-19 06:29:08Z liubo $
+ * SHOP 安装程序 之 控制器
+ * $Author: Jason $
+ * $Id: index.php 17217 2011-01-19 06:29:08Z Jason $
  */
 
 define('IN_ECS', true);
@@ -167,7 +160,7 @@ case 'setting_ui' :
     $_SESSION['setting_ui']['show_timezone'] = $show_timezone;
     $_SESSION['setting_ui']['local_timezone'] = get_local_timezone();
     $_SESSION['setting_ui']['timezones'] = $timezones;
-    $_SESSION['setting_ui']['userinterface'] = empty($_GET['ui'])?'ecshop':$_GET['ui'];
+    $_SESSION['setting_ui']['userinterface'] = empty($_GET['ui'])?'SHOP':$_GET['ui'];
     $smarty->assign('ucapi', $_POST['ucapi']);
     $smarty->assign('ucfounderpw', $_POST['ucfounderpw']);
     $smarty->assign('installer_lang', $installer_lang);
@@ -177,7 +170,7 @@ case 'setting_ui' :
     $smarty->assign('show_timezone', $show_timezone);
     $smarty->assign('local_timezone', get_local_timezone());
     $smarty->assign('timezones', $timezones);
-    $smarty->assign('userinterface', empty($_GET['ui'])?'ecshop':$_GET['ui']);
+    $smarty->assign('userinterface', empty($_GET['ui'])?'SHOP':$_GET['ui']);
     $smarty->display('setting.php');
 
     break;
@@ -231,8 +224,8 @@ case 'setup_ucenter' :
     $json = new JSON();
     $result = array('error' => 0, 'message' => '');
 
-    $app_type   = 'ECSHOP';
-    $app_name   = 'ECSHOP 网店';
+    $app_type   = 'SHOP';
+    $app_name   = 'SHOP 网店';
     $app_url    = url();
     $app_charset = EC_CHARSET;
     $app_dbcharset = EC_DB_CHARSET;
@@ -379,7 +372,7 @@ case 'do_others' :
     $captcha = isset($_POST['disable_captcha'])     ? intval($_POST['disable_captcha']) : '0';
     $goods_types = isset($_POST['goods_types'])     ? $_POST['goods_types'] : array();
     $install_demo = isset($_POST['install_demo'])   ? $_POST['install_demo'] : 0;
-    $integrate = isset($_POST['userinterface'])   ? trim($_POST['userinterface']) : 'ecshop';
+    $integrate = isset($_POST['userinterface'])   ? trim($_POST['userinterface']) : 'SHOP';
 
     $result = do_others($system_lang, $captcha, $goods_types, $install_demo, $integrate);
     if ($result === false)

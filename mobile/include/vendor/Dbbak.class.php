@@ -1,13 +1,13 @@
 <?php
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 /**
  * 内置MYSQL连接，只需要简单配置数据连接
   使用方法如下
 
-  $db = new Dbbak('localhost','root','','ectouch_db','utf8','data/dbbak/');
+  $db = new Dbbak('localhost','root','','Touch_db','utf8','data/dbbak/');
 
   //查找数据库内所有数据表
   $tableArry = $db->getTables();

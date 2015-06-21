@@ -1,16 +1,9 @@
 <?php
 
 /**
- * ECSHOP 管理中心商店设置
- * ============================================================================
- * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.ecshop.com；
- * ----------------------------------------------------------------------------
- * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
- * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ============================================================================
- * $Author: liubo $
- * $Id: shop_config.php 17217 2011-01-19 06:29:08Z liubo $
+ * SHOP 管理中心商店设置
+ * $Author: Jason $
+ * $Id: shop_config.php 17217 2011-01-19 06:29:08Z Jason $
  */
 
 define('IN_ECS', true);
@@ -31,7 +24,7 @@ $sess_id = $GLOBALS['sess']->get_session_id();
 
 $auth = mktime();
 $ac = md5($certi_id.'SHOPEX_SMS'.$auth);
-$url = 'http://ecshop.ecmoban.com/sms/index.php?certificate_id='.$certi_id.'&sess_id='.$sess_id.'&auth='.$auth.'&ac='.$ac;
+$url = 'http://SHOP.ecmoban.com/sms/index.php?certificate_id='.$certi_id.'&sess_id='.$sess_id.'&auth='.$auth.'&ac='.$ac;
 
 /*------------------------------------------------------ */
 //-- 列表编辑 ?act=list_edit
@@ -228,7 +221,7 @@ elseif ($_REQUEST['act'] == 'post')
     $shop_province  = $db->getOne("SELECT region_name FROM ".$ecs->table('region')." WHERE region_id='$_CFG[shop_province]'");
     $shop_city      = $db->getOne("SELECT region_name FROM ".$ecs->table('region')." WHERE region_id='$_CFG[shop_city]'");
 
-    $spt = '<script type="text/javascript" src="http://api.ecshop.com/record.php?';
+    $spt = '<script type="text/javascript" src="http://api.SHOP.com/record.php?';
     $spt .= "url=" .urlencode($ecs->url());
     $spt .= "&shop_name=" .urlencode($_CFG['shop_name']);
     $spt .= "&shop_title=".urlencode($_CFG['shop_title']);

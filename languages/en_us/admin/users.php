@@ -1,18 +1,17 @@
 <?php
 
 /**
- * ECSHOP Member ID management language files
+ * SHOP Member ID management language files
  * ============================================================================
  * All right reserved (C) 2005-2011 Beijing Yi Shang Interactive Technology
  * Development Ltd.
- * Web site: http://www.ecshop.com
+ * Web site: http://www.SHOP.com
  * ----------------------------------------------------------------------------
  * This is a free/open source software；it means that you can modify, use and
  * republish the program code, on the premise of that your behavior is not for
  * commercial purposes.
- * ============================================================================
- * $Author: liubo $
- * $Id: users.php 17217 2011-01-19 06:29:08Z liubo $
+ * ============================================================================ * $Author: Jason $
+ * $Id: users.php 17217 2011-01-19 06:29:08Z Jason $
 */
 /* List page */
 $_LANG['label_user_name'] = 'Username:';

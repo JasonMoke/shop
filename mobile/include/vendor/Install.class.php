@@ -1,7 +1,7 @@
 <?php
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 /**
  * 数据库安装类,用于导入mysql数据库文件

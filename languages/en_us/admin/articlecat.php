@@ -1,18 +1,17 @@
 <?php
 
 /**
- * ECSHOP Article\'s Category management program language file
+ * SHOP Article\'s Category management program language file
  * ============================================================================
  * All right reserved (C) 2005-2011 Beijing Yi Shang Interactive Technology
  * Development Ltd.
- * Web site: http://www.ecshop.com
+ * Web site: http://www.SHOP.com
  * ----------------------------------------------------------------------------
  * This is a free/open source software；it means that you can modify, use and
  * republish the program code, on the premise of that your behavior is not for
  * commercial purposes.
- * ============================================================================
- * $Author: liubo $
- * $Id: articlecat.php 17217 2011-01-19 06:29:08Z liubo $
+ * ============================================================================ * $Author: Jason $
+ * $Id: articlecat.php 17217 2011-01-19 06:29:08Z Jason $
 */
 
 $_LANG['cat_name'] = 'Name';

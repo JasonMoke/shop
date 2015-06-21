@@ -1,10 +1,10 @@
 <?php
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 /**
- * ECSHOP 服务器之间数据传输器。采集到的信息包括HTTP头和HTTP体，
+ * SHOP 服务器之间数据传输器。采集到的信息包括HTTP头和HTTP体，
  * 并以一维数组的形式返回，如：array('header' => 'bar', 'body' => 'foo')。
  */
 class EcsTransport {

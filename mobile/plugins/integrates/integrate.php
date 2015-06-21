@@ -1,19 +1,19 @@
 <?php
 
 /**
- * ECTouch Open Source Project
+ * Touch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
  * ----------------------------------------------------------------------------
- * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ * Licensed (  )
  * ----------------------------------------------------------------------------
  */
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 /**
- * ECSHOP 整合插件类的基类
+ * SHOP 整合插件类的基类
  */
 class integrate
 {
@@ -90,8 +90,8 @@ class integrate
         if (empty($cfg['db_host'])) {
             $this->db_name = $db_config['DB_NAME'];
             $this->prefix = $db_config['DB_PREFIX'];
-            if (class_exists('ECTouch')) {
-                // $this->db = & ECTouch::db();
+            if (class_exists('Touch')) {
+                // $this->db = & Touch::db();
                 $this->db = M();
             } else {
                 $this->db = $GLOBALS['db'];
@@ -313,8 +313,8 @@ class integrate
     {
         $post_id = $id;
         
-        if ($this->need_sync || (isset($this->is_ecshop) && $this->is_ecshop)) {
-            /* 如果需要同步或是ecshop插件执行这部分代码 */
+        if ($this->need_sync || (isset($this->is_SHOP) && $this->is_SHOP)) {
+            /* 如果需要同步或是SHOP插件执行这部分代码 */
             $where = (is_array($post_id)) ? db_create_in($post_id, 'user_name') : "user_name='" . $post_id . "'";
             $col = M()->table('users')
                 ->field('user_id')
@@ -360,8 +360,8 @@ class integrate
             }
         }
         
-        if (isset($this->ecshop) && $this->ecshop) {
-            /* 如果是ecshop插件直接退出 */
+        if (isset($this->SHOP) && $this->SHOP) {
+            /* 如果是SHOP插件直接退出 */
             return;
         }
         
@@ -580,7 +580,7 @@ class integrate
     function set_session($username = '')
     {
         if (empty($username)) {
-            ECTouch::sess()->destroy_session();
+            Touch::sess()->destroy_session();
         } else {
             $sql = "SELECT user_id, password, email FROM " . $this->db->pre . 'users ' . " WHERE user_name='$username' LIMIT 1";
             $row = $this->db->getRow($sql);

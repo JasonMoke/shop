@@ -5,7 +5,7 @@
   </div>
   <div class="panel-body">
     <form action="{url('install')}" method="post" class="form-horizontal" role="form">
-      <table id="general-table" class="table table-hover ectouch-table">
+      <table id="general-table" class="table table-hover Touch-table">
         {loop $info['config'] $key $vo}
         <tr>
           <td width="200">{$vo['label']}</td>

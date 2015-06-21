@@ -1,17 +1,16 @@
 <?php
 
 /**
- * ECSHOP 升级程序 之 控制器
+ * SHOP 升级程序 之 控制器
  * ============================================================================
  * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.ecshop.com
+ * 网站地址: http://www.SHOP.com
  * ----------------------------------------------------------------------------
  * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ============================================================================
- * $Author: liubo $
+ * ============================================================================ * $Author: Jason $
  * $Date: 2009-12-14 17:22:19 +0800 (一, 2009-12-14) $
- * $Id: index.php 16882 2009-12-14 09:22:19Z liubo $
+ * $Id: index.php 16882 2009-12-14 09:22:19Z Jason $
  */
 
 require_once('./includes/init.php');
@@ -96,9 +95,9 @@ case 'readme' :
     write_charset_config($updater_lang, $ec_charset);
     $smarty->assign('new_version', VERSION);
     $smarty->assign('old_version', get_current_version());
-    $smarty->assign('ui', empty($_REQUEST['ui'])?'ecshop':$_REQUEST['ui']);
+    $smarty->assign('ui', empty($_REQUEST['ui'])?'SHOP':$_REQUEST['ui']);
     $smarty->assign('mysql_charset', $mysql_charset);
-    $smarty->assign('ecshop_charset', $ecshop_charset);
+    $smarty->assign('SHOP_charset', $SHOP_charset);
     $smarty->display('readme.php');
 
     break;
@@ -118,7 +117,7 @@ case 'setup_ucenter' :
     $json = new JSON();
     $result = array('error' => 0, 'message' => '');
 
-    $app_type   = 'ECSHOP';
+    $app_type   = 'SHOP';
     $app_name   = $db->getOne('SELECT value FROM ' . $ecs->table('shop_config') . " WHERE code = 'shop_name'");
     $app_url    = url();
     $app_charset = EC_CHARSET;
@@ -278,7 +277,7 @@ case 'userimporttouc' :
     {
         $merge_uid = 0;
     }
-    // 更新ECSHOP表
+    // 更新SHOP表
     foreach ($up_user_table as $table)
     {
         $db->query("UPDATE " . $ecs->table($table) . " SET `user_id`=`user_id`+ $maxuid ORDER BY `user_id` DESC");
@@ -309,8 +308,8 @@ case 'check' :
     include_once(ROOT_PATH . 'demo/includes/lib_env_checker.php');
     include_once(ROOT_PATH . 'demo/includes/checking_dirs.php');
 
-    $ui = isset($_REQUEST['ui']) ? $_REQUEST['ui'] : 'ecshop';
-    if ($ui == 'ecshop')
+    $ui = isset($_REQUEST['ui']) ? $_REQUEST['ui'] : 'SHOP';
+    if ($ui == 'SHOP')
     {
         array_shift($checking_dirs);
     }
@@ -549,7 +548,7 @@ case 'update_version' :
 
 /* 成功页面 */
 case 'done' :
-    $ui = isset($_REQUEST['ui']) ? $_REQUEST['ui'] : 'ecshop';
+    $ui = isset($_REQUEST['ui']) ? $_REQUEST['ui'] : 'SHOP';
     if ($ui == 'ucenter')
     {
         change_ucenter_config();

@@ -1,15 +1,14 @@
 <?php
 /**
- * ECSHOP 管理中心商店設置語言文件
+ * SHOP 管理中心商店設置語言文件
  * ============================================================================
  * 版權所有 2005-2011 上海商派網絡科技有限公司，並保留所有權利。
- * 網站地址: http://www.ecshop.com；
+ * 網站地址: http://www.SHOP.com；
  * ----------------------------------------------------------------------------
  * 這不是一個自由軟件！您只能在不用於商業目的的前提下對程序代碼進行修改和
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
- * ============================================================================
- * $Author: liubo $
- * $Id: shop_config.php 17217 2011-01-19 06:29:08Z liubo $
+ * ============================================================================ * $Author: Jason $
+ * $Id: shop_config.php 17217 2011-01-19 06:29:08Z Jason $
  */
 
 require(ROOT_PATH.ADMIN_PATH.'/sms_url.php');
@@ -391,7 +390,7 @@ $_LANG['cfg_range']['visit_stats']['off'] = '關閉';
 
 $_LANG['rewrite_confirm_apache'] = "URL Rewrite 功能要求您的 Web Server 必須是 Apache，\\n並且起用了 rewrite 模塊。\\n同時請您確認是否已經將htaccess.txt文件重命名為.htaccess。\\n如果服務器上還有其他的重寫規則請去掉註釋,請將RewriteBase行的註釋去掉,並將路徑設置為服務器請求的絕對路徑";
 $_LANG['rewrite_confirm_iis'] = "URL Rewrite 功能要求您的 Web Server 必須安裝IIS，\\n並且起用了 ISAPI Rewrite 模組。\\n如果您使用的是ISAPI Rewrite商業版，請您確認是否已經將httpd.txt檔重命名為httpd.ini。如果您使用的是ISAPI Rewrite免費版，請您確認是否已經將httpd.txt檔內的內容複製到ISAPI Rewrite安裝目錄中httpd.ini裡。";
-$_LANG['gzip_confirm'] = "GZip 功能需要您的服務器支持 zlib 擴展庫。\\n如果您發現開啟Gzip後頁面出現亂碼，可能是您的服務器已經開啟了Gzip，您不需要在 ECSHOP 中再次開啟。";
+$_LANG['gzip_confirm'] = "GZip 功能需要您的服務器支持 zlib 擴展庫。\\n如果您發現開啟Gzip後頁面出現亂碼，可能是您的服務器已經開啟了Gzip，您不需要在 SHOP 中再次開啟。";
 $_LANG['retain_original_confirm'] = "如果您不保留商品原圖，在「圖片批量處理」的時候，\\n將不會重新生成不包含原圖的商品圖片。請慎重使用該功能！";
 $_LANG['msg_invalid_file'] = '您上傳了一個非法的文件類型。該文件名為：%s';
 $_LANG['msg_upload_failed'] = '上傳文件 %s 失敗，請檢查 %s 目錄是否可寫。';

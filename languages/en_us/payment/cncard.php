@@ -1,17 +1,16 @@
 <?php
 
 /**
- * ECSHOP cncard language file
+ * SHOP cncard language file
  * ============================================================================
  * All right reserved (C) 2005-2011 Beijing Yi Shang Interactive Technology
  * Development Ltd.
- * Web site: http://www.ecshop.com
+ * Web site: http://www.SHOP.com
  * ----------------------------------------------------------------------------
  * This is a free/open source software；it means that you can modify, use and
  * republish the program code, on the premise of that your behavior is not for
  * commercial purposes.
- * ============================================================================
- * $Author $
+ * ============================================================================ * $Author $
  * $Id $
  */
 

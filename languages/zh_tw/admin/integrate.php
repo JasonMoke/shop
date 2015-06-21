@@ -1,16 +1,15 @@
 <?php
 
 /**
- * ECSHOP 管理中心會員數據整合插件管理程序語言文件
+ * SHOP 管理中心會員數據整合插件管理程序語言文件
  * ============================================================================
  * 版權所有 2005-2011 上海商派網絡科技有限公司，並保留所有權利。
- * 網站地址: http://www.ecshop.com；
+ * 網站地址: http://www.SHOP.com；
  * ----------------------------------------------------------------------------
  * 這不是一個自由軟件！您只能在不用於商業目的的前提下對程序代碼進行修改和
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
- * ============================================================================
- * $Author: liubo $
- * $Id: integrate.php 17217 2011-01-19 06:29:08Z liubo $
+ * ============================================================================ * $Author: Jason $
+ * $Id: integrate.php 17217 2011-01-19 06:29:08Z Jason $
 */
 
 $_LANG['integrate_name'] = '名稱';
@@ -20,8 +19,8 @@ $_LANG['integrate_author'] = '作者';
 /* 插件列表 */
 $_LANG['update_success'] = '設置會員數據整合插件已經成功。';
 $_LANG['install_confirm'] = '您確定要安裝該會員數據整合插件嗎？';
-$_LANG['need_not_setup'] = '當您採用ECSHOP會員系統時，無須進行設置。';
-$_LANG['different_domain'] = '您設置的整合對像和 ECSHOP 不在同一域下。<br />您將只能共享該系統的會員數據，但無法實現同時登錄。';
+$_LANG['need_not_setup'] = '當您採用SHOP會員系統時，無須進行設置。';
+$_LANG['different_domain'] = '您設置的整合對像和 SHOP 不在同一域下。<br />您將只能共享該系統的會員數據，但無法實現同時登錄。';
 $_LANG['points_set'] = '積分兌換設置';
 $_LANG['view_user_list'] = '查看論壇用戶';
 $_LANG['view_install_log'] = '查看安裝日誌';
@@ -33,7 +32,7 @@ $_LANG['user_help'] = '<pre>
 使用方法：
          1:如果需要整合其他的用戶系統，可以安裝適當的版本號插件進行整合。
          2:如果需要更換整合的用戶系統，直接安裝目標插件即可完成整合，同時自動卸載上一次整合插件。
-         3:如果不需要整合任何用戶系統，請選擇安裝ecshop插件，即可卸載所有的整合插件。
+         3:如果不需要整合任何用戶系統，請選擇安裝SHOP插件，即可卸載所有的整合插件。
                            </pre>';
 /* 查看安裝日誌 */
 $_LANG['lost_install_log'] = '未找到安裝日誌';
@@ -172,12 +171,12 @@ $_LANG['ucenter_opt_database'] = '數據庫方式';
 $_LANG['ucenter_opt_interface'] = '接口方式';
 
 $_LANG['ucenter_notice_id'] = '該值為當前商店在 UCenter 的應用 ID，一般情況請不要改動';
-$_LANG['ucenter_notice_key'] = '通信密鑰用於在 UCenter 和 ECShop 之間傳輸信息的加密，可包含任何字母及數字，請在 UCenter 與 ECShop 設置完全相同的通訊密鑰，以確保兩套系統能夠正常通信';
+$_LANG['ucenter_notice_key'] = '通信密鑰用於在 UCenter 和 SHOP 之間傳輸信息的加密，可包含任何字母及數字，請在 UCenter 與 SHOP 設置完全相同的通訊密鑰，以確保兩套系統能夠正常通信';
 $_LANG['ucenter_notice_url'] = '該值在您安裝完 UCenter 後會被初始化，在您 UCenter 地址或者目錄改變的情況下，修改此項，一般情況請不要改動 例如: http://www.sitename.com/uc_server (最後不要加"/")';
 $_LANG['ucenter_notice_ip'] = '如果您的服務器無法通過域名訪問 UCenter，可以輸入 UCenter 服務器的 IP 地址';
 $_LANG['ucenter_notice_connect'] = '請根據您的服務器網絡環境選擇適當的連接方式';
 $_LANG['ucenter_notice_db_host'] = '可以是本地也可以是遠程數據庫服務器，如果 MySQL 端口不是默認的 3306，請填寫如下形式：127.0.0.1:6033';
-$_LANG['uc_notice_ip'] = '連接的過程中出了點問題，請您填寫服務器 IP 地址，如果您的 UC 與 ECShop 裝在同一服務器上，我們建議您嘗試填寫 127.0.0.1';
+$_LANG['uc_notice_ip'] = '連接的過程中出了點問題，請您填寫服務器 IP 地址，如果您的 UC 與 SHOP 裝在同一服務器上，我們建議您嘗試填寫 127.0.0.1';
 
 $_LANG['uc_lab_url'] = 'UCenter 的 URL:';
 $_LANG['uc_lab_pass'] = 'UCenter 創始人密碼:';

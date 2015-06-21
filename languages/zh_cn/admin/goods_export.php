@@ -1,17 +1,10 @@
 <?php
 
 /**
- * ECSHOP
- * ============================================================================
- * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.ecshop.com；
- * ----------------------------------------------------------------------------
- * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
- * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ============================================================================
- *
- * $Author: liubo $
- * $Id: goods_export.php 17217 2011-01-19 06:29:08Z liubo $
+ * SHOP
+
+ * * $Author: Jason $
+ * $Id: goods_export.php 17217 2011-01-19 06:29:08Z Jason $
 */
 
 $_LANG['user_guide'] =
@@ -195,28 +188,28 @@ $_LANG['paipai4']['chengBao'] = '诚保';
 $_LANG['paipai4']['shopWindow'] = '橱窗';
 
 // 批量上传商品的字段
-$_LANG['export_ecshop'] = '导出到ECShop数据格式';
-$_LANG['ecshop']['goods_name'] = '商品名称';
-$_LANG['ecshop']['goods_sn'] = '商品货号';
-$_LANG['ecshop']['brand_name'] = '商品品牌';   // 需要转换成brand_id
-$_LANG['ecshop']['market_price'] = '市场售价';
-$_LANG['ecshop']['shop_price'] = '本店售价';
-$_LANG['ecshop']['integral'] = '积分购买额度';
-$_LANG['ecshop']['original_img'] = '商品原始图';
-$_LANG['ecshop']['goods_img'] = '商品图片';
-$_LANG['ecshop']['goods_thumb'] = '商品缩略图';
-$_LANG['ecshop']['keywords'] = '商品关键词';
-$_LANG['ecshop']['goods_brief'] = '简单描述';
-$_LANG['ecshop']['goods_desc'] = '详细描述';
-$_LANG['ecshop']['goods_weight'] = '商品重量（kg）';
-$_LANG['ecshop']['goods_number'] = '库存数量';
-$_LANG['ecshop']['warn_number'] = '库存警告数量';
-$_LANG['ecshop']['is_best'] = '是否精品';
-$_LANG['ecshop']['is_new'] = '是否新品';
-$_LANG['ecshop']['is_hot'] = '是否热销';
-$_LANG['ecshop']['is_on_sale'] = '是否上架';
-$_LANG['ecshop']['is_alone_sale'] = '能否作为普通商品销售';
-$_LANG['ecshop']['is_real'] = '是否实体商品';
+$_LANG['export_SHOP'] = '导出到SHOP数据格式';
+$_LANG['SHOP']['goods_name'] = '商品名称';
+$_LANG['SHOP']['goods_sn'] = '商品货号';
+$_LANG['SHOP']['brand_name'] = '商品品牌';   // 需要转换成brand_id
+$_LANG['SHOP']['market_price'] = '市场售价';
+$_LANG['SHOP']['shop_price'] = '本店售价';
+$_LANG['SHOP']['integral'] = '积分购买额度';
+$_LANG['SHOP']['original_img'] = '商品原始图';
+$_LANG['SHOP']['goods_img'] = '商品图片';
+$_LANG['SHOP']['goods_thumb'] = '商品缩略图';
+$_LANG['SHOP']['keywords'] = '商品关键词';
+$_LANG['SHOP']['goods_brief'] = '简单描述';
+$_LANG['SHOP']['goods_desc'] = '详细描述';
+$_LANG['SHOP']['goods_weight'] = '商品重量（kg）';
+$_LANG['SHOP']['goods_number'] = '库存数量';
+$_LANG['SHOP']['warn_number'] = '库存警告数量';
+$_LANG['SHOP']['is_best'] = '是否精品';
+$_LANG['SHOP']['is_new'] = '是否新品';
+$_LANG['SHOP']['is_hot'] = '是否热销';
+$_LANG['SHOP']['is_on_sale'] = '是否上架';
+$_LANG['SHOP']['is_alone_sale'] = '能否作为普通商品销售';
+$_LANG['SHOP']['is_real'] = '是否实体商品';
 
 //自定义导出数据格式
 $_LANG['export_custom'] = '导出到自定义数据格式';

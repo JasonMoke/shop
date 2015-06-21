@@ -1,10 +1,10 @@
 <?php
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 /**
- * ECSHOP MYSQL 公用类库
+ * SHOP MYSQL 公用类库
  */
 class EcsMysql {
 
@@ -284,7 +284,7 @@ class EcsMysql {
 
     function ErrorMsg($message = '', $sql = '') {
         if ($message) {
-            echo "<b>ECSHOP info</b>: $message\n\n<br /><br />";
+            echo "<b>SHOP info</b>: $message\n\n<br /><br />";
             //print('<a href="http://faq.comsenz.com/?type=mysql&dberrno=2003&dberror=Can%27t%20connect%20to%20MySQL%20server%20on" target="_blank">http://faq.comsenz.com/</a>');
         } else {
             echo "<b>MySQL server error report:";

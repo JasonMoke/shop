@@ -1,18 +1,18 @@
 <?php
 
 /**
- * ECTouch Open Source Project
+ * Touch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
  * ----------------------------------------------------------------------------
  * 文件名称：uc.php
  * ----------------------------------------------------------------------------
  * 功能描述：UCenter API
  * ----------------------------------------------------------------------------
- * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ * Licensed (  )
  * ----------------------------------------------------------------------------
  */
-define('IN_ECTOUCH',true);
+define('IN_Touch',true);
 define('UC_CLIENT_VERSION', '1.6.0'); // note UCenter 版本标识
 define('UC_CLIENT_RELEASE', '20110501');
 
@@ -642,7 +642,7 @@ function load_config_uc()
     }
     
     if (empty($arr['integrate_code'])) {
-        $arr['integrate_code'] = 'ecshop'; // 默认的会员整合插件为 ecshop
+        $arr['integrate_code'] = 'SHOP'; // 默认的会员整合插件为 SHOP
     }
     
     foreach ($arr AS $key=>$vo) {

@@ -1,20 +1,20 @@
 <?php
 
 /**
- * ECTouch Open Source Project
+ * Touch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
  * ----------------------------------------------------------------------------
  * 文件名称：BrandControoller.class.php
  * ----------------------------------------------------------------------------
  * 功能描述：品牌管理控制器
  * ----------------------------------------------------------------------------
- * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ * Licensed (  )
  * ----------------------------------------------------------------------------
  */
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 class BrandController extends AdminController {
 
@@ -59,7 +59,7 @@ class BrandController extends AdminController {
             }
             /* 上传图标 */
             if ($_FILES['brand_logo']['name']) {
-                $result = $this->ectouchUpload('brand_logo', 'brand_image');
+                $result = $this->TouchUpload('brand_logo', 'brand_image');
                 if ($result['error'] > 0) {
                     $this->message($result['message'], NULL, 'error');
                 }
@@ -69,7 +69,7 @@ class BrandController extends AdminController {
             $brand_id = $this->model->table('brand')->data($data)->insert();
             /* 更新附表 */
             if ($_FILES['brand_banner']['name']) {
-                $result = $this->ectouchUpload('brand_banner', 'brand_image');
+                $result = $this->TouchUpload('brand_banner', 'brand_image');
                 if ($result['error'] > 0) {
                     $this->message($result['message'], NULL, 'error');
                 }
@@ -106,7 +106,7 @@ class BrandController extends AdminController {
             }
             /* 更新图标 */
             if ($_FILES['brand_logo']['name']) {
-                $result = $this->ectouchUpload('brand_logo', 'brand_image');
+                $result = $this->TouchUpload('brand_logo', 'brand_image');
                 if ($result['error'] > 0) {
                     $this->message($result['message'], NULL, 'error');
                 }
@@ -116,7 +116,7 @@ class BrandController extends AdminController {
             $this->model->table('brand')->data($data)->where('brand_id=' . $id)->update();
             /* 更新附表 */
             if ($_FILES['brand_banner']['name']) {
-                $result = $this->ectouchUpload('brand_banner', 'brand_image');
+                $result = $this->TouchUpload('brand_banner', 'brand_image');
                 if ($result['error'] > 0) {
                     $this->message($result['message'], NULL, 'error');
                 }

@@ -1,21 +1,14 @@
 <?php
 
 /**
- * ECSHOP 管理中心起始页语言文件
- * ============================================================================
- * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.ecshop.com；
- * ----------------------------------------------------------------------------
- * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
- * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ============================================================================
- * $Author: liubo $
- * $Id: index.php 17217 2011-01-19 06:29:08Z liubo $
+ * SHOP 管理中心起始页语言文件
+ * $Author: Jason $
+ * $Id: index.php 17217 2011-01-19 06:29:08Z Jason $
 */
 
 $_LANG['shop_guide'] = '开店向导';
 $_LANG['set_navigator'] = '设置导航栏';
-$_LANG['about'] = '关于 ECSHOP';
+$_LANG['about'] = '关于 SHOP';
 $_LANG['preview'] = '查看网店';
 $_LANG['menu'] = '菜单';
 $_LANG['help'] = '帮助';
@@ -95,7 +88,7 @@ $_LANG['php_version'] = 'PHP 版本:';
 $_LANG['mysql_version'] = 'MySQL 版本:';
 $_LANG['gd_version'] = 'GD 版本:';
 $_LANG['zlib'] = 'Zlib 支持:';
-$_LANG['ecs_version'] = 'ECShop 版本:';
+$_LANG['ecs_version'] = 'SHOP 版本:';
 $_LANG['install_date'] = '安装日期:';
 $_LANG['ip_version'] = 'IP 库版本:';
 $_LANG['max_filesize'] = '文件上传的最大大小:';
@@ -130,8 +123,8 @@ $_LANG['caches_cleared'] = '页面缓存已经清除成功。';
 /*------------------------------------------------------ */
 //-- 关于我们
 /*------------------------------------------------------ */
-$_LANG['team_member'] = 'ECSHOP 团队成员';
-$_LANG['before_team_member'] = 'ECSHOP 贡献者';
+$_LANG['team_member'] = 'SHOP 团队成员';
+$_LANG['before_team_member'] = 'SHOP 贡献者';
 
 $_LANG['director'] = '项目策划';
 $_LANG['programmer'] = '程序开发';

@@ -1,7 +1,7 @@
 {include file="pageheader"}
 
 <div class="row" style="margin:0">
-  <div class="ectouch-mb5">
+  <div class="Touch-mb5">
   	<a href="{url('index')}" class="btn btn-info">{$lang['upgrade']}</a>
     <a href="{url('checkfile')}" class="btn btn-success">{$lang['checkfile']}</a>
   </div>
@@ -15,7 +15,7 @@
       <h3 class="panel-title">{$lang['upgrade']}</h3>
     </div>
     <div class="panel-body" style="padding:0;">
-      <table class="table table-hover ectouch-table">
+      <table class="table table-hover Touch-table">
         <tr>
           <td width="70%">{$lang['currentversion']}
             <?php if(empty($pathlist)){ echo $lang['lastversion']; }?></td>
@@ -29,7 +29,7 @@
     </div>
   </div>
   <?php if(!empty($pathlist)) {?>
-  <table class="table table-hover ectouch-table" style="border:1px #ddd solid; margin-bottom:10px;">
+  <table class="table table-hover Touch-table" style="border:1px #ddd solid; margin-bottom:10px;">
     <tr>
       <th width="70%">{$lang['updatelist']}</th>
       <th width="30%" class="text-right">{$lang['updatetime']}</th>

@@ -1,16 +1,15 @@
 <?php
 
 /**
- * ECSHOP
+ * SHOP
  * ============================================================================
  * 版權所有 2005-2011 上海商派網絡科技有限公司，並保留所有權利。
- * 網站地址: http://www.ecshop.com；
+ * 網站地址: http://www.SHOP.com；
  * ----------------------------------------------------------------------------
  * 這不是一個自由軟件！您只能在不用於商業目的的前提下對程序代碼進行修改和
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
- * ============================================================================
- * $Author: liubo $
- * $Id: database.php 17217 2011-01-19 06:29:08Z liubo $
+ * ============================================================================ * $Author: Jason $
+ * $Id: database.php 17217 2011-01-19 06:29:08Z Jason $
 */
 
 $_LANG['db_manage'] = '數據庫管理';
@@ -66,12 +65,12 @@ $_LANG['fail_remove'] = '文件刪除失敗';
 $_LANG['fail_get_content'] = '獲取數據表內容失敗';
 $_LANG['fail_upload'] = '文件上傳失敗';
 $_LANG['fail_upload_move'] = '文件上傳移動失敗';
-$_LANG['unrecognize_version'] = '不能識別備份sql的ECShop版本';
+$_LANG['unrecognize_version'] = '不能識別備份sql的SHOP版本';
 $_LANG['unrecognize_mysql_version'] = '不能識別備份sql的mysql版本';
 $_LANG['mysql_version_error'] = '當前mysql版本%s與備份數據的mysql版本%s不同，你確認要導入該備份文件嗎?';
 $_LANG['confirm_ver'] = '是，確認導入';
 $_LANG['unconfirm_ver'] = '否，取消導入';
-$_LANG['version_error'] = 'ECShop 當前版本%s與備份數據版本%s不同，備份恢復失敗';
+$_LANG['version_error'] = 'SHOP 當前版本%s與備份數據版本%s不同，備份恢復失敗';
 $_LANG['not_sql_file'] = '你上傳的好像不是sql文件，如果文件確實是sql文件，請將文件擴展名改為.sql';
 $_LANG['sqlfile_error'] = '你上傳的sql文件執行出錯，備份恢復失敗';
 $_LANG['restore_success'] = '恢復成功';

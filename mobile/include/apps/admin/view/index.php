@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>{$lang['cp_home']} - Powered by ECTouch.Cn</title>
+<title>{$lang['cp_home']} - Powered by Touch.Cn</title>
 <meta http-equiv="expires" content="0" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />

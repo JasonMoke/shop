@@ -1,20 +1,20 @@
 <?php
 
 /**
- * ECTouch Open Source Project
+ * Touch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
  * ----------------------------------------------------------------------------
  * 文件名称：ClipsBaseModel.class.php
  * ----------------------------------------------------------------------------
- * 功能描述：ECTOUCH 用户基础模型
+ * 功能描述：Touch 用户基础模型
  * ----------------------------------------------------------------------------
- * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ * Licensed (  )
  * ----------------------------------------------------------------------------
  */
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 class ClipsBaseModel extends BaseModel {
 
@@ -151,7 +151,7 @@ class ClipsBaseModel extends BaseModel {
 
         if ($message['upload']) {
             if ($_FILES['message_img']['size'] / 1024 > $upload_size_limit) {
-                ECTouch::err()->add(sprintf(L('upload_file_limit'), $upload_size_limit));
+                Touch::err()->add(sprintf(L('upload_file_limit'), $upload_size_limit));
                 return false;
             }
             $img_name = upload_file($_FILES['message_img'], 'feedbackimg');
@@ -164,7 +164,7 @@ class ClipsBaseModel extends BaseModel {
         }
 
         if (empty($message['msg_title'])) {
-            ECTouch::err()->add(L('msg_title_empty'));
+            Touch::err()->add(L('msg_title_empty'));
             return false;
         }
 

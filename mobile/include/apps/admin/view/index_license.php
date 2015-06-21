@@ -5,7 +5,7 @@
   </div>
   <div class="panel-body">
     <form action="{url('license')}" method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
-      <table id="general-table" class="table table-hover ectouch-table">
+      <table id="general-table" class="table table-hover Touch-table">
         <tr>
           <td width="200">授权序列号:</td>
           <td><div class="col-md-4">

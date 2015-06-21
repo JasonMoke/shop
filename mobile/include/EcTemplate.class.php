@@ -1,20 +1,20 @@
 <?php
 
 /**
- * ECTouch Open Source Project
+ * Touch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
  * ----------------------------------------------------------------------------
  * 文件名称：EcTemplate.class.php
  * ----------------------------------------------------------------------------
  * 功能描述：模板类
  * ----------------------------------------------------------------------------
- * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ * Licensed (  )
  * ----------------------------------------------------------------------------
  */
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 class EcTemplate {
 
@@ -82,7 +82,7 @@ class EcTemplate {
         }
         extract($this->vars, EXTR_OVERWRITE);
         if ($is_tpl && $this->config['TPL_CACHE_ON']) {
-            define('ECTOUCH', true);
+            define('Touch', true);
             $tplFile = $this->config['TPL_TEMPLATE_PATH'] . $tpl . $this->config['TPL_TEMPLATE_SUFFIX'];
             $cacheFile = $this->config['TPL_CACHE_PATH'] . md5($tplFile) . $this->config['TPL_CACHE_SUFFIX'];
 
@@ -95,7 +95,7 @@ class EcTemplate {
                     @mkdir($this->config['TPL_CACHE_PATH'], 0777, true);
                 }
                 if ((!file_exists($cacheFile)) || (filemtime($tplFile) > filemtime($cacheFile))) {
-                    file_put_contents($cacheFile, "<?php if (!defined('ECTOUCH')) exit;?>" . $this->compile($tpl)); //写入缓存
+                    file_put_contents($cacheFile, "<?php if (!defined('Touch')) exit;?>" . $this->compile($tpl)); //写入缓存
                 }
                 include( $cacheFile ); //加载编译后的模板缓存
             } else {

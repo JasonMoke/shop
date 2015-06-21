@@ -1,15 +1,8 @@
 <?php
 /**
- * ECSHOP 商品批量上传、修改
- * ============================================================================
- * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.ecshop.com；
- * ----------------------------------------------------------------------------
- * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
- * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ============================================================================
- * $Author: liubo $
- * $Id: goods_batch.php 17217 2011-01-19 06:29:08Z liubo $
+ * SHOP 商品批量上传、修改
+ * $Author: Jason $
+ * $Id: goods_batch.php 17217 2011-01-19 06:29:08Z Jason $
  */
 
 define('IN_ECS', true);
@@ -46,7 +39,7 @@ if ($_REQUEST['act'] == 'add')
     }
     @closedir($dir);
     $data_format_array = array(
-                                'ecshop'    => $_LANG['export_ecshop'],
+                                'SHOP'    => $_LANG['export_SHOP'],
                                 'taobao'    => $_LANG['export_taobao'],
                                 'paipai'    => $_LANG['export_paipai'],
                                 'paipai3'   => $_LANG['export_paipai3'],
@@ -80,7 +73,7 @@ elseif ($_REQUEST['act'] == 'upload')
     $goods_list = array();
     $field_list = array_keys($_LANG['upload_goods']); // 字段列表
     $data = file($_FILES['file']['tmp_name']);
-    if($_POST['data_cat'] == 'ecshop')
+    if($_POST['data_cat'] == 'SHOP')
     {
         foreach ($data AS $line)
         {

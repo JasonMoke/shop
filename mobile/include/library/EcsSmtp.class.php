@@ -1,10 +1,10 @@
 <?php
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 /**
- * ECSHOP SMTP 邮件类
+ * SHOP SMTP 邮件类
  */
 
 define('SMTP_STATUS_NOT_CONNECTED', 1, true);

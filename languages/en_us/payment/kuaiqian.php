@@ -1,17 +1,16 @@
 <?php
 
 /**
- * ECSHOP 99Bill language file
+ * SHOP 99Bill language file
  * ============================================================================
  * All right reserved (C) 2008-2009 Beijing Yi Shang Interactive Technology
  * Development Ltd.
- * Web site: http://www.ecshop.com
+ * Web site: http://www.SHOP.com
  * ----------------------------------------------------------------------------
  * This is a free/open source software；it means that you can modify, use and
  * republish the program code, on the premise of that your behavior is not for
  * commercial purposes.
- * ============================================================================
- * $Author: liuhui $
+ * ============================================================================ * $Author: liuhui $
  * $Id: kuaiqian.php 16488 2009-07-27 10:12:56Z liuhui $
  */
 

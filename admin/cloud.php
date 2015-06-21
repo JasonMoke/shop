@@ -1,16 +1,15 @@
 <?php
 
 /**
- * ECSHOP  云服务接口
+ * SHOP  云服务接口
  * ============================================================================
  * 版权所有 2005-2010 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.ecshop.com；
+ * 网站地址: http://www.SHOP.com；
  * ----------------------------------------------------------------------------
  * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ============================================================================
- * $Author: liubo $
- * $Id: cloud.php 17063 2011-07-25 06:35:46Z liubo $
+ * ============================================================================ * $Author: Jason $
+ * $Id: cloud.php 17063 2011-07-25 06:35:46Z Jason $
 */
 
 define('IN_ECS', true);
@@ -57,7 +56,7 @@ if($act =='menu_api')
     {
         $t = new transport;
        $apiget = "ver= $data[version] &ecs_lang= $data[ecs_lang] &charset= $data[charset]&ent_id=$data[ent_id]& certificate_id=$data[certificate_id]";
-        $api_comment = $t->request('http://ecshop.ecmoban.com/menu_api.php', $apiget);
+        $api_comment = $t->request('http://SHOP.ecmoban.com/menu_api.php', $apiget);
         $api_str = $api_comment["body"];
         if (!empty($api_str))
         {
@@ -97,7 +96,7 @@ elseif($act == 'cloud_remind')
     {
         $t = new transport('-1',5);
         $apiget = "ver=$data[version]&ecs_lang=$data[ecs_lang]&charset=$data[charset]&certificate_id=$data[certificate_id]&ent_id=$data[ent_id]";
-        $api_comment = $t->request('http://ecshop.ecmoban.com/cloud_remind.php', $apiget);
+        $api_comment = $t->request('http://SHOP.ecmoban.com/cloud_remind.php', $apiget);
         $api_str=    $api_comment["body"];
         $json = new Services_JSON;
         $api_arr = @$json->decode($api_str,1);
@@ -137,7 +136,7 @@ elseif($act == 'close_remind')
     $remind_id=$_REQUEST['remind_id'];
     $t = new transport('-1',5);
     $apiget = "ver= $data[version] &ecs_lang= $data[ecs_lang] &charset= $data[charset] &certificate_id=$data[certificate_id]&ent_id=$data[ent_id]&remind_id=$remind_id";
-    $api_comment = $t->request('http://ecshop.ecmoban.com/cloud_remind.php', $apiget);
+    $api_comment = $t->request('http://SHOP.ecmoban.com/cloud_remind.php', $apiget);
 
     $api_str = $api_comment["body"];
     $json = new Services_JSON;
@@ -156,7 +155,7 @@ elseif($act == 'close_remind')
             {
                 $apiget.="&act=close_remind&ent_ac=$data[ent_ac]";
 
-                $result=$t->request('http://ecshop.ecmoban.com/cloud_remind.php', $apiget);
+                $result=$t->request('http://SHOP.ecmoban.com/cloud_remind.php', $apiget);
                 foreach ($result as $key => $value) {
     echo $key.'-------------'.urldecode($value).'<br/>';
 
@@ -231,7 +230,7 @@ else
     {
         $query .= '&'.$v.'='.$data[$v];
     }
-    ecs_header("Location: http://ecshop.ecmoban.com/api.php?act=".$act.$query."\n");
+    ecs_header("Location: http://SHOP.ecmoban.com/api.php?act=".$act.$query."\n");
     exit();
 }
 

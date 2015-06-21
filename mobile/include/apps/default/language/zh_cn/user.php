@@ -1,7 +1,7 @@
 <?php
 
 /**
- * ECSHOP 用户中心语言项
+ * SHOP 用户中心语言项
 */
 
 $_LANG['require_login'] = '非法入口。<br />必须登录才能完成操作。';

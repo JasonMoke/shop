@@ -1,16 +1,9 @@
 <?php
 
 /**
- * ECSHOP 数据库导出类
- * ============================================================================
- * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.ecshop.com；
- * ----------------------------------------------------------------------------
- * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
- * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ============================================================================
- * $Author: liubo $
- * $Id: cls_sql_dump.php 17217 2011-01-19 06:29:08Z liubo $
+ * SHOP 数据库导出类
+ * $Author: Jason $
+ * $Id: cls_sql_dump.php 17217 2011-01-19 06:29:08Z Jason $
 */
 
 if (!defined('IN_ECS'))
@@ -307,7 +300,7 @@ class cls_sql_dump
             }
         }
 
-        $this->dump_sql .= '-- END ecshop v2.x SQL Dump Program ';
+        $this->dump_sql .= '-- END SHOP v2.x SQL Dump Program ';
         $this->put_tables_list($path, $tables);
 
         return $tables;
@@ -330,13 +323,13 @@ class cls_sql_dump
         $sys_info['mysql_ver']  = $this->db->version();
         $sys_info['date']       = date('Y-m-d H:i:s');
 
-        $head = "-- ecshop v2.x SQL Dump Program\r\n".
+        $head = "-- SHOP v2.x SQL Dump Program\r\n".
                  "-- " . $sys_info['web_server'] . "\r\n".
                  "-- \r\n".
                  "-- DATE : ".$sys_info["date"]."\r\n".
                  "-- MYSQL SERVER VERSION : ".$sys_info['mysql_ver']."\r\n".
                  "-- PHP VERSION : ".$sys_info['php_ver']."\r\n".
-                 "-- ECShop VERSION : ".VERSION."\r\n".
+                 "-- SHOP VERSION : ".VERSION."\r\n".
                  "-- Vol : " . $vol . "\r\n";
 
         return $head;
@@ -378,7 +371,7 @@ class cls_sql_dump
                 {
                     $sql_info['php_ver'] = $value;
                 }
-                elseif ($type == 'ECShop VERSION')
+                elseif ($type == 'SHOP VERSION')
                 {
                     $sql_info['ecs_ver'] = $value;
                 }

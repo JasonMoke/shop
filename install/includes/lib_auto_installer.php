@@ -1,14 +1,7 @@
 <?php
 
 /**
- * ECSHOP 安装程序 之 模型
- * ============================================================================
- * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.ecshop.com；
- * ----------------------------------------------------------------------------
- * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
- * 使用；不允许对程序代码以任何形式任何目的的再发布。
- * ============================================================================
+ * SHOP 安装程序 之 模型
  * $Author: liuhui $
  * $Id: lib_installer.php 16368 2009-06-26 03:39:19Z liuhui $
  */
@@ -625,7 +618,7 @@ function do_others($system_lang, $captcha, $goods_types, $install_demo, $integra
     include_once(ROOT_PATH . 'includes/cls_mysql.php');
     $db = new cls_mysql($db_host, $db_user, $db_pass, $db_name);
 
-    /* 更新 ECSHOP 语言 */
+    /* 更新 SHOP 语言 */
     $sql = "UPDATE $prefix"."shop_config SET value='" . $system_lang . "' WHERE code='lang'";
     if (!$db->query($sql, 'SILENT'))
     {
@@ -681,7 +674,7 @@ function deal_aftermath()
     global $err, $_LANG;
 
     include(ROOT_PATH . 'data/config.php');
-    include_once(ROOT_PATH . 'includes/cls_ecshop.php');
+    include_once(ROOT_PATH . 'includes/cls_SHOP.php');
     include_once(ROOT_PATH . 'includes/cls_mysql.php');
 
     $db = new cls_mysql($db_host, $db_user, $db_pass, $db_name);
@@ -690,7 +683,7 @@ function deal_aftermath()
     $sql = "INSERT INTO $prefix"."friend_link ".
                 "(link_name, link_url, link_logo, show_order)".
             "VALUES ".
-                "('".$_LANG['default_friend_link']."', 'http://www.ecshop.com/', 'http://www.ecshop.com/images/logo/ecshop_logo.gif','0')";
+                "('".$_LANG['default_friend_link']."', 'http://www.SHOP.com/', 'http://www.SHOP.com/images/logo/SHOP_logo.gif','0')";
     if (!$db->query($sql, 'SILENT'))
     {
         $err->add($db->errno() .' '. $db->error());
@@ -705,14 +698,14 @@ function deal_aftermath()
         $err->add($db->errno() .' '. $db->error());
     }*/
 
-    /* 更新 ECSHOP 安装日期 */
+    /* 更新 SHOP 安装日期 */
     $sql = "UPDATE $prefix"."shop_config SET value='" .time(). "' WHERE code='install_date'";
     if (!$db->query($sql, 'SILENT'))
     {
         $err->add($db->errno() .' '. $db->error());
     }
 
-    /* 更新 ECSHOP 版本 */
+    /* 更新 SHOP 版本 */
     $sql = "UPDATE $prefix"."shop_config SET value='" .VERSION. "' WHERE code='ecs_version'";
     if (!$db->query($sql, 'SILENT'))
     {
@@ -755,12 +748,12 @@ function deal_aftermath()
 function get_spt_code()
 {
     include(ROOT_PATH . 'data/config.php');
-    include_once(ROOT_PATH . 'includes/cls_ecshop.php');
+    include_once(ROOT_PATH . 'includes/cls_SHOP.php');
     include_once(ROOT_PATH . 'includes/cls_mysql.php');
     $db = new cls_mysql($db_host, $db_user, $db_pass, $db_name);
     $ecs = new ECS($db_name, $prefix);
     $hash_code = $db->getOne("SELECT value FROM " . $ecs->table('shop_config') . " WHERE code='hash_code'");
-    $spt = '<script type="text/javascript" src="http://api.ecshop.com/record.php?';
+    $spt = '<script type="text/javascript" src="http://api.SHOP.com/record.php?';
     $spt .= "url=" .urlencode($ecs->url()). "&mod=install&version=" .VERSION. "&hash_code=" . $hash_code . "&charset=" .EC_CHARSET. "&language=" . $GLOBALS['installer_lang'] . "\"></script>";
 
     return $spt;
@@ -818,7 +811,7 @@ function get_domain()
 }
 
 /**
- * 获得 ECSHOP 当前环境的 URL 地址
+ * 获得 SHOP 当前环境的 URL 地址
  *
  * @access  public
  *
@@ -834,7 +827,7 @@ function url()
 }
 
 /**
- * 获得 ECSHOP 当前环境的 HTTP 协议方式
+ * 获得 SHOP 当前环境的 HTTP 协议方式
  *
  * @access  public
  *

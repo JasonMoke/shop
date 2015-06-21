@@ -1,7 +1,7 @@
 <?php
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 /**
  * 分页类，提供四种显示样式，和ajax支持

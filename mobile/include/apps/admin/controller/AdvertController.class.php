@@ -1,20 +1,20 @@
 <?php
 
 /**
- * ECTouch Open Source Project
+ * Touch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
  * ----------------------------------------------------------------------------
  * 文件名称：AdvertControoller.class.php
  * ----------------------------------------------------------------------------
  * 功能描述：广告管理控制器
  * ----------------------------------------------------------------------------
- * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ * Licensed (  )
  * ----------------------------------------------------------------------------
  */
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 class AdvertController extends AdminController {
 
@@ -193,7 +193,7 @@ class AdvertController extends AdminController {
                     /* 上传广告图片 */
                     if ($_FILES['ad_img']['name']) {
                         /* ad_img广告图片 */
-                        $result = $this->ectouchUpload('ad_img');
+                        $result = $this->TouchUpload('ad_img');
                         if ($result['error'] > 0) {
                             $this->message($result['message'], NULL, 'error');
                         }
@@ -313,7 +313,7 @@ class AdvertController extends AdminController {
                         }
 
                         /* ad_img广告图片 */
-                        $result = $this->ectouchUpload('ad_img');
+                        $result = $this->TouchUpload('ad_img');
                         if ($result['error'] > 0) {
                             $this->message($result['message'], NULL, 'error');
                         }

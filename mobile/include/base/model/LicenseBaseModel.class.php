@@ -1,20 +1,20 @@
 <?php
 
 /**
- * ECTouch Open Source Project
+ * Touch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
  * ----------------------------------------------------------------------------
  * 文件名称：LicenseBaseModel.class.php
  * ----------------------------------------------------------------------------
- * 功能描述：ECTOUCH 许可证基础模型
+ * 功能描述：Touch 许可证基础模型
  * ----------------------------------------------------------------------------
- * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ * Licensed (  )
  * ----------------------------------------------------------------------------
  */
 
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 class LicenseBaseModel extends Model {
 
@@ -51,12 +51,12 @@ class LicenseBaseModel extends Model {
     function license_reg($certi_added = '') {
         // 登录信息配置
         $certi['certi_app'] = ''; // 证书方法
-        $certi['app_id'] = 'ectouch_free'; // 说明客户端来源
+        $certi['app_id'] = 'Touch_free'; // 说明客户端来源
         $certi['app_instance_id'] = ''; // 应用服务ID
         $certi['version'] = LICENSE_VERSION; // license接口版本号
         $certi['shop_version'] = VERSION . '#' . RELEASE; // 网店软件版本号
         $certi['certi_url'] = sprintf(__URL__); // 网店URL
-        $certi['certi_session'] = ECTouch::sess()->get_session_id(); // 网店SESSION标识
+        $certi['certi_session'] = Touch::sess()->get_session_id(); // 网店SESSION标识
         $certi['certi_validate_url'] = sprintf(__URL__ . url('api/certi')); // 网店提供于官方反查接口
         $certi['format'] = 'json'; // 官方返回数据格式
         $certi['certificate_id'] = ''; // 网店证书ID

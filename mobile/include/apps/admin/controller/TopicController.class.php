@@ -1,19 +1,19 @@
 <?php
 
 /**
- * ECTouch Open Source Project
+ * Touch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
  * ----------------------------------------------------------------------------
  * 文件名称：TopicControoller.class.php
  * ----------------------------------------------------------------------------
  * 功能描述：专题管理控制器
  * ----------------------------------------------------------------------------
- * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ * Licensed (  )
  * ----------------------------------------------------------------------------
  */
 /* 访问控制 */
-defined('IN_ECTOUCH') or die('Deny Access');
+defined('IN_Touch') or die('Deny Access');
 
 class TopicController extends AdminController {
 
@@ -57,7 +57,7 @@ class TopicController extends AdminController {
                 case '1' :
                     // 主图上传
                     if ($_FILES['topic_img']['name'] && $_FILES['topic_img']['size'] > 0) {
-                        $result = $this->ectouchUpload('topic_img', 'topic_image');
+                        $result = $this->TouchUpload('topic_img', 'topic_image');
                         if ($result['error'] > 0) {
                             $this->message($result['message'], NULL, 'error');
                         }
@@ -83,7 +83,7 @@ class TopicController extends AdminController {
             }
             // 标题图上传
             if ($_FILES['title_pic']['name'] && $_FILES['title_pic']['size'] > 0) {
-                $result = $this->ectouchUpload('title_pic', 'topic_image');
+                $result = $this->TouchUpload('title_pic', 'topic_image');
                 if ($result['error'] > 0) {
                     $this->message($result['message'], NULL, 'error');
                 }
@@ -148,7 +148,7 @@ class TopicController extends AdminController {
                 case '1' :
                     // 主图上传
                     if ($_FILES['topic_img']['name'] && $_FILES['topic_img']['size'] > 0) {
-                        $result = $this->ectouchUpload('topic_img', 'topic_image');
+                        $result = $this->TouchUpload('topic_img', 'topic_image');
                         if ($result['error'] > 0) {
                             $this->message($result['message'], NULL, 'error');
                         }
@@ -173,7 +173,7 @@ class TopicController extends AdminController {
             }
             // 标题图上传
             if ($_FILES['title_pic']['name'] && $_FILES['title_pic']['size'] > 0) {
-                $result = $this->ectouchUpload('title_pic', 'topic_image');
+                $result = $this->TouchUpload('title_pic', 'topic_image');
                 if ($result['error'] > 0) {
                     $this->message($result['message'], NULL, 'error');
                 }

@@ -1,7 +1,7 @@
 <?php
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 $shipping_lang = ROOT_PATH . 'plugins/shipping/language/' . C('lang') . '/' . basename(__FILE__);
 if (file_exists($shipping_lang))
@@ -28,10 +28,10 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['cod']     = false;
 
     /* 插件的作者 */
-    $modules[$i]['author']  = 'SHOP TEAM';
+    $modules[$i]['author']  = 'ECSHOP TEAM';
 
     /* 插件作者的官方网站 */
-    $modules[$i]['website'] = 'http://www.SHOP.com';
+    $modules[$i]['website'] = 'http://www.ecshop.com';
 
     /* 配送接口需要的参数 */
     $modules[$i]['configure'] = array(
@@ -59,7 +59,7 @@ if (isset($set_modules) && $set_modules == TRUE)
  * - 其他地区统一资费:    1公斤以内18元， 每增加1公斤加5-6元, 云南为8元
  * - 对于体大质轻的包裹，我们将按照航空运输协会的规定，根据体积和实际重量中较重的一种收费，需将包的长、宽、高、相乘，再除以6000
  * - (具体资费请上此网站查询:http://www.car365.cn/fee.asp 客服电话:021-52238886)
- * -------------------------------------------------------------------------------------
+ *---------
  *
  */
 class sto_express

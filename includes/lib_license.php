@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP LICENSE 相关函数库
- * $Author: Jason $
- * $Id: lib_article.php 16336 2009-06-24 07:09:13Z Jason $
+ * ECSHOP LICENSE 相关函数库
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: lib_article.php 16336 2009-06-24 07:09:13Z jason $
 */
 
 if (!defined('IN_ECS'))
@@ -64,7 +71,7 @@ function make_shopex_ac($post_params, $token)
 }
 
 /**
- * 功能：与 SHOP 交换数据
+ * 功能：与 ECShop 交换数据
  *
  * @param   array     $certi    登录参数
  * @param   array     $license  网店license信息
@@ -146,7 +153,7 @@ function license_login($certi_added = '')
 {
     // 登录信息配置
     $certi['certi_app'] = ''; // 证书方法
-    $certi['app_id'] = 'SHOP_b2c'; // 说明客户端来源
+    $certi['app_id'] = 'ecshop_b2c'; // 说明客户端来源
     $certi['app_instance_id'] = ''; // 应用服务ID
     $certi['version'] = LICENSE_VERSION; // license接口版本号
     $certi['shop_version'] = VERSION . '#' .  RELEASE; // 网店软件版本号
@@ -218,7 +225,7 @@ function license_reg($certi_added = '')
 {
     // 登录信息配置
     $certi['certi_app'] = ''; // 证书方法
-    $certi['app_id'] = 'SHOP_b2c'; // 说明客户端来源
+    $certi['app_id'] = 'ecshop_b2c'; // 说明客户端来源
     $certi['app_instance_id'] = ''; // 应用服务ID
     $certi['version'] = LICENSE_VERSION; // license接口版本号
     $certi['shop_version'] = VERSION . '#' .  RELEASE; // 网店软件版本号

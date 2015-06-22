@@ -1,19 +1,19 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
  * 文件名称：商品Model.class.php
- * ----------------------------------------------------------------------------
- * 功能描述：Touch 商品模型
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ *
+ * 功能描述：ECTOUCH 商品模型
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 class GoodsModel extends BaseModel {
 
@@ -268,7 +268,7 @@ class GoodsModel extends BaseModel {
         }
 
         if ($from == 'web') {
-            Touch::view()->assign('cat_goods_' . $cat_id, $goods);
+            ECTouch::view()->assign('cat_goods_' . $cat_id, $goods);
         } elseif ($from == 'wap') {
             $cat['goods'] = $goods;
         }
@@ -694,7 +694,7 @@ class GoodsModel extends BaseModel {
 
             /* 取商品属性 */
             $sql = "SELECT ga.goods_attr_id, ga.attr_value
-					FROM " . $this->pre . "goods_attr AS ga, " . Touch::ecs()->table('attribute') . " AS a
+					FROM " . $this->pre . "goods_attr AS ga, " . ECTouch::ecs()->table('attribute') . " AS a
 					WHERE a.attr_id = ga.attr_id
 					AND a.attr_type = 1
 					AND " . db_create_in($goods_id_array, 'goods_id');

@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP Google sitemap 类
- * $Author: Jason $
- * $Id: cls_google_sitemap.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP Google sitemap 类
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: cls_google_sitemap.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 if (!defined('IN_ECS'))

@@ -53,11 +53,11 @@ $root_path = preg_replace('/includes(.*)/i', '', PHP_SELF);
 require(ROOT_PATH . 'data/config.php');
 require(ROOT_PATH . 'includes/lib_base.php');
 require(ROOT_PATH . 'includes/cls_mysql.php');
-require(ROOT_PATH . 'includes/cls_SHOP.php');
+require(ROOT_PATH . 'includes/cls_ecshop.php');
 require(ROOT_PATH . 'includes/cls_session.php');
 require(ROOT_PATH . 'includes/lib_common.php');
 
-/* 锟斤拷锟斤拷 SHOP 锟斤拷锟斤拷 */
+/* 创建 ECSHOP 对象 */
 $ecs = new ECS($db_name, $prefix);
 define('DATA_DIR', $ecs->data_dir());
 define('IMAGE_DIR', $ecs->image_dir());
@@ -91,7 +91,7 @@ else
     $enable = false;
 }
 
-/* 锟斤拷锟斤拷系统锟斤拷锟斤拷 */
+/* 载入系统参数 */
 $_CFG = load_config();
 
 $Config['Enabled'] = $enable;

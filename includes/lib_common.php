@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP 公用函数库
- * $Author: Jason $
- * $Id: lib_common.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP 公用函数库
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: lib_common.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 if (!defined('IN_ECS'))
@@ -610,7 +617,7 @@ function load_config()
 
         if (empty($arr['integrate_code']))
         {
-            $arr['integrate_code'] = 'SHOP'; // 默认的会员整合插件为 SHOP
+            $arr['integrate_code'] = 'ecshop'; // 默认的会员整合插件为 ecshop
         }
         write_static_cache('shop_config', $arr);
     }

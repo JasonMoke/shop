@@ -1,16 +1,17 @@
 <?php
 
 /**
- * SHOP Control panel authorization manage module language file
+ * ECSHOP Control panel authorization manage module language file
  * ============================================================================
  * All right reserved (C) 2005-2011 Beijing Yi Shang Interactive Technology
  * Development Ltd.
- * Web site: http://www.SHOP.com
- * ----------------------------------------------------------------------------
+ * Web site: http://www.ecshop.com
+ *
  * This is a free/open source software；it means that you can modify, use and
  * republish the program code, on the premise of that your behavior is not for
  * commercial purposes.
- * ============================================================================ * $Author: sxc_shop $
+ * ============================================================================
+ * $Author: sxc_shop $
  * $Id: privilege.php 16320 2009-06-23 09:42:41Z sxc_shop $
 */
 

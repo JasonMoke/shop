@@ -1,7 +1,7 @@
 <?php
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 /**
  * 文件缓存类 基于secache修改

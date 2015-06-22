@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP 基础类
- * $Author: Jason $
- * $Id: cls_SHOP.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP 基础类
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: cls_ecshop.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 if (!defined('IN_ECS'))
@@ -11,7 +18,7 @@ if (!defined('IN_ECS'))
     die('Hacking attempt');
 }
 
-define('APPNAME', 'SHOP');
+define('APPNAME', 'ECSHOP');
 define('VERSION', 'v2.7.3');
 define('RELEASE', '20121106');
 
@@ -48,7 +55,7 @@ class ECS
     }
 
     /**
-     * SHOP 密码编译方法;
+     * ECSHOP 密码编译方法;
      *
      * @access  public
      * @param   string      $pass       需要编译的原始密码
@@ -112,7 +119,7 @@ class ECS
     }
 
     /**
-     * 获得 SHOP 当前环境的 URL 地址
+     * 获得 ECSHOP 当前环境的 URL 地址
      *
      * @access  public
      *
@@ -135,7 +142,7 @@ class ECS
     }
 
     /**
-     * 获得 SHOP 当前环境的 HTTP 协议方式
+     * 获得 ECSHOP 当前环境的 HTTP 协议方式
      *
      * @access  public
      *

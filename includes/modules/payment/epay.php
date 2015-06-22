@@ -1,7 +1,14 @@
 <?php
 
 /**
- * SHOP 支付宝插件
+ * ECSHOP 支付宝插件
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
  * $Author: douqinghua $
  * $Id: alipay.php 17217 2011-01-19 06:29:08Z douqinghua $
  */
@@ -38,7 +45,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['is_online']  = '1';
 
     /* 作者 */
-    $modules[$i]['author']  = 'SHOP TEAM';
+    $modules[$i]['author']  = 'ECSHOP TEAM';
 
     /* 网址 */
     $modules[$i]['website'] ='http://www.95epay.cn/merRegister.jsp?countermanName=%E5%BC%A0%E4%BF%8A%E8%BE%89&countermanPhoneNO=13113391311&countermanQQ=2361064531';

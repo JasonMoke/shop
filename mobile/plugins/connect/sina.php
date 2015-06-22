@@ -1,20 +1,20 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
  * 文件名称：sina.php
- * ----------------------------------------------------------------------------
+ *
  * 功能描述：新浪微博登录插件
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 $payment_lang = ROOT_PATH . 'plugins/connect/language/' . C('lang') . '/' . basename(__FILE__);
 

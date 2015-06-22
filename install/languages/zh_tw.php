@@ -1,25 +1,26 @@
 <?php
 
 /**
- * SHOP 安裝程序語言文件
+ * ECSHOP 安裝程序語言文件
  * ============================================================================
  * 版權所有 2005-2011 上海商派網絡科技有限公司，並保留所有權利。
- * 網站地址: http://www.SHOP.com；
- * ----------------------------------------------------------------------------
+ * 網站地址: http://www.ecshop.com；
+ *
  * 這不是一個自由軟件！您只能在不用於商業目的的前提下對程序代碼進行修改和
  * 使用；不允許對程序代碼以任何形式任何目的的再發佈。
- * ============================================================================ * $Author: Jason $
- * $Id: zh_tw.php 17217 2011-01-19 06:29:08Z Jason $
+ * ============================================================================
+ * $Author: jason $
+ * $Id: zh_tw.php 17217 2011-01-19 06:29:08Z jason $
  */
 
 /* 通用語言項 */
 $_LANG['prev_step'] = '上一步：';
 $_LANG['next_step'] = '下一步：';
-$_LANG['copyright'] = '&copy; 2005-2012 <a href="http://www.SHOP.com" target="_blank">上海商派网络科技有限公司</a>。保留所有權利。';
+$_LANG['copyright'] = '&copy; 2005-2012 <a href="http://www.ecshop.com" target="_blank">上海商派网络科技有限公司</a>。保留所有權利。';
 
 
 /* 歡迎頁 */
-$_LANG['welcome_title'] = '歡迎您選用SHOP網上商店管理系統！';
+$_LANG['welcome_title'] = '歡迎您選用ECShop網上商店管理系統！';
 $_LANG['select_installer_lang'] = '界面語言：';
 $_LANG['simplified_chinese'] = '簡體中文';
 $_LANG['traditional_chinese'] = '繁體中文';
@@ -39,7 +40,7 @@ $_LANG['uc_intro'] = 'UCenter 是 Comsenz 公司產品的核心服務程序，Di
 
 
 /* 環境檢測頁 */
-$_LANG['checking_title'] = 'SHOP安裝程序 第2步/共3步 環境檢測';
+$_LANG['checking_title'] = 'ECShop安裝程序 第2步/共3步 環境檢測';
 $_LANG['system_environment'] = '系統環境';
 $_LANG['dir_priv_checking'] = '目錄權限檢測';
 $_LANG['template_writable_checking'] = '模板可寫性檢查';
@@ -74,7 +75,7 @@ $_LANG['all_are_writable'] = '所有模板，全部可寫';
 
 /* 系統設置 */
 $_LANG['setup'] = '填寫完畢';
-$_LANG['setting_title'] = 'SHOP安裝程序 第3步/共3步 配置系統';
+$_LANG['setting_title'] = 'ECShop安裝程序 第3步/共3步 配置系統';
 $_LANG['db_account'] = '數據庫帳號';
 $_LANG['db_port'] = '端口號：';
 $_LANG['db_host'] = '數據庫主機：';
@@ -108,7 +109,7 @@ $_LANG['dc'] = '數碼相機';
 $_LANG['dv'] = '數碼攝像機';
 $_LANG['cosmetics'] = '化妝品';
 $_LANG['install_at_once'] = '立即安裝';
-$_LANG['default_friend_link'] = 'SHOP 網上商店管理系統';
+$_LANG['default_friend_link'] = 'ECSHOP 網上商店管理系統';
 $_LANG['maifou_friend_link'] = '買否網';
 $_LANG['wdwd_friend_link']='免費開獨立網店';
 $_LANG['monitor_title'] = '安裝程序監視器';
@@ -123,7 +124,7 @@ $_LANG['pwd_middle'] = '中';
 $_LANG['pwd_high'] = '強';
 
 /* 提示信息 */
-$_LANG['has_locked_installer'] = '<strong>安裝程序已經被鎖定。</strong><br /><br />如果您確定要重新安裝 SHOP，請刪除data目錄下的 install.lock。';
+$_LANG['has_locked_installer'] = '<strong>安裝程序已經被鎖定。</strong><br /><br />如果您確定要重新安裝 ECSHOP，請刪除data目錄下的 install.lock。';
 $_LANG['connect_failed'] = '連接 數據庫失敗，請檢查您輸入的 數據庫帳號 是否正確。';
 $_LANG['query_failed'] = '查詢 數據庫失敗，請檢查您輸入的 數據庫帳號 是否正確。';
 $_LANG['select_db_failed'] = '選擇 數據庫失敗，請檢查您輸入的 數據庫名稱 是否正確。';
@@ -139,11 +140,11 @@ $_LANG['cannt_copy_file'] = '無法複製文件';
 $_LANG['open_installlock_failed'] = '打開install.lock文件失敗';
 $_LANG['write_installlock_failed'] = '寫入install.lock文件失敗';
 
-$_LANG['install_done_title'] = 'SHOP 安裝程序 安裝成功';
-$_LANG['install_error_title'] = 'SHOP 安裝程序 安裝失敗';
-$_LANG['done'] = '恭喜您，SHOP 已經成功地安裝完成。<br />基於安全的考慮，請在安裝完成後刪除 install 目錄。';
-$_LANG['go_to_view_my_SHOP'] = '前往 SHOP 首頁';
-$_LANG['go_to_view_control_panel'] = '前往 SHOP 後台管理中心';
+$_LANG['install_done_title'] = 'ECSHOP 安裝程序 安裝成功';
+$_LANG['install_error_title'] = 'ECSHOP 安裝程序 安裝失敗';
+$_LANG['done'] = '恭喜您，ECSHOP 已經成功地安裝完成。<br />基於安全的考慮，請在安裝完成後刪除 install 目錄。';
+$_LANG['go_to_view_my_ecshop'] = '前往 ECSHOP 首頁';
+$_LANG['go_to_view_control_panel'] = '前往 ECSHOP 後台管理中心';
 $_LANG['open_config_file_failed'] = '無法寫入 data/config.php，請檢查該文件是否允許寫入。';
 $_LANG['write_config_file_failed'] = '寫入配置文件出錯';
 

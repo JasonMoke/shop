@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP 支付响应页面
- * $Author: Jason $
- * $Id: respond.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP 支付响应页面
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: respond.php 17217 2011-01-19 06:29:08Z jason $
  */
 
 define('IN_ECS', true);
@@ -26,7 +33,7 @@ if(isset($_POST['MerRemark'])  && $_POST['MerRemark']=='epay')
 }
 
 //获取快钱神州行支付方式
-if (empty($pay_code) && ($_REQUEST['ext1'] == 'shenzhou') && ($_REQUEST['ext2'] == 'SHOP'))
+if (empty($pay_code) && ($_REQUEST['ext1'] == 'shenzhou') && ($_REQUEST['ext2'] == 'ecshop'))
 {
     $pay_code = 'shenzhou';
 }

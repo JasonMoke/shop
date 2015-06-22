@@ -4,19 +4,19 @@
 $charset = 'utf-8';
 $tools_version = "v1.0";
 $mysql_version = '';
-$SHOP_version = '';
+$ecshop_version = '';
 $mysql_charset = '';
-$SHOP_charset = '';
+$ecshop_charset = '';
 $convert_charset = array('utf-8' => 'gbk', 'gbk' => 'utf-8');
 $convert_tables_file = 'data/convert_tables.php';
 $rpp = 500; // 姣忔?澶勭悊鐨勮?褰曟暟
 
-/* SHOP鐨勭珯鐐圭洰褰 */
+/* ECShop鐨勭珯鐐圭洰褰 */
 define('ROOT_PATH', str_replace('\\', '/', substr(__FILE__, 0, -20)));
 define('IN_ECS', true);
 
 require(ROOT_PATH . 'data/config.php');
-require(ROOT_PATH . 'includes/cls_SHOP.php');
+require(ROOT_PATH . 'includes/cls_ecshop.php');
 require(ROOT_PATH . 'includes/cls_mysql.php');
 require(ROOT_PATH . 'includes/lib_common.php');
 
@@ -26,8 +26,8 @@ if (defined('EC_CHARSET')) {
 } else {
     $ec_charset = '';
 }
-$SHOP_version = str_replace('v', '', VERSION);
-$SHOP_charset = $ec_charset;
+$ecshop_version = str_replace('v', '', VERSION);
+$ecshop_charset = $ec_charset;
 $db = new cls_mysql($db_host, $db_user, $db_pass, $db_name, '', 0, 1);
 $mysql_version = $db->version;
 $mysql_charset = get_mysql_charset();
@@ -35,7 +35,7 @@ $mysql_charset = get_mysql_charset();
 $step = getgpc('step');
 $step = empty($step) ? 1 : $step;
 
-if ($SHOP_version < '2.6.0') {
+if ($ecshop_version < '2.6.0') {
     $step = 'halt';
 }
 if (!defined('UC_DBUSER') && !defined('UC_DBPW') && !defined('UC_DBNAME'))
@@ -70,19 +70,19 @@ instheader();
 if ($step == 1) {
     $ext_msg = '<a href="?step=start"><font size="3" color="red"><b>&gt;&gt;&nbsp;濡傛灉鎮ㄥ凡纭??涓婇潰鐨勪娇鐢ㄨ?鏄?璇风偣杩欓噷杩涜?瀵煎叆</b></font></a><br /><br /><a href="index.php"><font size="2"><b>&gt;&gt;&nbsp;濡傛灉鎮ㄩ渶瑕佹墽琛屽崌绾х▼搴忥紝璇风偣杩欓噷杩涜?鍗囩骇</b></font></a>';
     echo <<<EOT
-<h4>鏈?浆鎹㈢▼搴忓彧鑳介拡SHOP2.6.0鎴栬€呬互涓婄増鏈?▼搴忕殑鏁版嵁瀵煎叆<br /></h4>
+<h4>鏈?浆鎹㈢▼搴忓彧鑳介拡ECShop2.6.0鎴栬€呬互涓婄増鏈?▼搴忕殑鏁版嵁瀵煎叆<br /></h4>
 瀵煎叆涔嬪墠<b>鍔″繀澶囦唤鏁版嵁搴撹祫鏂橖/b>锛岄伩鍏嶅?鍏ュけ璐ョ粰鎮ㄥ甫鏉ユ崯澶变笌涓嶄究<br /><br />
 
 <p>瀵煎叆绋嬪簭浣跨敤璇存槑锛欬/p>
 <ol>
-    <li>鍙?敮鎸佷粠UCenter鏁版嵁搴撳埌SHOP鏁版嵁搴撶殑瀵煎叆</li>
+    <li>鍙?敮鎸佷粠UCenter鏁版嵁搴撳埌ECShop鏁版嵁搴撶殑瀵煎叆</li>
     <li>鍙??鍏ヤ細鍛樼殑鐢ㄦ埛鍚嶃€侀偖绠便€佸瘑鐮侊紝杩欎簺鍩烘湰淇℃伅銆備笉浼氱牬鍧忓師鏈変細鍛樻暟鎹?/li>
 </ol>
 
 <p>鎮ㄥ綋鍓嶇▼搴忎笌鏁版嵁搴撶殑淇℃伅锛欬/p>
 <ul>
-    <li>绋嬪簭鐗堟湰锛?SHOP_version</li>
-    <li>绋嬪簭缂栫爜锛?SHOP_charset</li>
+    <li>绋嬪簭鐗堟湰锛?ecshop_version</li>
+    <li>绋嬪簭缂栫爜锛?ecshop_charset</li>
     <li>MySQL鐗堟湰锛?mysql_version</li>
     <li>MySQL缂栫爜锛?mysql_charset</li>
 </ul>
@@ -252,7 +252,7 @@ function instheader() {
 function instfooter() {
     echo "</td></tr><tr><td><hr noshade align=\"center\" width=\"100%\" size=\"1\"></td></tr>".
             "<tr><td align=\"center\">".
-                "<b style=\"font-size: 11px\">Powered by <a href=\"http://www.SHOP.com\" target=\"_blank\"><span style=\"color:#FF6100\">SHOP</span>".
+                "<b style=\"font-size: 11px\">Powered by <a href=\"http://www.ecshop.com\" target=\"_blank\"><span style=\"color:#FF6100\">ECShop</span>".
               "</a></b>&nbsp; &copy; 2005-2011 涓婃捣鍟嗘淳缃戠粶绉戞妧鏈夐檺鍏?徃銆侟br /><br />".
               "</td></tr></table></td></tr></table>".
         "</body></html>";

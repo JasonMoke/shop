@@ -1,17 +1,18 @@
 <?php
 
 /**
- * SHOP Image batch processing program language file
+ * ECSHOP Image batch processing program language file
  * ============================================================================
  * All right reserved (C) 2005-2011 Beijing Yi Shang Interactive Technology
  * Development Ltd.
- * Web site: http://www.SHOP.com
- * ----------------------------------------------------------------------------
+ * Web site: http://www.ecshop.com
+ *
  * This is a free/open source software；it mean that you can modify, use and
  * republish the program code, on the premise of that your behavior is not for
  * commercial purposes.
- * ============================================================================ * $Author: Jason $
- * $Id: picture_batch.php 17217 2011-01-19 06:29:08Z Jason $
+ * ============================================================================
+ * $Author: jason $
+ * $Id: picture_batch.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 $_LANG['notes'] = "Image batch processing allow you to re-create thumbnail and watermark.<br/> Please wait for processing.";

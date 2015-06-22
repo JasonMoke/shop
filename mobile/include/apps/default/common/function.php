@@ -1,7 +1,7 @@
 <?php
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 /**
  * 检查是否是微信浏览器访问
@@ -24,7 +24,7 @@ function is_wechat_browser()
  */
 function get_page_title($cat = 0, $str = '') {
     /* 初始化“页面标题”和“当前位置” */
-    $page_title = C('shop_title') . ' - ' . 'Powered by Touch.cn';
+    $page_title = C('shop_title') . ' - ' . 'Powered by ECTouch.cn';
     $ur_here = '<a href="' . __APP__ . '">' . L('home') . '</a>';
     /* 控制器名称 */
     $controller_name = strtolower(CONTROLLER_NAME);
@@ -281,7 +281,7 @@ function assign_pager($app, $cat, $record_count, $size, $sort, $order, $page = 1
         }
     }
 
-    Touch::view()->assign('pager', $pager);
+    ECTouch::view()->assign('pager', $pager);
 }
 
 /**
@@ -781,19 +781,19 @@ function upload_file($upload, $type) {
 
             $target = ROOT_PATH . DATA_DIR . '/' . $type . '/' . $name;
             if (!move_upload_file($upload['tmp_name'], $target)) {
-                Touch::err()->add(L('upload_file_error'), 1);
+                ECTouch::err()->add(L('upload_file_error'), 1);
 
                 return false;
             } else {
                 return $name;
             }
         } else {
-            Touch::err()->add(L('upload_file_type'), 1);
+            ECTouch::err()->add(L('upload_file_type'), 1);
 
             return false;
         }
     } else {
-        Touch::err()->add(L('upload_file_error'));
+        ECTouch::err()->add(L('upload_file_error'));
         return false;
     }
 }
@@ -828,14 +828,14 @@ function show_message($content, $links = '', $hrefs = '', $type = 'info', $auto_
     }
 
     $msg['type'] = $type;
-    if (is_null(Touch::view()->get_template_vars('helps'))) {
-        Touch::view()->assign('helps', model('Article')->get_shop_help()); // 网店帮助
+    if (is_null(ECTouch::view()->get_template_vars('helps'))) {
+        ECTouch::view()->assign('helps', model('Article')->get_shop_help()); // 网店帮助
     }
 
-    Touch::view()->assign('title', L('tips_message'));
-    Touch::view()->assign('auto_redirect', $auto_redirect);
-    Touch::view()->assign('message', $msg);
-    Touch::view()->display('message.dwt');
+    ECTouch::view()->assign('title', L('tips_message'));
+    ECTouch::view()->assign('auto_redirect', $auto_redirect);
+    ECTouch::view()->assign('message', $msg);
+    ECTouch::view()->display('message.dwt');
 
     exit;
 }
@@ -871,27 +871,27 @@ function parse_rate_value($str, &$operate) {
 }
 
 function assign_template($ctype = '', $catlist = array()) {
-    Touch::view()->assign('image_width', C('image_width'));
-    Touch::view()->assign('image_height', C('image_height'));
-    Touch::view()->assign('points_name', C('integral_name'));
-    Touch::view()->assign('qq', explode(',', C('qq')));
-    Touch::view()->assign('ww', explode(',', C('ww')));
-    Touch::view()->assign('ym', explode(',', C('ym')));
-    Touch::view()->assign('msn', explode(',', C('msn')));
-    Touch::view()->assign('skype', explode(',', C('skype')));
-    Touch::view()->assign('stats_code', C('stats_code'));
-    Touch::view()->assign('copyright', sprintf(L('copyright'), date('Y'), C('shop_name')));
-    Touch::view()->assign('shop_name', C('shop_name'));
-    Touch::view()->assign('service_email', C('service_email'));
-    Touch::view()->assign('service_phone', C('service_phone'));
-    Touch::view()->assign('shop_address', C('shop_address'));
-    Touch::view()->assign('licensed', license_info());
-    Touch::view()->assign('ecs_version', VERSION);
-    Touch::view()->assign('icp_number', C('icp_number'));
-    Touch::view()->assign('username', !empty($_SESSION['user_name']) ? $_SESSION['user_name'] : '');
-    Touch::view()->assign('category_list', cat_list(0, 0, true, 2, false));
-    Touch::view()->assign('catalog_list', cat_list(0, 0, false, 1, false));
-    Touch::view()->assign('navigator_list', model('Common')->get_navigator($ctype, $catlist));  //自定义导航栏
+    ECTouch::view()->assign('image_width', C('image_width'));
+    ECTouch::view()->assign('image_height', C('image_height'));
+    ECTouch::view()->assign('points_name', C('integral_name'));
+    ECTouch::view()->assign('qq', explode(',', C('qq')));
+    ECTouch::view()->assign('ww', explode(',', C('ww')));
+    ECTouch::view()->assign('ym', explode(',', C('ym')));
+    ECTouch::view()->assign('msn', explode(',', C('msn')));
+    ECTouch::view()->assign('skype', explode(',', C('skype')));
+    ECTouch::view()->assign('stats_code', C('stats_code'));
+    ECTouch::view()->assign('copyright', sprintf(L('copyright'), date('Y'), C('shop_name')));
+    ECTouch::view()->assign('shop_name', C('shop_name'));
+    ECTouch::view()->assign('service_email', C('service_email'));
+    ECTouch::view()->assign('service_phone', C('service_phone'));
+    ECTouch::view()->assign('shop_address', C('shop_address'));
+    ECTouch::view()->assign('licensed', license_info());
+    ECTouch::view()->assign('ecs_version', VERSION);
+    ECTouch::view()->assign('icp_number', C('icp_number'));
+    ECTouch::view()->assign('username', !empty($_SESSION['user_name']) ? $_SESSION['user_name'] : '');
+    ECTouch::view()->assign('category_list', cat_list(0, 0, true, 2, false));
+    ECTouch::view()->assign('catalog_list', cat_list(0, 0, false, 1, false));
+    ECTouch::view()->assign('navigator_list', model('Common')->get_navigator($ctype, $catlist));  //自定义导航栏
 
     $search_keywords = C('search_keywords');
     if (!empty($search_keywords)) {
@@ -899,7 +899,7 @@ function assign_template($ctype = '', $catlist = array()) {
     } else {
         $searchkeywords = array();
     }
-    Touch::view()->assign('searchkeywords', $searchkeywords);
+    ECTouch::view()->assign('searchkeywords', $searchkeywords);
 }
 
 /**
@@ -937,9 +937,9 @@ function set_affiliate($u = '') {
             } else {
                 $c = 1;
             }
-            setcookie('SHOP_affiliate_uid', intval($_GET['u']), gmtime() + 3600 * $config['config']['expire'] * $c);
+            setcookie('ecshop_affiliate_uid', intval($_GET['u']), gmtime() + 3600 * $config['config']['expire'] * $c);
         } else {
-            setcookie('SHOP_affiliate_uid', intval($_GET['u']), gmtime() + 3600 * 24); // 过期时间为 1 天
+            setcookie('ecshop_affiliate_uid', intval($_GET['u']), gmtime() + 3600 * 24); // 过期时间为 1 天
         }
     }
 }
@@ -951,7 +951,7 @@ function set_affiliate($u = '') {
  */
 function license_info() {
     if (C('licensed') > 0) {
-        $license = '<a href="http://www.SHOP.com/license.php?product=Touch_free&url=' . urlencode(__URL__) . '" target="_blank"
+        $license = '<a href="http://www.ecshop.com/license.php?product=ectouch_free&url=' . urlencode(__URL__) . '" target="_blank"
 >&nbsp;&nbsp;Licensed</a>';
         return $license;
     } else {
@@ -1282,12 +1282,12 @@ function logout() {
  */
 function edit_password($user_id, $old_password, $new_password = '', $code = '') {
     if (empty($user_id))
-        Touch::err()->add(L('not_login'));
+        ECTouch::err()->add(L('not_login'));
 
-    if (Touch::user()->edit_password($user_id, $old_password, $new_password, $code)) {
+    if (ECTouch::user()->edit_password($user_id, $old_password, $new_password, $code)) {
         return true;
     } else {
-        Touch::err()->add(L('edit_password_failure'));
+        ECTouch::err()->add(L('edit_password_failure'));
 
         return false;
     }
@@ -1310,7 +1310,7 @@ function check_userinfo($user_name, $email) {
     }
 
     /* 检测用户名和邮件地址是否匹配 */
-    $user_info = Touch::user()->check_pwd_info($user_name, $email);
+    $user_info = ECTouch::user()->check_pwd_info($user_name, $email);
     if (!empty($user_info)) {
         return $user_info;
     } else {
@@ -1340,13 +1340,13 @@ function send_pwd_email($uid, $user_name, $email, $code) {
     $template = model('Base')->get_mail_template('send_password');
     $reset_email = __HOST__ . url('user/get_password_email', array('uid' => $uid, 'code' => $code));
 
-    Touch::view()->assign('user_name', $user_name);
-    Touch::view()->assign('reset_email', $reset_email);
-    Touch::view()->assign('shop_name', C('shop_name'));
-    Touch::view()->assign('send_date', date('Y-m-d'));
-    Touch::view()->assign('sent_date', date('Y-m-d'));
+    ECTouch::view()->assign('user_name', $user_name);
+    ECTouch::view()->assign('reset_email', $reset_email);
+    ECTouch::view()->assign('shop_name', C('shop_name'));
+    ECTouch::view()->assign('send_date', date('Y-m-d'));
+    ECTouch::view()->assign('sent_date', date('Y-m-d'));
 
-    $content = Touch::view()->fetch('str:' . $template['template_content']);
+    $content = ECTouch::view()->fetch('str:' . $template['template_content']);
 
     /* 发送确认重置密码的确认邮件 */
     if (send_mail($user_name, $email, $template['template_subject'], $content, $template['is_html'])) {

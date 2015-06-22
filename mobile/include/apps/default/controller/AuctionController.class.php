@@ -1,19 +1,19 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
  * 文件名称：ActivityControoller.class.php
- * ----------------------------------------------------------------------------
+ *
  * 功能描述：拍卖活动控制器
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 class AuctionController extends CommonController {
 
@@ -64,7 +64,7 @@ class AuctionController extends CommonController {
         foreach ($list as $key => $auction) {
             $this->assign('auction', $auction);
             $sayList [] = array(
-                'single_item' => Touch::view()->fetch('library/asynclist_info.lbi')
+                'single_item' => ECTouch::view()->fetch('library/asynclist_info.lbi')
             );
         }
         die(json_encode($sayList));
@@ -102,7 +102,7 @@ class AuctionController extends CommonController {
         $cache_id = sprintf('%X', crc32($cache_id));
 
         /* 如果没有缓存，生成缓存 */
-        if (!Touch::view()->is_cached('auction.dwt', $cache_id)) {
+        if (!ECTouch::view()->is_cached('auction.dwt', $cache_id)) {
             //取货品信息
             if ($auction['product_id'] > 0) {
                 $goods_specifications = model('goodsBase')->get_specifications_list($auction['goods_id']);

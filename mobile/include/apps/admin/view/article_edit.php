@@ -11,7 +11,7 @@
     <form  action="{url('edit')}" method="post" enctype="multipart/form-data" name="theForm" onsubmit="return validate();">
       <div class="tab-content">
         <div class="tab-pane active" id="general">
-          <table width="90%" id="general-table" class="table table-hover Touch-table">
+          <table width="90%" id="general-table" class="table table-hover ectouch-table">
             <tr>
               <td width="200">{$lang['title']}</td>
               <td><div class="col-md-4">

@@ -1,19 +1,26 @@
 <?php
 
 /**
- * SHOP 转换程序语言文件
- * $Author: Jason $
- * $Id: convert.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP 转换程序语言文件
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: convert.php 17217 2011-01-19 06:29:08Z jason $
  */
 
 $_LANG['confirm_convert'] = '注意：执行转换程序将会使现有数据丢失，请您三思而行！！！';
 $_LANG['backup_data'] = '如果现有数据对您可能还有价值，请您先做好备份。';
 $_LANG['backup'] = '现在就去备份';
 $_LANG['select_system'] = '请选择您要转换的系统：';
-$_LANG['note_select_system'] = '（如果您的系统不在左边的列表中，您可以到<a href="http://www.SHOP.com" target="_blank"><strong>我们的网站</strong></a>寻求帮助）';
+$_LANG['note_select_system'] = '（如果您的系统不在左边的列表中，您可以到<a href="http://www.ecshop.com" target="_blank"><strong>我们的网站</strong></a>寻求帮助）';
 $_LANG['select_charset'] = '请选择您要转换的系统使用的字符集：';
 $_LANG['note_select_charset'] = '（如果你的系统使用的不是 UTF-8 字符集，转换可能需要较长时间）';
-$_LANG['dir_notes'] = '请注意原商城的根目录路径请使用相对于admin目录的路径。<br />例如：原商城的目录在根目录下的shop，而SHOP放在根目录下，则该路径为 ../shop';
+$_LANG['dir_notes'] = '请注意原商城的根目录路径请使用相对于admin目录的路径。<br />例如：原商城的目录在根目录下的shop，而ecshop放在根目录下，则该路径为 ../shop';
 $_LANG['your_config'] = '请设置原系统的配置信息：';
 $_LANG['your_host'] = '主机名称或地址：';
 $_LANG['your_user'] = '登录帐号：';

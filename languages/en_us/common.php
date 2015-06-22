@@ -1,15 +1,16 @@
 <?php
 
 /**
- * SHOP Front language file
+ * ECSHOP Front language file
  * ============================================================================
  * All right reserved (C) 2005-2011 Beijing Yi Shang Interactive Technology Development Ltd.
- * Web site: http://www.SHOP.com
- * ----------------------------------------------------------------------------
+ * Web site: http://www.ecshop.com
+ *
  * This is a free/open source software；it means that you can modify, use and
  * republish the program code, on the premise of that your behavior is not for commercial purposes.
- * ============================================================================ * $Author: Jason $
- * $Id: common.php 17217 2011-01-19 06:29:08Z Jason $
+ * ============================================================================
+ * $Author: jason $
+ * $Id: common.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 /* 用户登录语言项 */
@@ -551,7 +552,7 @@ $_LANG['email_checked'] = 'Email has been checked!';
 $_LANG['hash_wrong'] = 'Hash wrong! Recheck the hash and enter email address to send hash again!';
 $_LANG['email_canceled'] = 'Email is canceled!';
 $_LANG['goods_click_count'] = 'Goods click count';
-$_LANG['p_y']['link_start'] = '<a href="http://www.SHOP.com" target="_blank" style=" font-family:Verdana; font-size:11px;">';
+$_LANG['p_y']['link_start'] = '<a href="http://www.ecshop.com" target="_blank" style=" font-family:Verdana; font-size:11px;">';
 $_LANG['p_y']['link_p'] = 'Powe';
 $_LANG['p_y']['link_r'] = 'red&nbsp;';
 $_LANG['p_y']['link_b'] = 'by&nbsp;';

@@ -1,20 +1,20 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
  * 文件名称：cod.php
- * ----------------------------------------------------------------------------
+ *
  * 功能描述：货到付款
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 $payment_lang = ROOT_PATH . 'plugins/payment/language/' .C('lang'). '/'.basename(__FILE__);
 
@@ -38,9 +38,9 @@ if (isset($set_modules) && $set_modules == TRUE)
     /* 支付费用，由配送决定 */
     $modules[$i]['pay_fee'] = '0';
     /* 作者 */
-    $modules[$i]['author']  = 'SHOP TEAM';
+    $modules[$i]['author']  = 'ECSHOP TEAM';
     /* 网址 */
-    $modules[$i]['website'] = 'http://www.SHOP.com';
+    $modules[$i]['website'] = 'http://www.ecshop.com';
     /* 版本号 */
     $modules[$i]['version'] = '1.0.0';
     /* 配置信息 */

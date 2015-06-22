@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP 顺丰速运 配送方式插件
- * $Author: Jason $
- * $Id: sf_express.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP 顺丰速运 配送方式插件
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: sf_express.php 17217 2011-01-19 06:29:08Z jason $
  */
 
 if (!defined('IN_ECS'))
@@ -39,10 +46,10 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['cod']     = false;
 
     /* 插件的作者 */
-    $modules[$i]['author']  = 'SHOP TEAM';
+    $modules[$i]['author']  = 'ECSHOP TEAM';
 
     /* 插件作者的官方网站 */
-    $modules[$i]['website'] = 'http://www.SHOP.com';
+    $modules[$i]['website'] = 'http://www.ecshop.com';
 
     /* 配送接口需要的参数 */
     $modules[$i]['configure'] = array(
@@ -69,7 +76,7 @@ if (isset($set_modules) && $set_modules == TRUE)
  * -浙江，上海，江苏地区为15元/公斤，续重(2元/公斤)
  * -续重每500克或其零数 (具体请上顺丰速运网站查询:http://www.sf-express.com/sfwebapp/price.jsp 客服电话 4008111111)
  *
- * -------------------------------------------------------------------------------------
+ *---------
  */
 
 class sf_express

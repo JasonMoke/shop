@@ -1,20 +1,20 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
  * 文件名称：CommonModel.class.php
- * ----------------------------------------------------------------------------
- * 功能描述：Touch 公共函数 模型
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ *
+ * 功能描述：ECTOUCH 公共函数 模型
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 class CommonModel extends BaseModel {
 
@@ -33,21 +33,21 @@ class CommonModel extends BaseModel {
             switch ($row['type']) {
                 case 1:
                     /* 分类下的商品 */
-                    Touch::view()->assign('goods_cat_' . $row['id'], model('Goods')->assign_cat_goods($row['id'], $row['number']));
+                    ECTouch::view()->assign('goods_cat_' . $row['id'], model('Goods')->assign_cat_goods($row['id'], $row['number']));
                     break;
                 case 2:
                     /* 品牌的商品 */
                     $brand_goods = model('Goods')->assign_brand_goods($row['id'], $row['number']);
 
-                    Touch::view()->assign('brand_goods_' . $row['id'], $brand_goods['goods']);
-                    Touch::view()->assign('goods_brand_' . $row['id'], $brand_goods['brand']);
+                    ECTouch::view()->assign('brand_goods_' . $row['id'], $brand_goods['goods']);
+                    ECTouch::view()->assign('goods_brand_' . $row['id'], $brand_goods['brand']);
                     break;
                 case 3:
                     /* 文章列表 */
                     $cat_articles = model('Article')->assign_articles($row['id'], $row['number']);
 
-                    Touch::view()->assign('articles_cat_' . $row['id'], $cat_articles['cat']);
-                    Touch::view()->assign('articles_' . $row['id'], $cat_articles['arr']);
+                    ECTouch::view()->assign('articles_cat_' . $row['id'], $cat_articles['cat']);
+                    ECTouch::view()->assign('articles_' . $row['id'], $cat_articles['arr']);
                     break;
             }
         }

@@ -1,19 +1,19 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
  * 文件名称：SnatchModel.class.php
- * ----------------------------------------------------------------------------
- * 功能描述：Touch 夺宝奇兵模型
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ *
+ * 功能描述：ECTOUCH 夺宝奇兵模型
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 class SnatchModel extends BaseModel {
 

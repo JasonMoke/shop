@@ -20,17 +20,17 @@
 <![endif]-->
 <style type="text/css">
 body {padding:5px; font-size:12px; margin-bottom:0px; font-family:'微软雅黑'}
-.Touch-table {margin:0;}
-.Touch-table tr:first-child td {border-top:none;}
-.Touch-line {line-height: 1.8;}
-.Touch-mb5, .breadcrumb {margin-bottom:5px}
-.Touch-fs16 {font-size:16px}
-.Touch-fs18 {font-size:18px}
+.ectouch-table {margin:0;}
+.ectouch-table tr:first-child td {border-top:none;}
+.ectouch-line {line-height: 1.8;}
+.ectouch-mb5, .breadcrumb {margin-bottom:5px}
+.ectouch-fs16 {font-size:16px}
+.ectouch-fs18 {font-size:18px}
 .btn-primary {background-color:#1b9ad5}
 .panel-title {font-size:14px}
 .pagination {margin-top:0}
 .pagination .glyphicon {top:0}
-.Touch-mb{margin-bottom:5px;}
+.ectouch-mb{margin-bottom:5px;}
 .clear{clear:both;}
 .borderno{border:0;}
 </style>
@@ -54,6 +54,6 @@ var {$key} = "{$item}";
 </ol>
 {if $action_link}
 <div class="row" style="margin:0">
-	<div class="pull-right Touch-mb5"><a href="{$action_link['href']}" class="btn btn-primary">{$action_link['text']}</a></div>
+	<div class="pull-right ectouch-mb5"><a href="{$action_link['href']}" class="btn btn-primary">{$action_link['text']}</a></div>
 </div>
 {/if}

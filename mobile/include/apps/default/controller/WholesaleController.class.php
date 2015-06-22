@@ -1,19 +1,19 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
  * 文件名称：WholesaleControoller.class.php
- * ----------------------------------------------------------------------------
+ *
  * 功能描述：批发控制器
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 class WholesaleController extends CommonController {
 
@@ -103,7 +103,7 @@ class WholesaleController extends CommonController {
         foreach ($wholesale_list as $key => $value) {
             $this->assign('wholesale', $value);
             $sayList [] = array(
-                'single_item' => Touch::view()->fetch('library/asynclist_info.lbi')
+                'single_item' => ECTouch::view()->fetch('library/asynclist_info.lbi')
             );
         }
         die(json_encode($sayList));
@@ -329,7 +329,7 @@ class WholesaleController extends CommonController {
             $this->assign('order', $order);
             $this->assign('shop_name', C('shop_name'));
             $this->assign('send_date', date(C('time_format')));
-            $content = Touch::view()->fetch('str:' . $tpl['template_content']);
+            $content = ECTouch::view()->fetch('str:' . $tpl['template_content']);
             send_mail(C('shop_name'), C('service_email'), $tpl['template_subject'], $content, $tpl['is_html']);
         }
 

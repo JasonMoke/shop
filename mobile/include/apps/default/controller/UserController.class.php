@@ -1,19 +1,19 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
  * 文件名称：UserController.class.php
- * ----------------------------------------------------------------------------
- * 功能描述：Touch用户中心
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ *
+ * 功能描述：ECTouch用户中心
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 class UserController extends CommonController {
 
@@ -555,7 +555,7 @@ class UserController extends CommonController {
             foreach ($order_list as $key => $order) {
                 $this->assign('orders', $order);
                 $sayList[] = array(
-                    'single_item' => Touch::view()->fetch('library/asynclist_info.lbi')
+                    'single_item' => ECTouch::view()->fetch('library/asynclist_info.lbi')
                 );
             }
             die(json_encode($sayList));
@@ -622,7 +622,7 @@ class UserController extends CommonController {
             $order['handler'] = '<a class="btn btn-info ect-colorf" type="button" href="javascript:void(0);">' . L('os.' . $order['order_status']) . '</a>';
         }
         if ($order === false) {
-            Touch::err()->show(L('back_home_lnk'), './');
+            ECTouch::err()->show(L('back_home_lnk'), './');
             exit();
         }
 
@@ -692,7 +692,7 @@ class UserController extends CommonController {
             ecs_header("Location: " . url('order_list') . "\n");
             exit();
         } else {
-            Touch::err()->show(L('order_list_lnk'), url('order_list'));
+            ECTouch::err()->show(L('order_list_lnk'), url('order_list'));
         }
     }
 
@@ -711,8 +711,8 @@ class UserController extends CommonController {
         // 检查余额
         $surplus = floatval($_POST['surplus']);
         if ($surplus <= 0) {
-            Touch::err()->add(L('error_surplus_invalid'));
-            Touch::err()->show(L('order_detail'), url('order_detail', array(
+            ECTouch::err()->add(L('error_surplus_invalid'));
+            ECTouch::err()->show(L('order_detail'), url('order_detail', array(
                 'order_id' => $order_id
             )));
         }
@@ -732,8 +732,8 @@ class UserController extends CommonController {
 
         // 检查订单是否未付款，检查应付款金额是否大于0
         if ($order['pay_status'] != PS_UNPAYED || $order['order_amount'] <= 0) {
-            Touch::err()->add(L('error_order_is_paid'));
-            Touch::err()->show(L('order_detail'), url('order_detail', array(
+            ECTouch::err()->add(L('error_order_is_paid'));
+            ECTouch::err()->show(L('order_detail'), url('order_detail', array(
                 'order_id' => $order_id
             )));
         }
@@ -751,8 +751,8 @@ class UserController extends CommonController {
 
         // 用户帐户余额是否足够
         if ($surplus > $user['user_money'] + $user['credit_line']) {
-            Touch::err()->add(L('error_surplus_not_enough'));
-            Touch::err()->show(L('order_detail'), url('order_detail', array(
+            ECTouch::err()->add(L('error_surplus_not_enough'));
+            ECTouch::err()->show(L('order_detail'), url('order_detail', array(
                 'order_id' => $order_id
             )));
         }
@@ -889,7 +889,7 @@ class UserController extends CommonController {
             ecs_header("Location: $url\n");
             exit();
         } else {
-            Touch::err()->show(L('order_list_lnk'), url('order_list'));
+            ECTouch::err()->show(L('order_list_lnk'), url('order_list'));
         }
     }
 
@@ -920,7 +920,7 @@ class UserController extends CommonController {
                     ));
                     $this->assign('consignee', $v);
                     $sayList[] = array(
-                        'single_item' => Touch::view()->fetch('library/asynclist_info.lbi')
+                        'single_item' => ECTouch::view()->fetch('library/asynclist_info.lbi')
                     );
                 }
             }
@@ -1056,7 +1056,7 @@ class UserController extends CommonController {
                 foreach ($message_list as $key => $vo) {
                     $this->assign('msg', $vo);
                     $sayList[] = array(
-                        'single_item' => Touch::view()->fetch('library/asynclist_info.lbi')
+                        'single_item' => ECTouch::view()->fetch('library/asynclist_info.lbi')
                     );
                 }
             }
@@ -1312,7 +1312,7 @@ class UserController extends CommonController {
             if (model('Users')->add_bonus($this->user_id, $bonus_sn)) {
                 show_message(L('add_bonus_sucess'), L('back_up_page'), url('bonus'), 'info');
             } else {
-                Touch::err()->show(L('back_up_page'), url('bonus'));
+                ECTouch::err()->show(L('back_up_page'), url('bonus'));
             }
         }
         // 分页
@@ -1374,7 +1374,7 @@ class UserController extends CommonController {
             if (model('ClipsBase')->add_booking($booking)) {
                 show_message(L('booking_success'), L('back_booking_list'), url('booking_list'), 'info');
             } else {
-                Touch::err()->show(L('booking_list_lnk'), url('booking_list'));
+                ECTouch::err()->show(L('booking_list_lnk'), url('booking_list'));
             }
         }
         $goods_id = I('get.id', 0);
@@ -1614,7 +1614,7 @@ class UserController extends CommonController {
                             )), 'error');
                 }
                 // 检查验证码
-                if ($_SESSION['Touch_verify'] !== strtoupper($_POST['captcha'])) {
+                if ($_SESSION['ectouch_verify'] !== strtoupper($_POST['captcha'])) {
                     show_message(L('invalid_captcha'), L('relogin_lnk'), url('login', array(
                         'referer' => urlencode($this->back_act)
                             )), 'error');
@@ -1703,7 +1703,7 @@ class UserController extends CommonController {
                         show_message(L('invalid_captcha'), L('sign_up'), url('register'), 'error');
                     }
                     // 检查验证码
-                    if ($_SESSION['Touch_verify'] !== strtoupper($_POST['captcha'])) {
+                    if ($_SESSION['ectouch_verify'] !== strtoupper($_POST['captcha'])) {
                         show_message(L('invalid_captcha'), L('sign_up'), url('register'), 'error');
                     }
                 }
@@ -1758,7 +1758,7 @@ class UserController extends CommonController {
                 // 设置一个默认的邮箱
                 $email = $username . '@qq.com';
             } else {
-                Touch::err()->show(L('sign_up'), url('register'));
+                ECTouch::err()->show(L('sign_up'), url('register'));
             }
             
             
@@ -1841,7 +1841,7 @@ class UserController extends CommonController {
                     url('index')
                         ), 'info');
             } else {
-                Touch::err()->show(L('sign_up'), url('register'));
+                ECTouch::err()->show(L('sign_up'), url('register'));
             }
             exit();
         }
@@ -2062,7 +2062,7 @@ class UserController extends CommonController {
             }
 
             // 检查验证码
-            if ($_SESSION['Touch_verify'] !== strtoupper($_POST['captcha'])) {
+            if ($_SESSION['ectouch_verify'] !== strtoupper($_POST['captcha'])) {
                 show_message(L('invalid_captcha'), L('back_page_up'), url('get_password_email'), 'error');
             }
         }
@@ -2105,7 +2105,7 @@ class UserController extends CommonController {
                 }
 
                 // 检查验证码
-                if ($_SESSION['Touch_verify'] !== strtoupper($_POST['captcha'])) {
+                if ($_SESSION['ectouch_verify'] !== strtoupper($_POST['captcha'])) {
                     show_message(L('invalid_captcha'), L('back_retry_answer'), url('get_password_question'), 'error');
                 }
             }

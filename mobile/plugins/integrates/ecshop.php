@@ -1,42 +1,42 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 /* 模块的基本信息 */
 if (isset($set_modules) && $set_modules == TRUE) {
     $i = (isset($modules)) ? count($modules) : 0;
     /* 会员数据整合插件的代码必须和文件名保持一致 */
-    $modules[$i]['code'] = 'SHOP';
+    $modules[$i]['code'] = 'ecshop';
     /* 被整合的第三方程序的名称 */
-    $modules[$i]['name'] = 'SHOP';
+    $modules[$i]['name'] = 'Ecshop';
     /* 被整合的第三方程序的版本 */
     $modules[$i]['version'] = '2.0';
     /* 插件的作者 */
-    $modules[$i]['author'] = 'SHOP TEAM';
+    $modules[$i]['author'] = 'ECSHOP TEAM';
     /* 插件作者的官方网站 */
-    $modules[$i]['website'] = 'http://www.SHOP.com';
+    $modules[$i]['website'] = 'http://www.ecshop.com';
     return;
 }
 
 require_once (ROOT_PATH . 'plugins/integrates/integrate.php');
 
 /**
- * SHOP 会员数据处理类
+ * ECSHOP 会员数据处理类
  */
-class SHOP extends integrate
+class ecshop extends integrate
 {
 
-    public $is_SHOP = 1;
+    public $is_ecshop = 1;
 
     /**
      * 构造函数
@@ -58,7 +58,7 @@ class SHOP extends integrate
         $this->field_reg_date = 'reg_time';
         $this->field_passwd_question = 'passwd_question';
         $this->need_sync = false;
-        $this->is_SHOP = 1;
+        $this->is_ecshop = 1;
     }
 
     /**

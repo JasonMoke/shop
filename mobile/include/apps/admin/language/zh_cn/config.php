@@ -1,16 +1,16 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
  * 文件名称：config.php
- * ----------------------------------------------------------------------------
+ *
  * 功能描述：商店设置语言
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 //require(ROOT_PATH.ADMIN_PATH.'/sms_url.php');
 $_LANG['cfg_name']['basic'] = '基本设置';
@@ -395,7 +395,7 @@ $_LANG['cfg_range']['visit_stats']['off'] = '关闭';
 
 $_LANG['rewrite_confirm_apache'] = "URL Rewrite 功能要求您的 Web Server 必须是 Apache，\\n并且起用了 rewrite 模块。\\n同时请您确认是否已经将htaccess.txt文件重命名为.htaccess。\\n如果服务器上还有其他的重写规则请去掉注释,请将RewriteBase行的注释去掉,并将路径设置为服务器请求的绝对路径";
 $_LANG['rewrite_confirm_iis'] = "URL Rewrite 功能要求您的 Web Server 必须安装IIS，\\n并且起用了 ISAPI Rewrite 模块。\\n如果您使用的是ISAPI Rewrite商业版，请您确认是否已经将httpd.txt文件重命名为httpd.ini。如果您使用的是ISAPI Rewrite免费版，请您确认是否已经将httpd.txt文件内的内容复制到ISAPI Rewrite安装目录中httpd.ini里。";
-$_LANG['gzip_confirm'] = "GZip 功能需要您的服务器支持 zlib 扩展库。\\n如果您发现开启Gzip后页面出现乱码，可能是您的服务器已经开启了Gzip，您不需要在 SHOP 中再次开启。";
+$_LANG['gzip_confirm'] = "GZip 功能需要您的服务器支持 zlib 扩展库。\\n如果您发现开启Gzip后页面出现乱码，可能是您的服务器已经开启了Gzip，您不需要在 ECSHOP 中再次开启。";
 $_LANG['retain_original_confirm'] = "如果您不保留商品原图，在“图片批量处理”的时候，\\n将不会重新生成不包含原图的商品图片。请慎重使用该功能！";
 $_LANG['msg_invalid_file'] = '您上传了一个非法的文件类型。该文件名为：%s';
 $_LANG['msg_upload_failed'] = '上传文件 %s 失败，请检查 %s 目录是否可写。';

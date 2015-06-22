@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP 快钱插件
- * $Author: Jason $
- * $Id: kuaiqian.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP 快钱插件
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: kuaiqian.php 17217 2011-01-19 06:29:08Z jason $
  */
 
 if (!defined('IN_ECS'))
@@ -40,7 +47,7 @@ if (isset($set_modules) && $set_modules == true)
     $modules[$i]['is_online'] = '1';
 
     /* 作者 */
-    $modules[$i]['author']  = 'SHOP TEAM';
+    $modules[$i]['author']  = 'ECSHOP TEAM';
 
     /* 网址 */
     $modules[$i]['website'] = 'http://www.99bill.com';

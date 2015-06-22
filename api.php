@@ -1,6 +1,13 @@
 <?php
 /**
- * SHOP OPEN API统一接口
+ * ECSHOP OPEN API统一接口
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
  * $Author: sxc_shop $
  * $Id: goods.php 15921 2009-05-07 05:35:58Z sxc_shop $
 */
@@ -265,7 +272,7 @@ function check_auth()
 
     /* 对应用申请的session进行验证 */
     $certi['certificate_id'] = $license['certificate_id']; // 网店证书ID
-    $certi['app_id'] = 'SHOP_b2c'; // 说明客户端来源
+    $certi['app_id'] = 'ecshop_b2c'; // 说明客户端来源
     $certi['app_instance_id'] = 'webcollect'; // 应用服务ID
     $certi['version'] = VERSION . '#' .  RELEASE; // 网店软件版本号
     $certi['format'] = 'json'; // 官方返回数据格式

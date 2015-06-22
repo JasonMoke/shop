@@ -1,16 +1,16 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 /* 模块的基本信息 */
 if (isset($set_modules) && $set_modules == TRUE) {
@@ -22,9 +22,9 @@ if (isset($set_modules) && $set_modules == TRUE) {
     /* 被整合的第三方程序的版本 */
     $modules[$i]['version'] = '1.x';
     /* 插件的作者 */
-    $modules[$i]['author'] = 'SHOP TEAM';
+    $modules[$i]['author'] = 'ECSHOP TEAM';
     /* 插件作者的官方网站 */
-    $modules[$i]['website'] = 'http://www.SHOP.com';
+    $modules[$i]['website'] = 'http://www.ecshop.com';
     /* 插件的初始的默认值 */
     $modules[$i]['default']['db_host'] = 'localhost';
     $modules[$i]['default']['db_user'] = 'root';
@@ -59,7 +59,7 @@ class ucenter extends integrate
         $this->field_bday = 'birthday';
         $this->field_reg_date = 'reg_time';
         $this->need_sync = false;
-        $this->is_SHOP = 1;
+        $this->is_ecshop = 1;
         
         /* 初始化UC需要常量 */
         if (! defined('UC_CONNECT') && isset($cfg['uc_id']) && isset($cfg['db_host']) && isset($cfg['db_user']) && isset($cfg['db_name'])) {
@@ -462,7 +462,7 @@ class ucenter extends integrate
     function set_session($username = '')
     {
         if (empty($username)) {
-            Touch::sess()->destroy_session();
+            ECTouch::sess()->destroy_session();
         } else {
             $sql = "SELECT user_id, password, email FROM " . model('Base')->model->pre . "users WHERE user_name='$username' LIMIT 1";
             $row = model('Base')->model->query($sql);
@@ -520,7 +520,7 @@ class ucenter extends integrate
             $post_id = $id;
         }
         
-        /* 如果需要同步或是SHOP插件执行这部分代码 */
+        /* 如果需要同步或是ecshop插件执行这部分代码 */
         $sql = "SELECT user_id FROM " . model('Base')->model->pre . "users  WHERE ";
         $sql .= (is_array($post_id)) ? db_create_in($post_id, 'user_name') : "user_name='" . $post_id . "' LIMIT 1";
         $array = model('Base')->model->query($sql);
@@ -566,8 +566,8 @@ class ucenter extends integrate
             model('Base')->model->query($sql);
         }
         
-        if (isset($this->SHOP) && $this->SHOP) {
-            /* 如果是SHOP插件直接退出 */
+        if (isset($this->ecshop) && $this->ecshop) {
+            /* 如果是ecshop插件直接退出 */
             return;
         }
         

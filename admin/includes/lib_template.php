@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP 管理中心模版相关公用函数库
- * $Author: Jason $
- * $Id: lib_template.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP 管理中心模版相关公用函数库
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: lib_template.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 if (!defined('IN_ECS'))
@@ -334,7 +341,8 @@ function get_template_info($template_name, $template_style='')
         $template_uri       = explode(': ', $arr[2]);
         $template_desc      = explode(': ', $arr[3]);
         $template_version   = explode(': ', $arr[4]);
-        $template_author    = explode(': ', $arr[5]); * $Author_uri         = explode(': ', $arr[6]);
+        $template_author    = explode(': ', $arr[5]);
+        $author_uri         = explode(': ', $arr[6]);
         $logo_filename      = explode(': ', $arr[7]);
         $template_type      = explode(': ', $arr[8]);
 

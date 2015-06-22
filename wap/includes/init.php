@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP wap前台公共函数
- * $Author: Jason $
- * $Id: init.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP wap前台公共函数
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: init.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 if (!defined('IN_ECS'))
@@ -19,7 +26,7 @@ if (__FILE__ == '')
     die('Fatal error code: 0');
 }
 
-/* 取得当前SHOP所在的根目录 */
+/* 取得当前ecshop所在的根目录 */
 define('ROOT_PATH', str_replace('wap/includes/init.php', '', str_replace('\\', '/', __FILE__)));
 
 /* 初始化设置 */
@@ -65,7 +72,7 @@ if ('/' == substr($php_self, -1))
 }
 define('PHP_SELF', $php_self);
 
-require(ROOT_PATH . 'includes/cls_SHOP.php');
+require(ROOT_PATH . 'includes/cls_ecshop.php');
 require(ROOT_PATH . 'includes/lib_goods.php');
 require(ROOT_PATH . 'includes/lib_base.php');
 require(ROOT_PATH . 'includes/lib_common.php');
@@ -90,7 +97,7 @@ if (!get_magic_quotes_gpc())
     $_REQUEST  = addslashes_deep($_REQUEST);
 }
 
-/* 创建 SHOP 对象 */
+/* 创建 ECSHOP 对象 */
 $ecs = new ECS($db_name, $prefix);
 
 /* 初始化数据库类 */
@@ -183,7 +190,7 @@ header("Content-Type:text/vnd.wap.wml; charset=utf-8");
 echo "<?xml version='1.0' encoding='utf-8'?>";
 if (empty($_CFG['wap_config']))
 {
-    echo "<!DOCTYPE wml PUBLIC '-//WAPFORUM//DTD WML 1.1//EN' 'http://www.wapforum.org/DTD/wml_1.1.xml'><wml><head><meta http-equiv='Cache-Control' content='max-age=0'/></head><card id='SHOP' title='SHOP_WAP'><p align='left'>对不起,{$_CFG['shop_name']}暂时没有开启WAP功能</p></card></wml>";
+    echo "<!DOCTYPE wml PUBLIC '-//WAPFORUM//DTD WML 1.1//EN' 'http://www.wapforum.org/DTD/wml_1.1.xml'><wml><head><meta http-equiv='Cache-Control' content='max-age=0'/></head><card id='ecshop' title='ECShop_WAP'><p align='left'>对不起,{$_CFG['shop_name']}暂时没有开启WAP功能</p></card></wml>";
     exit();
 }
 

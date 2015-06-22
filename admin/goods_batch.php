@@ -1,8 +1,15 @@
 <?php
 /**
- * SHOP 商品批量上传、修改
- * $Author: Jason $
- * $Id: goods_batch.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP 商品批量上传、修改
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: goods_batch.php 17217 2011-01-19 06:29:08Z jason $
  */
 
 define('IN_ECS', true);
@@ -39,7 +46,7 @@ if ($_REQUEST['act'] == 'add')
     }
     @closedir($dir);
     $data_format_array = array(
-                                'SHOP'    => $_LANG['export_SHOP'],
+                                'ecshop'    => $_LANG['export_ecshop'],
                                 'taobao'    => $_LANG['export_taobao'],
                                 'paipai'    => $_LANG['export_paipai'],
                                 'paipai3'   => $_LANG['export_paipai3'],
@@ -73,7 +80,7 @@ elseif ($_REQUEST['act'] == 'upload')
     $goods_list = array();
     $field_list = array_keys($_LANG['upload_goods']); // 字段列表
     $data = file($_FILES['file']['tmp_name']);
-    if($_POST['data_cat'] == 'SHOP')
+    if($_POST['data_cat'] == 'ecshop')
     {
         foreach ($data AS $line)
         {

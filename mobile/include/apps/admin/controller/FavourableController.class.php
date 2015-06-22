@@ -1,20 +1,20 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
  * 文件名称：FavourableControoller.class.php
- * ----------------------------------------------------------------------------
+ *
  * 功能描述：优惠活动控制器
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 class FavourableController extends AdminController {
 
@@ -43,7 +43,7 @@ class FavourableController extends AdminController {
         if (IS_POST) {
             $data = I('data');
             if ($_FILES['act_banner']['name']) {
-                $result = $this->TouchUpload('act_banner', 'banner_image');
+                $result = $this->ectouchUpload('act_banner', 'banner_image');
                 if ($result['error'] > 0) {
                     $this->message($result['message'], NULL, 'error');
                 }

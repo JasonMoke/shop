@@ -1,7 +1,14 @@
 <?php
 
 /**
- * SHOP paypal快速结帐
+ * ECSHOP paypal快速结帐
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
  * $Author: liuhui $
  * $Id: paypal_ec.php 16489 2009-08-03 10:14:03Z liuhui $
  */
@@ -47,7 +54,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['is_online']  = '1';
 
     /* 作者 */
-    $modules[$i]['author']  = 'SHOP TEAM';
+    $modules[$i]['author']  = 'ECSHOP TEAM';
 
     /* 网址 */
     $modules[$i]['website'] = 'http://www.paypal.com';
@@ -117,7 +124,7 @@ class paypal_ec
         $returnURL =urlencode($url.'/respond.php?code=paypal_ec&currencyCodeType='.$currencyCodeType.'&paymentType='.$paymentType.'&paymentAmount='.$paymentAmount.'&invoice='.$data_order_id);
         $cancelURL =urlencode("$url/SetExpressCheckout.php?paymentType=$paymentType" );
 
-        $nvpstr="&Amt=".$paymentAmount."&PAYMENTACTION=".$paymentType."&ReturnUrl=".$returnURL."&CANCELURL=".$cancelURL ."&CURRENCYCODE=".$currencyCodeType ."&ButtonSource=SHOP_cart_EC_C2";
+        $nvpstr="&Amt=".$paymentAmount."&PAYMENTACTION=".$paymentType."&ReturnUrl=".$returnURL."&CANCELURL=".$cancelURL ."&CURRENCYCODE=".$currencyCodeType ."&ButtonSource=ECSHOP_cart_EC_C2";
 
         $resArray=$this->hash_call("SetExpressCheckout",$nvpstr);
 

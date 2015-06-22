@@ -12,7 +12,7 @@
     <form action="{url('post')}" method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
       <div class="tab-content"> {loop $group_list $item $group}
         <div class="tab-pane{if $item == 1} active{/if}" id="{$group['code']}">
-          <table class="table table-hover Touch-table">
+          <table class="table table-hover ectouch-table">
             {loop $group['vars'] $key $var}
             <tr>
               <td width="200" valign="top"> {$var['name']}: </td>

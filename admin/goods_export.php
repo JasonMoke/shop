@@ -1,10 +1,17 @@
 <?php
 
 /**
- * SHOP
-
- * * $Author: Jason $
- * $Id: goods_export.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ *
+ * $Author: jason $
+ * $Id: goods_export.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 define('IN_ECS', true);
@@ -22,7 +29,7 @@ if ($_REQUEST['act'] == 'goods_export')
     $smarty->assign('goods_type_list',  goods_type_list(0));
     $goods_fields = my_array_merge($_LANG['custom'], get_attributes());
     $data_format_array = array(
-                                'SHOP'    => $_LANG['export_SHOP'],
+                                'ecshop'    => $_LANG['export_ecshop'],
                                 'taobao V4.3'    => $_LANG['export_taobao_v43'],
                                 'taobao V4.6'    => $_LANG['export_taobao_v46'],
                                 'taobao'    => $_LANG['export_taobao'],
@@ -214,7 +221,7 @@ elseif ($_REQUEST['act'] == 'import_taobao')
 {
     $smarty->display('import_taobao.htm');
 }
-elseif($_REQUEST['act'] == 'act_export_SHOP')
+elseif($_REQUEST['act'] == 'act_export_ecshop')
 {
     /* 检查权限 */
     admin_priv('goods_export');
@@ -253,7 +260,7 @@ elseif($_REQUEST['act'] == 'act_export_SHOP')
     $goods_value['is_on_sale'] = 1;
     $goods_value['is_alone_sale'] = 1;
     $goods_value['is_real'] = 1;
-    $content = '"' . implode('","', $_LANG['SHOP']) . "\"\n";
+    $content = '"' . implode('","', $_LANG['ecshop']) . "\"\n";
 
     while ($row = $db->fetchRow($res))
     {

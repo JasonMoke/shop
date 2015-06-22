@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP 前台语言文件
- * $Author: Jason $
- * $Id: common.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP 前台语言文件
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: common.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 /* 用户登录语言项 */
@@ -545,7 +552,7 @@ $_LANG['email_checked'] = '邮件已经被确认！';
 $_LANG['hash_wrong'] = '验证串错误！请核对验证串或输入email地址重新发送验证串！';
 $_LANG['email_canceled'] = '邮件已经被退定！';
 $_LANG['goods_click_count'] = '商品点击数';
-$_LANG['p_y']['link_start'] = '<a href="http://www.SHOP.com" target="_blank" style=" font-family:Verdana; font-size:11px;">';
+$_LANG['p_y']['link_start'] = '<a href="http://www.ecshop.com" target="_blank" style=" font-family:Verdana; font-size:11px;">';
 $_LANG['p_y']['link_p'] = 'Powe';
 $_LANG['p_y']['link_r'] = 'red&nbsp;';
 $_LANG['p_y']['link_b'] = 'by&nbsp;';

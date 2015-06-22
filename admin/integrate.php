@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP 第三方程序会员数据整合插件管理程序
- * $Author: Jason $
- * $Id: integrate.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP 第三方程序会员数据整合插件管理程序
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: integrate.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 define('IN_ECS', true);
@@ -20,7 +27,7 @@ if ($_REQUEST['act'] == 'list')
          $modules[$i]['installed'] = ($modules[$i]['code'] == $_CFG['integrate_code']) ? 1 : 0;
     }
 
-    $allow_set_points = $_CFG['integrate_code'] == 'SHOP' ? 0 : 1;
+    $allow_set_points = $_CFG['integrate_code'] == 'ecshop' ? 0 : 1;
 
     $smarty->assign('allow_set_points',  $allow_set_points);
     $smarty->assign('ur_here', $_LANG['06_list_integrate']);
@@ -50,9 +57,9 @@ if ($_REQUEST['act'] == 'install')
             sys_msg($_LANG['uc_client_not_write'], 0);
         }
     }
-    if ($_GET['code'] == 'SHOP')
+    if ($_GET['code'] == 'ecshop')
     {
-        $sql = "UPDATE " .$ecs->table('shop_config'). " SET value = 'SHOP' WHERE code = 'integrate_code'";
+        $sql = "UPDATE " .$ecs->table('shop_config'). " SET value = 'ecshop' WHERE code = 'integrate_code'";
         $db->query($sql);
         $sql = "UPDATE " . $GLOBALS['ecs']->table('shop_config') . " SET value = '' WHERE code = 'points_rule'";
         $GLOBALS['db']->query($sql);
@@ -135,7 +142,7 @@ if ($_REQUEST['act'] == 'setup')
 {
     admin_priv('integrate_users', '');
 
-    if ($_GET['code'] == 'SHOP')
+    if ($_GET['code'] == 'ecshop')
     {
         sys_msg($_LANG['need_not_setup']);
     }
@@ -263,7 +270,7 @@ if ($_REQUEST['act'] == 'check_config')
     $size = 100;
 
     $smarty->assign('ur_here',$_LANG['conflict_username_check']);
-    $smarty->assign('domain', '@SHOP');
+    $smarty->assign('domain', '@ecshop');
     $smarty->assign('lang_total', sprintf($_LANG['shop_user_total'], $total));
     $smarty->assign('size', $size);
     $smarty->display('integrates_check.htm');
@@ -415,7 +422,7 @@ if ($_REQUEST['act'] == 'check_user')
     $start = empty($_GET['start']) ? 0 : intval($_GET['start']);
     $size = empty($_GET['size']) ? 100 : intval($_GET['size']);
     $method = empty($_GET['method']) ? 1 : intval($_GET['method']);
-    $domain = empty($_GET['domain']) ? '@SHOP' : trim($_GET['domain']);
+    $domain = empty($_GET['domain']) ? '@ecshop' : trim($_GET['domain']);
     if ($size <2)
     {
         $size = 2;
@@ -575,7 +582,7 @@ if ($_REQUEST['act'] == 'import_user')
     {
         $merge_uid = 0;
     }
-    // 更新SHOP表
+    // 更新ECSHOP表
     foreach ($up_user_table as $table)
     {
         $db->query("UPDATE " . $ecs->table($table) . " SET `user_id`=`user_id`+ $maxuid ORDER BY `user_id` DESC");
@@ -623,7 +630,7 @@ if ($_REQUEST['act'] == 'modify')
     $arr = conflict_userlist();
 
     $smarty->assign('ur_here',      $_LANG['conflict_username_modify']);
-    $smarty->assign('domain',       '@SHOP');
+    $smarty->assign('domain',       '@ecshop');
     $smarty->assign('list',         $arr['list']);
     $smarty->assign('filter',       $arr['filter']);
     $smarty->assign('record_count', $arr['record_count']);
@@ -932,7 +939,7 @@ if ($_REQUEST['act'] == 'setup_ucenter')
     $json = new JSON();
     $result = array('error' => 0, 'message' => '');
 
-    $app_type   = 'SHOP';
+    $app_type   = 'ECSHOP';
     $app_name   = $db->getOne('SELECT value FROM ' . $ecs->table('shop_config') . " WHERE code = 'shop_name'");
     $app_url    = $GLOBALS['ecs']->url();
     $app_charset = EC_CHARSET;

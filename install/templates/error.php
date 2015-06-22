@@ -7,7 +7,7 @@
 
 <body style="background:#DDEEF2">
 <div id="logos">
-  <div id="logos-inside"> <img src="../admin/images/SHOP_logo.gif" alt="SHOP" width="160" height="57" /> </div>
+  <div id="logos-inside"> <img src="../admin/images/ecshop_logo.gif" alt="ECSHOP" width="160" height="57" /> </div>
 </div>
 
 <div style="margin:10px;padding:20px;border: 1px solid #BBDDE5; background: #F4FAFB; ">

@@ -1,19 +1,19 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
  * 文件名称：IndexController.class.php
- * ----------------------------------------------------------------------------
- * 功能描述：Touch首页控制器
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ *
+ * 功能描述：ECTouch首页控制器
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 class IndexController extends CommonController {
 
@@ -58,7 +58,7 @@ class IndexController extends CommonController {
                 foreach ($hot_goods as $key => $value) {
                     $this->assign('hot_goods', $value);
                     $list [] = array(
-                        'single_item' => Touch::view()->fetch('library/asynclist_index.lbi')
+                        'single_item' => ECTouch::view()->fetch('library/asynclist_index.lbi')
                     );
                 }
             }

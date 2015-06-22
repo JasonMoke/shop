@@ -1,20 +1,20 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
  * 文件名称：tenpay.php
- * ----------------------------------------------------------------------------
+ *
  * 功能描述：财付通wap支付插件
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 $payment_lang = ROOT_PATH . 'plugins/payment/language/' . C('lang') . '/' . basename(__FILE__);
 
@@ -35,9 +35,9 @@ if (isset($set_modules) && $set_modules == TRUE) {
     /* 是否支持在线支付 */
     $modules[$i]['is_online'] = '1';
     /* 作者 */
-    $modules[$i]['author'] = 'Touch TEAM';
+    $modules[$i]['author'] = 'ECTOUCH TEAM';
     /* 网址 */
-    $modules[$i]['website'] = 'http://www.Touch.cn';
+    $modules[$i]['website'] = 'http://www.ectouch.cn';
     /* 版本号 */
     $modules[$i]['version'] = '1.0.0';
     /* 配置信息 */

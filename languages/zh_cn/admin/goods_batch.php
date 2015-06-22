@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP 商品批量上传、修改语言文件
- * $Author: Jason $
- * $Id: goods_batch.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP 商品批量上传、修改语言文件
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: goods_batch.php 17217 2011-01-19 06:29:08Z jason $
  */
 
 $_LANG['select_method'] = '选择商品的方式：';
@@ -38,7 +45,7 @@ $_LANG['brand'] = '品牌';
 $_LANG['batch_edit_ok'] = '批量修改成功';
 
 $_LANG['export_format'] = '数据格式';
-$_LANG['export_SHOP'] = 'SHOP支持数据格式';
+$_LANG['export_ecshop'] = 'ecshop支持数据格式';
 $_LANG['export_taobao'] = '淘宝助理支持数据格式';
 $_LANG['export_taobao46'] = '淘宝助理4.6支持数据格式';
 $_LANG['export_paipai'] = '拍拍助理支持数据格式';

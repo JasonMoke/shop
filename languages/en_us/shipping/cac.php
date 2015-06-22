@@ -1,17 +1,18 @@
 <?php
 
 /**
- * SHOP Door-to-door trade plug-in's language file
+ * ECSHOP Door-to-door trade plug-in's language file
  * ============================================================================
  * All right reserved (C) 2005-2011 Beijing Yi Shang Interactive Technology 
  * Development Ltd.
- * Web site: http://www.SHOP.com
- * ----------------------------------------------------------------------------
+ * Web site: http://www.ecshop.com
+ *
  * This is a free/open source software；it means that you can modify, use and 
  * republish the program code, on the premise of that your behavior is not for 
  * commercial purposes.
- * ============================================================================ * $Author: Jason $
- * $Id: cac.php 17217 2011-01-19 06:29:08Z Jason $
+ * ============================================================================
+ * $Author: jason $
+ * $Id: cac.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 $_LANG['cac']          = 'Door-to-door trade';

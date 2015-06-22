@@ -1,20 +1,20 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
  * 文件名称：UpgradeControoller.class.php
- * ----------------------------------------------------------------------------
+ *
  * 功能描述：在线更新控制器
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 class UpgradeController extends AdminController
 {
@@ -24,9 +24,9 @@ class UpgradeController extends AdminController
     private $_wechat = 'wechat';
     private $_extend = 'extend';
     // md5验证地址
-    private $_upgrademd5 = 'http://www.Touch.cn/upgrademd5/';
+    private $_upgrademd5 = 'http://www.ectouch.cn/upgrademd5/';
     // 补丁地址
-    private $_patchurl = 'http://download.Touch.cn/upgrade/1.0/patch/';
+    private $_patchurl = 'http://download.ectouch.cn/upgrade/1.0/patch/';
 
     /**
      * 构造函数
@@ -128,7 +128,7 @@ class UpgradeController extends AdminController
             if (file_exists($configpath)) {
                 $config = include $configpath;
                 // 版本文件地址
-                $content = "<?php\ndefine('APPNAME', '".$config['APPNAME']."');\ndefine('VERSION', '".$config['VERSION']."');\ndefine('RELEASE', '".$release."');\ndefine('Touch_AUTH_KEY', '".Touch_AUTH_KEY."');";
+                $content = "<?php\ndefine('APPNAME', '".$config['APPNAME']."');\ndefine('VERSION', '".$config['VERSION']."');\ndefine('RELEASE', '".$release."');\ndefine('ECTOUCH_AUTH_KEY', '".ECTOUCH_AUTH_KEY."');";
                 @file_put_contents(ROOT_PATH . 'data/version.php', $content);
             }
             
@@ -157,21 +157,21 @@ class UpgradeController extends AdminController
         if (! empty($do)) {
             $this->ec_readdir('.');
             // 读取接口
-            $Touch_md5 = Http::doGet($this->_upgrademd5 . RELEASE . '_' . $this->patch_charset . ".php");
-            $Touch_md5_arr = json_decode($Touch_md5, 1);
-            $Touch_md5_arr = empty($Touch_md5_arr) ? array():$Touch_md5_arr;
+            $ectouch_md5 = Http::doGet($this->_upgrademd5 . RELEASE . '_' . $this->patch_charset . ".php");
+            $ectouch_md5_arr = json_decode($ectouch_md5, 1);
+            $ectouch_md5_arr = empty($ectouch_md5_arr) ? array():$ectouch_md5_arr;
             // 计算数组差集
-            $diff = array_diff($Touch_md5_arr, $this->md5_arr);
+            $diff = array_diff($ectouch_md5_arr, $this->md5_arr);
             // 丢失文件列表
             $lostfile = array();
-            foreach ($Touch_md5_arr as $k => $v) {
+            foreach ($ectouch_md5_arr as $k => $v) {
                 if (! in_array($k, array_keys($this->md5_arr))) {
                     $lostfile[] = $k;
                     unset($diff[$k]);
                 }
             }
             // 未知文件列表
-            $unknowfile = array_diff(array_keys($this->md5_arr), array_keys($Touch_md5_arr));
+            $unknowfile = array_diff(array_keys($this->md5_arr), array_keys($ectouch_md5_arr));
             // 赋值
             $this->assign('diff', $diff);
             $this->assign('lostfile', $lostfile);

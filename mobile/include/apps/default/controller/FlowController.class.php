@@ -1,19 +1,19 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
  * 文件名称：FlowControoller.class.php
- * ----------------------------------------------------------------------------
+ *
  * 功能描述：购物流程控制器
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 class FlowController extends CommonController {
 
@@ -90,7 +90,7 @@ class FlowController extends CommonController {
                 foreach ($fittings_list as $key => $fittings) {
                     $this->assign('fittings', $fittings);
                     $sayList[] = array(
-                        'single_item' => Touch::view()->fetch('library/asynclist_info.lbi')
+                        'single_item' => ECTouch::view()->fetch('library/asynclist_info.lbi')
                     );
                 }
             }
@@ -220,8 +220,8 @@ class FlowController extends CommonController {
                 $result ['content'] = insert_cart_info();
                 $result ['one_step_buy'] = C('one_step_buy');
             } else {
-                $result ['message'] = Touch::err()->last_message();
-                $result ['error'] = Touch::err()->error_no;
+                $result ['message'] = ECTouch::err()->last_message();
+                $result ['error'] = ECTouch::err()->error_no;
                 $result ['goods_id'] = stripslashes($goods->goods_id);
                 if (is_array($goods->spec)) {
                     $result ['product_spec'] = implode(',', $goods->spec);
@@ -696,7 +696,7 @@ class FlowController extends CommonController {
                         show_message(L('invalid_captcha'));
                     }
 
-                    if ($_SESSION ['Touch_verify'] !== $_POST ['captcha']) {
+                    if ($_SESSION ['ectouch_verify'] !== $_POST ['captcha']) {
                         show_message(L('invalid_captcha'));
                     }
                 }
@@ -720,7 +720,7 @@ class FlowController extends CommonController {
                     if (empty($post_captcha)) {
                         show_message(L('invalid_captcha'));
                     }
-                    if ($_SESSION ['Touch_verify'] !== $_POST ['captcha']) {
+                    if ($_SESSION ['ectouch_verify'] !== $_POST ['captcha']) {
                         show_message(L('invalid_captcha'));
                     }
                 }
@@ -729,7 +729,7 @@ class FlowController extends CommonController {
                     /* 用户注册成功 */
                     ecs_header("Location: " . url('flow/consignee') . "\n");
                 } else {
-                    Touch::err()->show();
+                    ECTouch::err()->show();
                 }
             } else {
                 // TODO: 非法访问的处理
@@ -950,7 +950,7 @@ class FlowController extends CommonController {
                 $result ['cod_fee'] = price_format($result ['cod_fee'], false);
             }
             $result ['need_insure'] = ($shipping_info ['insure'] > 0 && !empty($order ['need_insure'])) ? 1 : 0;
-            $result ['content'] = Touch::$view->fetch('library/order_total.lbi');
+            $result ['content'] = ECTouch::$view->fetch('library/order_total.lbi');
         }
         echo json_encode($result);
     }
@@ -1265,7 +1265,7 @@ class FlowController extends CommonController {
             $this->assign('goods_list', $cart_goods);
             $this->assign('shop_name', C('shop_name'));
             $this->assign('send_date', date(C('time_format')));
-            $content = Touch::$view->fetch('str:' . $tpl ['template_content']);
+            $content = ECTouch::$view->fetch('str:' . $tpl ['template_content']);
             send_mail(C('shop_name'), C('service_email'), $tpl ['template_subject'], $content, $tpl ['is_html']);
         }
 
@@ -1459,7 +1459,7 @@ class FlowController extends CommonController {
                 $this->assign('is_group_buy', 1);
             }
 
-            $result['content'] = Touch::$view->fetch('library/order_total.lbi');
+            $result['content'] = ECTouch::$view->fetch('library/order_total.lbi');
         }
 
         echo $json->encode($result);
@@ -1528,7 +1528,7 @@ class FlowController extends CommonController {
                 $this->assign('is_group_buy', 1);
             }
 
-            $result['content'] = Touch::$view->fetch('library/order_total.lbi');
+            $result['content'] = ECTouch::$view->fetch('library/order_total.lbi');
         }
 
         echo json_encode($result);
@@ -1577,7 +1577,7 @@ class FlowController extends CommonController {
                 $this->assign('is_group_buy', 1);
             }
 
-            $result['content'] = Touch::$view->fetch('library/order_total.lbi');
+            $result['content'] = ECTouch::$view->fetch('library/order_total.lbi');
         }
 
         echo json_encode($result);
@@ -1622,7 +1622,7 @@ class FlowController extends CommonController {
                     $this->assign('is_group_buy', 1);
                 }
 
-                $result['content'] = Touch::$view->fetch('library/order_total.lbi');
+                $result['content'] = ECTouch::$view->fetch('library/order_total.lbi');
             }
         }
 
@@ -1671,7 +1671,7 @@ class FlowController extends CommonController {
                     $this->assign('is_group_buy', 1);
                 }
 
-                $result['content'] = Touch::$view->fetch('library/order_total.lbi');
+                $result['content'] = ECTouch::$view->fetch('library/order_total.lbi');
                 $result['error'] = '';
             }
         }
@@ -1721,7 +1721,7 @@ class FlowController extends CommonController {
                 $this->assign('is_group_buy', 1);
             }
 
-            $result['content'] = Touch::$view->fetch('library/order_total.lbi');
+            $result['content'] = ECTouch::$view->fetch('library/order_total.lbi');
         }
 
         die(json_encode($result));
@@ -1776,7 +1776,7 @@ class FlowController extends CommonController {
                 $this->assign('is_group_buy', 1);
             }
 
-            die(Touch::$view->fetch('library/order_total.lbi'));
+            die(ECTouch::$view->fetch('library/order_total.lbi'));
         }
     }
 
@@ -1915,7 +1915,7 @@ class FlowController extends CommonController {
                 $this->assign('is_group_buy', 1);
             }
 
-            $result['content'] = Touch::$view->fetch('library/order_total.lbi');
+            $result['content'] = ECTouch::$view->fetch('library/order_total.lbi');
         }
         die(json_encode($result));
     }
@@ -1956,8 +1956,8 @@ class FlowController extends CommonController {
                 $result['content'] = insert_cart_info();
                 $result['one_step_buy'] = C('one_step_buy');
             } else {
-                $result['message'] = Touch::err()->last_message();
-                $result['error'] = Touch::err()->error_no;
+                $result['message'] = ECTouch::err()->last_message();
+                $result['error'] = ECTouch::err()->error_no;
                 $result['package_id'] = stripslashes($package->package_id);
             }
         }
@@ -2102,7 +2102,7 @@ class FlowController extends CommonController {
                     $v['url'] = url('flow/consignee', array('id' => $v ['address_id']));
                     $this->assign('consignee', $v);
                     $sayList [] = array(
-                        'single_item' => Touch::view()->fetch('library/asynclist_info.lbi')
+                        'single_item' => ECTouch::view()->fetch('library/asynclist_info.lbi')
                     );
                 }
             }

@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP RSS Feed 生成程序
- * $Author: Jason $
- * $Id: feed.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP RSS Feed 生成程序
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: feed.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 define('IN_ECS', true);
@@ -26,7 +33,7 @@ $brd = isset($_REQUEST['brand']) ? ' AND g.brand_id=' . intval($_REQUEST['brand'
 $uri = $ecs->url();
 
 $rss = new RSSBuilder(EC_CHARSET, $uri, htmlspecialchars($_CFG['shop_name']), htmlspecialchars($_CFG['shop_desc']), $uri . 'animated_favicon.gif');
-$rss->addDCdata('', 'http://www.SHOP.com', date('r'));
+$rss->addDCdata('', 'http://www.ecshop.com', date('r'));
 
 if (isset($_REQUEST['type']))
 {

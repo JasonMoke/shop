@@ -1,19 +1,19 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
  * 文件名称：GroupbuyControoller.class.php
- * ----------------------------------------------------------------------------
+ *
  * 功能描述：团购活动管理控制器
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 class GroupbuyController extends AdminController {
 
@@ -79,7 +79,7 @@ class GroupbuyController extends AdminController {
         if (IS_POST) {
             $info = I('data');
             if ($_FILES['act_banner']['name']) {
-                $result = $this->TouchUpload('act_banner', 'banner_image');
+                $result = $this->ectouchUpload('act_banner', 'banner_image');
                 if ($result['error'] > 0) {
                     $this->message($result['message'], NULL, 'error');
                 }

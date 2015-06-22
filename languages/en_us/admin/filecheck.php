@@ -1,13 +1,20 @@
 <?php
 
 /**
- * SHOP
+ * ECSHOP
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
  * $Author: testyang $
  * $Id: filecheck.php 15013 2008-10-23 09:31:42Z testyang $
 */
 
 $_LANG['filecheck_verifying'] = 'Check files in progress, please wait......';
-$_LANG['filecheck_tips_step1'] = 'SHOP check documents for the official release of the documents as the basis for cross-checking, click the button below to start checking。';
+$_LANG['filecheck_tips_step1'] = 'ECSHOP check documents for the official release of the documents as the basis for cross-checking, click the button below to start checking。';
 $_LANG['filecheck_start'] = 'Start';
 $_LANG['fileperms_confirm'] = 'To confirm the beginning of';
 $_LANG['fileperms_verify'] = 'Start verify';
@@ -23,7 +30,7 @@ $_LANG['filecheck_unknown'] = 'unknown';
 $_LANG['filecheck_check_ok'] = 'Correct';
 $_LANG['jump_info'] = 'If your browser does not automatically jump, please click here';
 $_LANG['tips'] = 'Tips: ';
-$_LANG['filecheck_tips'] = '<li>“<em class="edited">To be revised</em>”、“<em class="del">Deleted</em>” The list of documents, instantly, through FTP or other tools to check the validity of their documents in order to ensure the normal function of SHOP Shop use。</li>
+$_LANG['filecheck_tips'] = '<li>“<em class="edited">To be revised</em>”、“<em class="del">Deleted</em>” The list of documents, instantly, through FTP or other tools to check the validity of their documents in order to ensure the normal function of ECSHOP Shop use。</li>
     <li>“<em class="unknown">unknown</em>” The documents listed, please check whether it was illegal Shop into the other documents。</li>
     <li style="">“<em class="unknown">The week were revised</em>” Listed in the document, make sure that the recently revised。</li>';
 $_LANG['filename'] = 'File Name';

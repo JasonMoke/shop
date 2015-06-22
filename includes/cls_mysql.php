@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP MYSQL 公用类库
- * $Author: Jason $
- * $Id: cls_mysql.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP MYSQL 公用类库
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: cls_mysql.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 if (!defined('IN_ECS'))
@@ -380,7 +387,7 @@ class cls_mysql
     {
         if ($message)
         {
-            echo "<b>SHOP info</b>: $message\n\n<br /><br />";
+            echo "<b>ECSHOP info</b>: $message\n\n<br /><br />";
             //print('<a href="http://faq.comsenz.com/?type=mysql&dberrno=2003&dberror=Can%27t%20connect%20to%20MySQL%20server%20on" target="_blank">http://faq.comsenz.com/</a>');
         }
         else

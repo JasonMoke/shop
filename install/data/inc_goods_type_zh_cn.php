@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP 安装程序商品类型
- * $Author: Jason $
- * $Id: inc_goods_type_zh_cn.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP 安装程序商品类型
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: inc_goods_type_zh_cn.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 $attributes['book'] = array("attr"=>"INSERT INTO `".$prefix."attribute` (`attr_id`, `cat_id`, `attr_name`, `attr_input_type`, `attr_type`, `attr_values`, `sort_order`) VALUES

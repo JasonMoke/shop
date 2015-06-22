@@ -1,20 +1,20 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
  * 文件名称：CategoryControoller.class.php
- * ----------------------------------------------------------------------------
+ *
  * 功能描述：分类栏目管理控制器
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 class CategoryController extends AdminController {
 
@@ -54,7 +54,7 @@ class CategoryController extends AdminController {
             /* 更新栏目图标 */
             if ($_FILES['cat_image']['name']) {
                 /* cat_image图标 */
-                $result = $this->TouchUpload('cat_image', 'cat_image');
+                $result = $this->ectouchUpload('cat_image', 'cat_image');
                 if ($result['error'] > 0) {
                     $this->message($result['message'], NULL, 'error');
                 }

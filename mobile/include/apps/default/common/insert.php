@@ -1,7 +1,7 @@
 <?php
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 /**
  * 获得查询次数以及查询时间
@@ -180,13 +180,13 @@ function insert_ads($arr) {
     }
     $position_style = 'str:' . $position_style;
 
-    $need_cache = Touch::view()->caching;
-    Touch::view()->caching = false;
+    $need_cache = ECTouch::view()->caching;
+    ECTouch::view()->caching = false;
 
-    Touch::view()->assign('ads', $ads);
-    $val = Touch::view()->fetch($position_style);
+    ECTouch::view()->assign('ads', $ads);
+    $val = ECTouch::view()->fetch($position_style);
 
-    Touch::view()->caching = $need_cache;
+    ECTouch::view()->caching = $need_cache;
 
     return html_entity_decode($val);
 }
@@ -198,24 +198,24 @@ function insert_ads($arr) {
  * @return  string
  */
 function insert_member_info() {
-    $need_cache = Touch::view()->caching;
-    Touch::view()->caching = false;
+    $need_cache = ECTouch::view()->caching;
+    ECTouch::view()->caching = false;
 
     if ($_SESSION['user_id'] > 0) {
-        Touch::view()->assign('user_info', model('Users')->get_user_info());
+        ECTouch::view()->assign('user_info', model('Users')->get_user_info());
     } else {
         if (!empty($_COOKIE['ECS']['username'])) {
-            Touch::view()->assign('ecs_username', stripslashes($_COOKIE['ECS']['username']));
+            ECTouch::view()->assign('ecs_username', stripslashes($_COOKIE['ECS']['username']));
         }
         $captcha = intval(C('captcha'));
         if (($captcha & CAPTCHA_LOGIN) && (!($captcha & CAPTCHA_LOGIN_FAIL) || (($captcha & CAPTCHA_LOGIN_FAIL) && $_SESSION['login_fail'] > 2)) && gd_version() > 0) {
-            Touch::view()->assign('enabled_captcha', 1);
-            Touch::view()->assign('rand', mt_rand());
+            ECTouch::view()->assign('enabled_captcha', 1);
+            ECTouch::view()->assign('rand', mt_rand());
         }
     }
-    $output = Touch::view()->fetch('library/member_info.lbi');
+    $output = ECTouch::view()->fetch('library/member_info.lbi');
 
-    Touch::view()->caching = $need_cache;
+    ECTouch::view()->caching = $need_cache;
 
     return $output;
 }
@@ -227,43 +227,43 @@ function insert_member_info() {
  * @return  string
  */
 function insert_comments($arr) {
-    $need_cache = Touch::view()->caching;
-    $need_compile = Touch::view()->force_compile;
+    $need_cache = ECTouch::view()->caching;
+    $need_compile = ECTouch::view()->force_compile;
 
-    Touch::view()->caching = false;
-    Touch::view()->force_compile = true;
+    ECTouch::view()->caching = false;
+    ECTouch::view()->force_compile = true;
 
     /* 验证码相关设置 */
     if ((intval(C('captcha')) & CAPTCHA_COMMENT) && gd_version() > 0) {
-        Touch::view()->assign('enabled_captcha', 1);
-        Touch::view()->assign('rand', mt_rand());
+        ECTouch::view()->assign('enabled_captcha', 1);
+        ECTouch::view()->assign('rand', mt_rand());
     }
-    Touch::view()->assign('username', stripslashes($_SESSION['user_name']));
-    Touch::view()->assign('email', $_SESSION['email']);
-    Touch::view()->assign('comment_type', $arr['type']);
-    Touch::view()->assign('id', $arr['id']);
+    ECTouch::view()->assign('username', stripslashes($_SESSION['user_name']));
+    ECTouch::view()->assign('email', $_SESSION['email']);
+    ECTouch::view()->assign('comment_type', $arr['type']);
+    ECTouch::view()->assign('id', $arr['id']);
     $comments = model('Comment')->get_comment_info($arr['id'], 0);
-    Touch::view()->assign('comments_info', $comments);
+    ECTouch::view()->assign('comments_info', $comments);
     //全部评论
     $cmt = model('Comment')->assign_comment($arr['id'], $arr['type']);
-    Touch::view()->assign('comment_list', $cmt['comments']);
-    Touch::view()->assign('pager', $cmt['pager']);
+    ECTouch::view()->assign('comment_list', $cmt['comments']);
+    ECTouch::view()->assign('pager', $cmt['pager']);
     //好评
     $cmt_fav = model('Comment')->assign_comment($arr['id'], $arr['type'], '1');
-    Touch::view()->assign('comment_fav', $cmt_fav['comments']);
-    Touch::view()->assign('pager_fav', $cmt_fav['pager']);
+    ECTouch::view()->assign('comment_fav', $cmt_fav['comments']);
+    ECTouch::view()->assign('pager_fav', $cmt_fav['pager']);
     //中评
     $cmt_med = model('Comment')->assign_comment($arr['id'], $arr['type'], '2');
-    Touch::view()->assign('comment_med', $cmt_med['comments']);
-    Touch::view()->assign('pager_med', $cmt_med['pager']);
+    ECTouch::view()->assign('comment_med', $cmt_med['comments']);
+    ECTouch::view()->assign('pager_med', $cmt_med['pager']);
     //差评
     $cmt_bad = model('Comment')->assign_comment($arr['id'], $arr['type'], '3');
-    Touch::view()->assign('comment_bad', $cmt_bad['comments']);
-    Touch::view()->assign('pager_bad', $cmt_bad['pager']);
-    $val = Touch::view()->fetch('library/comments_list.lbi');
+    ECTouch::view()->assign('comment_bad', $cmt_bad['comments']);
+    ECTouch::view()->assign('pager_bad', $cmt_bad['pager']);
+    $val = ECTouch::view()->fetch('library/comments_list.lbi');
 
-    Touch::view()->caching = $need_cache;
-    Touch::view()->force_compile = $need_compile;
+    ECTouch::view()->caching = $need_cache;
+    ECTouch::view()->force_compile = $need_compile;
 
     return $val;
 }
@@ -275,11 +275,11 @@ function insert_comments($arr) {
  * @return  string
  */
 function insert_bought_notes($arr) {
-    $need_cache = Touch::view()->caching;
-    $need_compile = Touch::view()->force_compile;
+    $need_cache = ECTouch::view()->caching;
+    $need_compile = ECTouch::view()->force_compile;
 
-    Touch::view()->caching = false;
-    Touch::view()->force_compile = true;
+    ECTouch::view()->caching = false;
+    ECTouch::view()->force_compile = true;
 
     /* 商品购买记录 */
     $sql = 'SELECT u.user_name, og.goods_number, oi.add_time, IF(oi.order_status IN (2, 3, 4), 0, 1) AS order_status ' .
@@ -309,14 +309,14 @@ function insert_bought_notes($arr) {
     $pager['page_next'] = $page < $page_count ? 'javascript:gotoBuyPage(' . ($page + 1) . ",$arr[id])" : 'javascript:;';
     $pager['page_last'] = $page < $page_count ? 'javascript:gotoBuyPage(' . $page_count . ",$arr[id])" : 'javascript:;';
 
-    Touch::view()->assign('notes', $bought_notes);
-    Touch::view()->assign('pager', $pager);
+    ECTouch::view()->assign('notes', $bought_notes);
+    ECTouch::view()->assign('pager', $pager);
 
 
-    $val = Touch::view()->fetch('library/bought_notes.lbi');
+    $val = ECTouch::view()->fetch('library/bought_notes.lbi');
 
-    Touch::view()->caching = $need_cache;
-    Touch::view()->force_compile = $need_compile;
+    ECTouch::view()->caching = $need_cache;
+    ECTouch::view()->force_compile = $need_compile;
 
     return $val;
 }
@@ -330,10 +330,10 @@ function insert_bought_notes($arr) {
 function insert_vote() {
     $vote = get_vote();
     if (!empty($vote)) {
-        Touch::view()->assign('vote_id', $vote['id']);
-        Touch::view()->assign('vote', $vote['content']);
+        ECTouch::view()->assign('vote_id', $vote['id']);
+        ECTouch::view()->assign('vote', $vote['content']);
     }
-    $val = Touch::view()->fetch('library/vote.lbi');
+    $val = ECTouch::view()->fetch('library/vote.lbi');
 
     return $val;
 }

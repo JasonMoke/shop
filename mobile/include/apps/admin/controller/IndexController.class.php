@@ -1,20 +1,20 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
  * 文件名称：IndexControoller.class.php
- * ----------------------------------------------------------------------------
+ *
  * 功能描述：管理中心首页控制器
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 class IndexController extends AdminController
 {
@@ -81,7 +81,7 @@ class IndexController extends AdminController
         $this->assign('ecs_charset', strtoupper(EC_CHARSET));
         $this->assign('install_date', local_date(C('date_format'), C('install_date')));
         // 检测是否授权
-        $data = array('appid' => Touch_AUTH_KEY);
+        $data = array('appid' => ECTOUCH_AUTH_KEY);
         $empower = $this->cloud->data($data)->act('get.license');
         $this->assign('empower', $empower);
         $this->display('welcome');
@@ -139,7 +139,7 @@ class IndexController extends AdminController
                 // 数据验证
                 $msg = Check::rule(array(
                     array(
-                        Check::same($captcha, $_SESSION['Touch_verify']),
+                        Check::same($captcha, $_SESSION['ectouch_verify']),
                         L('captcha_error')
                     )
                 ));
@@ -159,8 +159,8 @@ class IndexController extends AdminController
                 // 保存登录状态
                 if (! empty($remember)) {
                     $time = gmtime() + 3600 * 24 * 365;
-                    setcookie('TouchCP[ADMIN_ID]', $userInfo['user_id'], $time);
-                    setcookie('TouchCP[ADMIN_PWD]', md5(md5($userInfo['user_id'] . $userInfo['user_name']) . C('hash_code')), $time);
+                    setcookie('ECTOUCHCP[ADMIN_ID]', $userInfo['user_id'], $time);
+                    setcookie('ECTOUCHCP[ADMIN_PWD]', md5(md5($userInfo['user_id'] . $userInfo['user_name']) . C('hash_code')), $time);
                 }
                 $result = array(
                     'err' => 0,
@@ -221,7 +221,7 @@ class IndexController extends AdminController
                     L('email_format_faild')
                 ),
                 array(
-                    Check::same($captcha, $_SESSION['Touch_verify']),
+                    Check::same($captcha, $_SESSION['ectouch_verify']),
                     L('captcha_error')
                 )
             ));
@@ -392,7 +392,7 @@ class IndexController extends AdminController
             if ($msg !== true) {
                 $this->message($msg, NULL, 'error');
             }
-            $data = array('license'=>$license, 'appid' => Touch_AUTH_KEY);
+            $data = array('license'=>$license, 'appid' => ECTOUCH_AUTH_KEY);
             $result = $this->cloud->data($data)->act('post.dolicense');
             if ($result['error'] > 0) {
                 $this->message($result['msg'], NULL, 'error');

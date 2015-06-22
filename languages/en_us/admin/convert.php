@@ -1,27 +1,28 @@
 <?php
 
 /**
- * SHOP Convert a program language file
+ * ECSHOP Convert a program language file
  * ============================================================================
  * All right reserved (C) 2005-2011 Beijing Yi Shang Interactive Technology
  * Development Ltd.
- * Web site: http://www.SHOP.com
- * ----------------------------------------------------------------------------
+ * Web site: http://www.ecshop.com
+ *
  * This is a free/open source software；it means that you can modify, use and
  * republish the program code, on the premise of that your behavior is not for
  * commercial purposes.
- * ============================================================================ * $Author: Jason $
- * $Id: convert.php 17217 2011-01-19 06:29:08Z Jason $
+ * ============================================================================
+ * $Author: jason $
+ * $Id: convert.php 17217 2011-01-19 06:29:08Z jason $
  */
 
 $_LANG['confirm_convert'] ='Attention: To convert program will lose the existing data, please operate with caution.';
 $_LANG['backup_data'] ='If the existing data still has value probably to you, please backup first.';
 $_LANG['backup'] ='Backup now.';
 $_LANG['select_system'] ='Please choose the system that you want to convert:';
-$_LANG['note_select_system'] ='(If your system not in the list, you can arrive <a href="http://www.SHOP.com" target="_ blank"> <strong> our website </strong></a>look for a help).';
+$_LANG['note_select_system'] ='(If your system not in the list, you can arrive <a href="http://www.ecshop.com" target="_ blank"> <strong> our website </strong></a>look for a help).';
 $_LANG['select_charset'] ='Please choose the character list that the system that you have to convert use to gather:';
 $_LANG['note_select_charset']='(If your system isn\'t UTF-8 character, converting need a long time.)';
-$_LANG['dir_notes'] ='Please notice root directory path of the old shop, please use opposite path of the admin directory.<Br/>For example:The old shop directory is shop in root directory, but the SHOP put in root directory, that path is../shop.';
+$_LANG['dir_notes'] ='Please notice root directory path of the old shop, please use opposite path of the admin directory.<Br/>For example:The old shop directory is shop in root directory, but the ecshop put in root directory, that path is../shop.';
 $_LANG['your_config'] ='Please config an original system to install an information:';
 $_LANG['your_host'] ='Host name or address:';
 $_LANG['your_user'] ='Username:';

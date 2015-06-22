@@ -1,16 +1,17 @@
 <?php
 
 /**
- * SHOP 前台公用文件
+ * ECSHOP 前台公用文件
  * ============================================================================
  * 版权所有 (C) 2005-2011 康盛创想（北京）科技有限公司，并保留所有权利。
- * 网站地址: http://www.SHOP.com
- * ----------------------------------------------------------------------------
+ * 网站地址: http://www.ecshop.com
+ *
  * 这是一个免费开源的软件；这意味着您可以在不用于商业目的的前提下对程序代码
  * 进行修改、使用和再发布。
- * ============================================================================ * $Author: Jason $
+ * ============================================================================
+ * $Author: jason $
  * $Date: 2011-01-19 14:29:08 +0800 (周三, 2011-01-19) $
- * $Id: init.php 17217 2011-01-19 06:29:08Z Jason $
+ * $Id: init.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 error_reporting(7);
@@ -37,7 +38,7 @@ define('PHP_SELF', $php_self);
 require(ROOT_PATH . 'data/config.php');
 require(ROOT_PATH . 'includes/lib_common.php');
 require(ROOT_PATH . 'includes/cls_mysql.php');
-/* 兼容SHOPV2.5.1版本载入库文件 */
+/* 兼容ECShopV2.5.1版本载入库文件 */
 if (!function_exists('addslashes_deep'))
 {
     require(ROOT_PATH . 'includes/lib_base.php');
@@ -54,7 +55,7 @@ if (!get_magic_quotes_gpc())
     $_COOKIE   = addslashes_deep($_COOKIE);
 }
 
-/* 兼容SHOPV2.5.1版本 */
+/* 兼容ECShopV2.5.1版本 */
 if (!defined('EC_CHARSET'))
 {
     define('EC_CHARSET', 'utf-8');
@@ -68,13 +69,13 @@ parse_json($json, $_POST['Json']);
 
 /* 初始化包含文件 */
 require(ROOT_PATH . 'includes/inc_constant.php');
-require(ROOT_PATH . 'includes/cls_SHOP.php');
+require(ROOT_PATH . 'includes/cls_ecshop.php');
 require(ROOT_PATH . 'includes/lib_time.php');
 require(ROOT_PATH . 'includes/lib_main.php');
 require(ROOT_PATH . 'includes/lib_insert.php');
 require(ROOT_PATH . 'includes/lib_goods.php');
 
-/* 创建 SHOP 对象 */
+/* 创建 ECSHOP 对象 */
 $ecs = new ECS($db_name, $prefix);
 
 /* 初始化数据库类 */

@@ -1,19 +1,19 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
  * 文件名称：GroupbuyControoller.class.php
- * ----------------------------------------------------------------------------
+ *
  * 功能描述：团购控制器
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 class GroupbuyController extends CommonController {
 
@@ -63,7 +63,7 @@ class GroupbuyController extends CommonController {
         foreach ($gb_list as $key => $value) {
             $this->assign('groupbuy', $value);
             $sayList [] = array(
-                'single_item' => Touch::view()->fetch('library/asynclist_info.lbi')
+                'single_item' => ECTouch::view()->fetch('library/asynclist_info.lbi')
             );
         }
         die(json_encode($sayList));

@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP 挂号印刷品插件
- * $Author: Jason $
- * $Id: presswork.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP 挂号印刷品插件
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: presswork.php 17217 2011-01-19 06:29:08Z jason $
  */
 
 if (!defined('IN_ECS'))
@@ -38,10 +45,10 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['cod']     = false;
 
     /* 插件的作者 */
-    $modules[$i]['author']  = 'SHOP TEAM';
+    $modules[$i]['author']  = 'ECSHOP TEAM';
 
     /* 插件作者的官方网站 */
-    $modules[$i]['website'] = 'http://www.SHOP.com';
+    $modules[$i]['website'] = 'http://www.ecshop.com';
 
     /* 配送接口需要的参数 */
     $modules[$i]['configure'] = array();

@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP 申通快递 配送方式插件
- * $Author: Jason $
- * $Id: sto_express.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP 申通快递 配送方式插件
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: sto_express.php 17217 2011-01-19 06:29:08Z jason $
  */
 
 if (!defined('IN_ECS'))
@@ -38,10 +45,10 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['cod']     = false;
 
     /* 插件的作者 */
-    $modules[$i]['author']  = 'SHOP TEAM';
+    $modules[$i]['author']  = 'ECSHOP TEAM';
 
     /* 插件作者的官方网站 */
-    $modules[$i]['website'] = 'http://www.SHOP.com';
+    $modules[$i]['website'] = 'http://www.ecshop.com';
 
     /* 配送接口需要的参数 */
     $modules[$i]['configure'] = array(
@@ -69,7 +76,7 @@ if (isset($set_modules) && $set_modules == TRUE)
  * - 其他地区统一资费:    1公斤以内18元， 每增加1公斤加5-6元, 云南为8元
  * - 对于体大质轻的包裹，我们将按照航空运输协会的规定，根据体积和实际重量中较重的一种收费，需将包的长、宽、高、相乘，再除以6000
  * - (具体资费请上此网站查询:http://www.car365.cn/fee.asp 客服电话:021-52238886)
- * -------------------------------------------------------------------------------------
+ *---------
  *
  */
 class sto_express

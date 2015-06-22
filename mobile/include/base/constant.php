@@ -1,9 +1,9 @@
 <?php
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
-/* Touch 常量 */
+/* ECTouch 常量 */
 define('EC_CHARSET', 'utf-8');
 define('AUTH_KEY', 'this is a key');
 define('OLD_AUTH_KEY', '');

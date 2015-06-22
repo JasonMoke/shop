@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP 搜索引擎关键字统计
- * $Author: Jason $
- * $Id: searchengine_stats.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP 搜索引擎关键字统计
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: searchengine_stats.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 define('IN_ECS', true);
@@ -95,7 +102,7 @@ if ($_REQUEST['act'] == 'view')
     $smarty->assign('ur_here',      $_LANG['searchengine_stats']);
     $smarty->assign('general_data', $general_xml);
 
-    $searchengines = array('SHOP'  => false,
+    $searchengines = array('ecshop'  => false,
                             'MSLIVE'  => false,
                             'BAIDU'  => false,
                             'GOOGLE' => false,

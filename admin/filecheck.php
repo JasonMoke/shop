@@ -1,7 +1,14 @@
 <?php
 
 /**
- * SHOP 文件校验
+ * ECSHOP 文件校验
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
  * $Author: sunxiaodong $
  * $Id: filecheck.php 15457 2008-12-16 10:42:26Z sunxiaodong $
 */
@@ -13,7 +20,7 @@ require(dirname(__FILE__) . '/includes/init.php');
 /* 检查权限 */
 admin_priv('file_check');
 
-if (!$SHOPfiles = @file('./SHOPfiles.md5'))
+if (!$ecshopfiles = @file('./ecshopfiles.md5'))
 {
     sys_msg($_LANG['filecheck_nofound_md5file'], 1);
 }
@@ -57,7 +64,7 @@ elseif ($step == 3)
     checkfiles('uc_client/lib/', '\.php');
     */
 
-    foreach ($SHOPfiles as $line)
+    foreach ($ecshopfiles as $line)
     {
         $file = trim(substr($line, 34));
         $md5datanew[$file] = substr($line, 0, 32);

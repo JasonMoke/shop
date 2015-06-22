@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP SOHU BLOG widget
- * $Author: Jason $
- * $Id: blog_sohu.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP SOHU BLOG widget
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: blog_sohu.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 define('IN_ECS', true);

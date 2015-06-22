@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP 搜索程序
- * $Author: Jason $
- * $Id: search.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP 搜索程序
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: search.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 define('IN_ECS', true);
@@ -210,7 +217,7 @@ else
             }
 
             $db->autoReplace($ecs->table('keywords'), array('date' => local_date('Y-m-d'),
-                'searchengine' => 'SHOP', 'keyword' => addslashes(str_replace('%', '', $val)), 'count' => 1), array('count' => 1));
+                'searchengine' => 'ecshop', 'keyword' => addslashes(str_replace('%', '', $val)), 'count' => 1), array('count' => 1));
         }
         $keywords .= ')';
 

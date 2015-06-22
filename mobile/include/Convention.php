@@ -1,20 +1,20 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
  * 文件名称：convention.php
- * ----------------------------------------------------------------------------
+ *
  * 功能描述：常规配置文件
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 return array(
 	/* 应用配置 */
@@ -74,7 +74,7 @@ return array(
 		'DB_USER' => 'root', // 数据库用户名
 		'DB_PWD' => '', // 数据库密码
 		'DB_PORT' => 3306, // 数据库端口，mysql默认是3306，一般不需要修改
-		'DB_NAME' => 'Touch_db', // 数据库名
+		'DB_NAME' => 'ectouch_db', // 数据库名
 		'DB_CHARSET' => 'utf8', // 数据库编码，一般不需要修改
 		'DB_PREFIX' => 'ect_', // 数据库前缀
 		'DB_CACHE_ON' => false, // 是否开启数据库缓存，true开启，false不开启

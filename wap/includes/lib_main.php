@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP wap前台公共函数
- * $Author: Jason $
- * $Id: lib_main.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP wap前台公共函数
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: lib_main.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 if (!defined('IN_ECS'))
@@ -87,7 +94,7 @@ function get_footer()
 {
     if (substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER['SCRIPT_NAME'], '/')) == '/index.php')
     {
-        $footer = "<br/>Powered by SHOP[".local_date('H:i')."]";
+        $footer = "<br/>Powered by ECShop[".local_date('H:i')."]";
     }
     else
     {

@@ -1,10 +1,10 @@
 <?php
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 /**
- * SHOP 用户级错误处理类
+ * ECSHOP 用户级错误处理类
  */
 class EcsError {
 
@@ -92,13 +92,13 @@ class EcsError {
             foreach ($this->_message AS $msg) {
                 $message['content'] =  htmlspecialchars($msg);
             }
-			$view = Touch::view();
+			$view = ECTouch::view();
             if (isset($view)) {
                 assign_template();
-                Touch::view()->assign('title', L('tips_message'));
-                Touch::view()->assign('auto_redirect', true);
-                Touch::view()->assign('message', $message);
-                Touch::view()->display($this->_template);
+                ECTouch::view()->assign('title', L('tips_message'));
+                ECTouch::view()->assign('auto_redirect', true);
+                ECTouch::view()->assign('message', $message);
+                ECTouch::view()->display($this->_template);
             } else {
                 die($message['content']);
             }

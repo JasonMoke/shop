@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP 管理中心会员数据整合插件管理程序语言文件
- * $Author: Jason $
- * $Id: integrate.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP 管理中心会员数据整合插件管理程序语言文件
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: integrate.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 $_LANG['integrate_name'] = '名称';
@@ -13,8 +20,8 @@ $_LANG['integrate_author'] = '作者';
 /* 插件列表 */
 $_LANG['update_success'] = '设置会员数据整合插件已经成功。';
 $_LANG['install_confirm'] = '您确定要安装该会员数据整合插件吗？';
-$_LANG['need_not_setup'] = '当您采用SHOP会员系统时，无须进行设置。';
-$_LANG['different_domain'] = '您设置的整合对象和 SHOP 不在同一域下。<br />您将只能共享该系统的会员数据，但无法实现同时登录。';
+$_LANG['need_not_setup'] = '当您采用ECSHOP会员系统时，无须进行设置。';
+$_LANG['different_domain'] = '您设置的整合对象和 ECSHOP 不在同一域下。<br />您将只能共享该系统的会员数据，但无法实现同时登录。';
 $_LANG['points_set'] = '积分兑换设置';
 $_LANG['view_user_list'] = '查看论坛用户';
 $_LANG['view_install_log'] = '查看安装日志';
@@ -26,7 +33,7 @@ $_LANG['user_help'] = '<pre>
 使用方法：
          1:如果需要整合其他的用户系统，可以安装适当的版本号插件进行整合。
          2:如果需要更换整合的用户系统，直接安装目标插件即可完成整合，同时自动卸载上一次整合插件。
-         3:如果不需要整合任何用户系统，请选择安装 SHOP 插件，即可卸载所有的整合插件。
+         3:如果不需要整合任何用户系统，请选择安装 ecshop 插件，即可卸载所有的整合插件。
                            </pre>';
 
 /* 查看安装日志 */
@@ -166,12 +173,12 @@ $_LANG['ucenter_opt_database'] = '数据库方式';
 $_LANG['ucenter_opt_interface'] = '接口方式';
 
 $_LANG['ucenter_notice_id'] = '该值为当前商店在 UCenter 的应用 ID，一般情况请不要改动';
-$_LANG['ucenter_notice_key'] = '通信密钥用于在 UCenter 和 SHOP 之间传输信息的加密，可包含任何字母及数字，请在 UCenter 与 SHOP 设置完全相同的通讯密钥，以确保两套系统能够正常通信';
+$_LANG['ucenter_notice_key'] = '通信密钥用于在 UCenter 和 ECShop 之间传输信息的加密，可包含任何字母及数字，请在 UCenter 与 ECShop 设置完全相同的通讯密钥，以确保两套系统能够正常通信';
 $_LANG['ucenter_notice_url'] = '该值在您安装完 UCenter 后会被初始化，在您 UCenter 地址或者目录改变的情况下，修改此项，一般情况请不要改动 例如: http://www.sitename.com/uc_server (最后不要加"/")';
 $_LANG['ucenter_notice_ip'] = '如果您的服务器无法通过域名访问 UCenter，可以输入 UCenter 服务器的 IP 地址';
 $_LANG['ucenter_notice_connect'] = '请根据您的服务器网络环境选择适当的连接方式';
 $_LANG['ucenter_notice_db_host'] = '可以是本地也可以是远程数据库服务器，如果 MySQL 端口不是默认的 3306，请填写如下形式：127.0.0.1:6033';
-$_LANG['uc_notice_ip'] = '连接的过程中出了点问题，请您填写服务器 IP 地址，如果您的 UC 与 SHOP 装在同一服务器上，我们建议您尝试填写 127.0.0.1';
+$_LANG['uc_notice_ip'] = '连接的过程中出了点问题，请您填写服务器 IP 地址，如果您的 UC 与 ECShop 装在同一服务器上，我们建议您尝试填写 127.0.0.1';
 
 $_LANG['uc_lab_url'] = 'UCenter 的 URL:';
 $_LANG['uc_lab_pass'] = 'UCenter 创始人密码:';

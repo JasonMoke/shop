@@ -1,20 +1,20 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
  * 文件名称：UserModel.php
- * ----------------------------------------------------------------------------
- * 功能描述：Touch 用户模型
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ *
+ * 功能描述：ECTouch 用户模型
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 class UsersModel extends BaseModel {
 
@@ -106,51 +106,51 @@ class UsersModel extends BaseModel {
         /* 检查注册是否关闭 */
         $shop_reg_closed = C('shop_reg_closed');
         if (!empty($shop_reg_closed)) {
-            Touch::err()->add(L('shop_register_closed'));
+            ECTouch::err()->add(L('shop_register_closed'));
         }
         /* 检查username */
         if (empty($username)) {
-            Touch::err()->add(L('username_empty'));
+            ECTouch::err()->add(L('username_empty'));
         } else {
             if (preg_match('/\'\/^\\s*$|^c:\\\\con\\\\con$|[%,\\*\\"\\s\\t\\<\\>\\&\'\\\\]/', $username)) {
-                Touch::err()->add(sprintf(L('username_invalid'), htmlspecialchars($username)));
+                ECTouch::err()->add(sprintf(L('username_invalid'), htmlspecialchars($username)));
             }
         }
 
         /* 检查email */
         if (empty($email)) {
-            Touch::err()->add(L('email_empty'));
+            ECTouch::err()->add(L('email_empty'));
         } else {
             if (!is_email($email)) {
-                Touch::err()->add(sprintf(L('email_invalid'), htmlspecialchars($email)));
+                ECTouch::err()->add(sprintf(L('email_invalid'), htmlspecialchars($email)));
             }
         }
 
-        if (Touch::err()->error_no > 0) {
+        if (ECTouch::err()->error_no > 0) {
             return false;
         }
 
         /* 检查是否和管理员重名 */
         if (model('Users')->admin_registered($username)) {
-            Touch::err()->add(sprintf(L('username_exist'), $username));
+            ECTouch::err()->add(sprintf(L('username_exist'), $username));
             return false;
         }
 
-        if (!Touch::user()->add_user($username, $password, $email)) {
-            if (Touch::user()->error == ERR_INVALID_USERNAME) {
-                Touch::err()->add(sprintf(L('username_invalid'), $username));
-            } elseif (Touch::user()->error == ERR_USERNAME_NOT_ALLOW) {
-                Touch::err()->add(sprintf(L('username_not_allow'), $username));
-            } elseif (Touch::user()->error == ERR_USERNAME_EXISTS) {
-                Touch::err()->add(sprintf(L('username_exist'), $username));
-            } elseif (Touch::user()->error == ERR_INVALID_EMAIL) {
-                Touch::err()->add(sprintf(L('email_invalid'), $email));
-            } elseif (Touch::user()->error == ERR_EMAIL_NOT_ALLOW) {
-                Touch::err()->add(sprintf(L('email_not_allow'), $email));
-            } elseif (Touch::user()->error == ERR_EMAIL_EXISTS) {
-                Touch::err()->add(sprintf(L('email_exist'), $email));
+        if (!ECTouch::user()->add_user($username, $password, $email)) {
+            if (ECTouch::user()->error == ERR_INVALID_USERNAME) {
+                ECTouch::err()->add(sprintf(L('username_invalid'), $username));
+            } elseif (ECTouch::user()->error == ERR_USERNAME_NOT_ALLOW) {
+                ECTouch::err()->add(sprintf(L('username_not_allow'), $username));
+            } elseif (ECTouch::user()->error == ERR_USERNAME_EXISTS) {
+                ECTouch::err()->add(sprintf(L('username_exist'), $username));
+            } elseif (ECTouch::user()->error == ERR_INVALID_EMAIL) {
+                ECTouch::err()->add(sprintf(L('email_invalid'), $email));
+            } elseif (ECTouch::user()->error == ERR_EMAIL_NOT_ALLOW) {
+                ECTouch::err()->add(sprintf(L('email_not_allow'), $email));
+            } elseif (ECTouch::user()->error == ERR_EMAIL_EXISTS) {
+                ECTouch::err()->add(sprintf(L('email_exist'), $email));
             } else {
-                Touch::err()->add('UNKNOWN ERROR!');
+                ECTouch::err()->add('UNKNOWN ERROR!');
             }
 
             //注册失败
@@ -159,8 +159,8 @@ class UsersModel extends BaseModel {
             //注册成功
 
             /* 设置成登录状态 */
-            Touch::user()->set_session($username);
-            Touch::user()->set_cookie($username);
+            ECTouch::user()->set_session($username);
+            ECTouch::user()->set_cookie($username);
 
             /* 注册送积分 */
             $register_points = C('register_points');
@@ -231,17 +231,17 @@ class UsersModel extends BaseModel {
         /* 设置验证邮件模板所需要的内容信息 */
         $template = model('Base')->get_mail_template('register_validate');
         $hash = model('Users')->register_hash('encode', $user_id);
-        $validate_email = __HOST__ . url('user/validate_email', array('hash' => $hash)); //Touch::ecs()->url() . 'user.php?act=validate_email&hash=' . $hash;
+        $validate_email = __HOST__ . url('user/validate_email', array('hash' => $hash)); //ECTouch::ecs()->url() . 'user.php?act=validate_email&hash=' . $hash;
 
         $sql = "SELECT user_name, email FROM " . $this->pre . "users WHERE user_id = '$user_id'";
         $row = $this->row($sql);
 
-        Touch::view()->assign('user_name', $row['user_name']);
-        Touch::view()->assign('validate_email', $validate_email);
-        Touch::view()->assign('shop_name', C('shop_name'));
-        Touch::view()->assign('send_date', date(C('date_format')));
+        ECTouch::view()->assign('user_name', $row['user_name']);
+        ECTouch::view()->assign('validate_email', $validate_email);
+        ECTouch::view()->assign('shop_name', C('shop_name'));
+        ECTouch::view()->assign('send_date', date(C('date_format')));
 
-        $content = Touch::view()->fetch('str:' . $template['template_content']);
+        $content = ECTouch::view()->fetch('str:' . $template['template_content']);
 
         /* 发送激活验证邮件 */
         if (send_mail($row['user_name'], $row['email'], $template['template_subject'], $content, $template['is_html'])) {
@@ -320,7 +320,7 @@ class UsersModel extends BaseModel {
      */
     function edit_profile($profile) {
         if (empty($profile['user_id'])) {
-            Touch::err()->add(L('not_login'));
+            ECTouch::err()->add(L('not_login'));
             return false;
         }
 
@@ -333,7 +333,7 @@ class UsersModel extends BaseModel {
         }
         if (!empty($profile['email'])) {
             if (!is_email($profile['email'])) {
-                Touch::err()->add(sprintf(L('email_invalid'), $profile['email']));
+                ECTouch::err()->add(sprintf(L('email_invalid'), $profile['email']));
 
                 return false;
             }
@@ -344,11 +344,11 @@ class UsersModel extends BaseModel {
         }
 
 
-        if (!Touch::user()->edit_user($cfg)) {
-            if (Touch::user()->error == ERR_EMAIL_EXISTS) {
-                Touch::err()->add(sprintf(L('email_exist'), $profile['email']));
+        if (!ECTouch::user()->edit_user($cfg)) {
+            if (ECTouch::user()->error == ERR_EMAIL_EXISTS) {
+                ECTouch::err()->add(sprintf(L('email_exist'), $profile['email']));
             } else {
-                Touch::err()->add('DB ERROR!');
+                ECTouch::err()->add('DB ERROR!');
             }
 
             return false;
@@ -392,7 +392,7 @@ class UsersModel extends BaseModel {
         $infos = $this->row($sql);
         $infos['user_name'] = addslashes($infos['user_name']);
 
-        $row = Touch::user()->get_profile_by_name($infos['user_name']); //获取用户帐号信息
+        $row = ECTouch::user()->get_profile_by_name($infos['user_name']); //获取用户帐号信息
         $_SESSION['email'] = $row['email'];    //注册SESSION
 
         /* 会员等级 */
@@ -479,7 +479,7 @@ class UsersModel extends BaseModel {
      */
     function add_bonus($user_id, $bouns_sn) {
         if (empty($user_id)) {
-            Touch::err()->add(L('not_login'));
+            ECTouch::err()->add(L('not_login'));
 
             return false;
         }
@@ -498,7 +498,7 @@ class UsersModel extends BaseModel {
 
                 $now = gmtime();
                 if ($now > $bonus_time['use_end_date']) {
-                    Touch::err()->add(L('bonus_use_expire'));
+                    ECTouch::err()->add(L('bonus_use_expire'));
                     return false;
                 }
 
@@ -513,17 +513,17 @@ class UsersModel extends BaseModel {
             } else {
                 if ($row['user_id'] == $user_id) {
                     //红包已经添加过了。
-                    Touch::err()->add(L('bonus_is_used'));
+                    ECTouch::err()->add(L('bonus_is_used'));
                 } else {
                     //红包被其他人使用过了。
-                    Touch::err()->add(L('bonus_is_used_by_other'));
+                    ECTouch::err()->add(L('bonus_is_used_by_other'));
                 }
 
                 return false;
             }
         } else {
             //红包不存在
-            Touch::err()->add(L('bonus_not_exist'));
+            ECTouch::err()->add(L('bonus_not_exist'));
             return false;
         }
     }
@@ -607,41 +607,41 @@ class UsersModel extends BaseModel {
         $order = $this->row($sql);
 
         if (empty($order)) {
-            Touch::err()->add(L('order_exist'));
+            ECTouch::err()->add(L('order_exist'));
             return false;
         }
 
         // 如果用户ID大于0，检查订单是否属于该用户
         if ($user_id > 0 && $order['user_id'] != $user_id) {
-            Touch::err()->add(L('no_priv'));
+            ECTouch::err()->add(L('no_priv'));
 
             return false;
         }
 
         // 订单状态只能是“未确认”或“已确认”
         if ($order['order_status'] != OS_UNCONFIRMED && $order['order_status'] != OS_CONFIRMED) {
-            Touch::err()->add(L('current_os_not_unconfirmed'));
+            ECTouch::err()->add(L('current_os_not_unconfirmed'));
 
             return false;
         }
 
         //订单一旦确认，不允许用户取消
         if ($order['order_status'] == OS_CONFIRMED) {
-            Touch::err()->add(L('current_os_already_confirmed'));
+            ECTouch::err()->add(L('current_os_already_confirmed'));
 
             return false;
         }
 
         // 发货状态只能是“未发货”
         if ($order['shipping_status'] != SS_UNSHIPPED) {
-            Touch::err()->add(L('current_ss_not_cancel'));
+            ECTouch::err()->add(L('current_ss_not_cancel'));
 
             return false;
         }
 
         // 如果付款状态是“已付款”、“付款中”，不允许取消，要取消和商家联系
         if ($order['pay_status'] != PS_UNPAYED) {
-            Touch::err()->add(L('current_ps_not_cancel'));
+            ECTouch::err()->add(L('current_ps_not_cancel'));
 
             return false;
         }
@@ -702,16 +702,16 @@ class UsersModel extends BaseModel {
 
         // 如果用户ID大于 0 。检查订单是否属于该用户
         if ($user_id > 0 && $order['user_id'] != $user_id) {
-            Touch::err()->add(L('no_priv'));
+            ECTouch::err()->add(L('no_priv'));
 
             return false;
         }
         /* 检查订单 */ elseif ($order['shipping_status'] == SS_RECEIVED) {
-            Touch::err()->add(L('order_already_received'));
+            ECTouch::err()->add(L('order_already_received'));
 
             return false;
         } elseif ($order['shipping_status'] != SS_SHIPPED) {
-            Touch::err()->add(L('order_invalid'));
+            ECTouch::err()->add(L('order_invalid'));
 
             return false;
         }
@@ -829,7 +829,7 @@ class UsersModel extends BaseModel {
 
         $order_id = intval($order_id);
         if ($order_id <= 0) {
-            Touch::err()->add(L('invalid_order_id'));
+            ECTouch::err()->add(L('invalid_order_id'));
 
             return false;
         }
@@ -887,7 +887,7 @@ class UsersModel extends BaseModel {
 
         //检查订单是否属于该用户
         if ($user_id > 0 && $user_id != $order['user_id']) {
-            Touch::err()->add(L('no_priv'));
+            ECTouch::err()->add(L('no_priv'));
 
             return false;
         }
@@ -984,7 +984,7 @@ class UsersModel extends BaseModel {
                 }
             }
             $var_card = deleteRepeat($virtual_card);
-            Touch::view()->assign('virtual_card', $var_card);
+            ECTouch::view()->assign('virtual_card', $var_card);
         }
 
         /* 确认时间 支付时间 发货时间 */
@@ -1047,10 +1047,10 @@ class UsersModel extends BaseModel {
                 $res = $this->row($sql);
                 $order_user = $res['user_id'];
                 if ($order_user != $user_id) {
-                    Touch::err()->add(L('no_priv'));
+                    ECTouch::err()->add(L('no_priv'));
                 }
             } else {
-                Touch::err()->add(L('order_sn_empty'));
+                ECTouch::err()->add(L('order_sn_empty'));
                 return false;
             }
         }
@@ -1059,7 +1059,7 @@ class UsersModel extends BaseModel {
         if ($result === true) {
             return true;
         } else {
-            Touch::err()->add($result);
+            ECTouch::err()->add($result);
             return false;
         }
     }
@@ -1224,19 +1224,19 @@ class UsersModel extends BaseModel {
      * @return  boolen  $bool
      */
     function save_order_address($address, $user_id) {
-        Touch::err()->clean();
+        ECTouch::err()->clean();
         /* 数据验证 */
-        empty($address['consignee']) and Touch::err()->add(L('consigness_empty'));
-        empty($address['address']) and Touch::err()->add(L('address_empty'));
-        $address['order_id'] == 0 and Touch::err()->add(L('order_id_empty'));
+        empty($address['consignee']) and ECTouch::err()->add(L('consigness_empty'));
+        empty($address['address']) and ECTouch::err()->add(L('address_empty'));
+        $address['order_id'] == 0 and ECTouch::err()->add(L('order_id_empty'));
         if (empty($address['email'])) {
-            Touch::err()->add($GLOBALS['email_empty']);
+            ECTouch::err()->add($GLOBALS['email_empty']);
         } else {
             if (!is_email($address['email'])) {
-                Touch::err()->add(sprintf(L('email_invalid'), $address['email']));
+                ECTouch::err()->add(sprintf(L('email_invalid'), $address['email']));
             }
         }
-        if (Touch::err()->error_no > 0) {
+        if (ECTouch::err()->error_no > 0) {
             return false;
         }
 
@@ -1245,11 +1245,11 @@ class UsersModel extends BaseModel {
         $row = $this->row($sql);
         if ($row) {
             if ($user_id > 0 && $user_id != $row['user_id']) {
-                Touch::err()->add(L('no_priv'));
+                ECTouch::err()->add(L('no_priv'));
                 return false;
             }
             if ($row['order_status'] != OS_UNCONFIRMED) {
-                Touch::err()->add(L('require_unconfirmed'));
+                ECTouch::err()->add(L('require_unconfirmed'));
                 return false;
             }
             $this->table = 'order_info';
@@ -1258,7 +1258,7 @@ class UsersModel extends BaseModel {
             return true;
         } else {
             /* 订单不存在 */
-            Touch::err()->add(L('order_exist'));
+            ECTouch::err()->add(L('order_exist'));
             return false;
         }
     }
@@ -1326,11 +1326,11 @@ class UsersModel extends BaseModel {
             $order_res = $this->query($sql);
             foreach ($order_res as $goods_data) {
                 if (!empty($goods_data['goods_thumb'])) {
-                    $url = __URL__ . $goods_data['goods_thumb']; //Touch::ecs()->url() . $goods_data['goods_thumb'];
+                    $url = __URL__ . $goods_data['goods_thumb']; //ECTouch::ecs()->url() . $goods_data['goods_thumb'];
                 } else {
-                    $url = __URL__ . C('no_picture'); //Touch::ecs()->url() . C('no_picture');
+                    $url = __URL__ . C('no_picture'); //ECTouch::ecs()->url() . C('no_picture');
                 }
-                $link = __HOST__ . url('goods/index', array('id' => $goods_data["goods_id"])); //Touch::ecs()->url() . "goods.php?id=" . $goods_data["goods_id"];
+                $link = __HOST__ . url('goods/index', array('id' => $goods_data["goods_id"])); //ECTouch::ecs()->url() . "goods.php?id=" . $goods_data["goods_id"];
 
                 $feed['icon'] = "goods";
                 $feed['title_template'] = '<b>{username} ' . L('feed_user_buy') . ' {goods_name}</b>';
@@ -1721,12 +1721,12 @@ class UsersModel extends BaseModel {
      * @author xuanyan
      * */
     function get_affiliate() {
-        if (!empty($_COOKIE['SHOP_affiliate_uid'])) {
-            $uid = intval($_COOKIE['SHOP_affiliate_uid']);
+        if (!empty($_COOKIE['ecshop_affiliate_uid'])) {
+            $uid = intval($_COOKIE['ecshop_affiliate_uid']);
             if ($this->row('SELECT user_id FROM ' . $this->pre . "users WHERE user_id = '$uid'")) {
                 return $uid;
             } else {
-                setcookie('SHOP_affiliate_uid', '', 1);
+                setcookie('ecshop_affiliate_uid', '', 1);
             }
         }
         elseif($_SESSION['user_id'] !== 0){

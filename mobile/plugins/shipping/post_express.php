@@ -1,7 +1,7 @@
 <?php
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 $shipping_lang = ROOT_PATH . 'plugins/shipping/language/' . C('lang') . '/' . basename(__FILE__);
 if (file_exists($shipping_lang))
@@ -30,10 +30,10 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['cod']     = false;
 
     /* 插件的作者 */
-    $modules[$i]['author']  = 'SHOP TEAM';
+    $modules[$i]['author']  = 'ECSHOP TEAM';
 
     /* 插件作者的官方网站 */
-    $modules[$i]['website'] = 'http://www.SHOP.com';
+    $modules[$i]['website'] = 'http://www.ecshop.com';
 
     /* 配送接口需要的参数 */
     $modules[$i]['configure'] = array(
@@ -59,7 +59,7 @@ if (isset($set_modules) && $set_modules == TRUE)
  * 邮政快递包裹费用计算方式
  * ====================================================================================
  * 运距                     首重1000克      5000克以内续重每500克   5001克以上续重500克
- * -------------------------------------------------------------------------------------
+ *---------
  * 500公里及500公里以内     5.00            2.00                    1.00
  * 500公里以上至1000公里    6.00            2.50                    1.30
  * 1000公里以上至1500公里   7.00            3.00                    1.60
@@ -70,7 +70,7 @@ if (isset($set_modules) && $set_modules == TRUE)
  * 4000公里以上至5000公里   14.00           6.50                    3.70
  * 5000公里以上至6000公里   16.00           7.50                    4.30
  * 6000公里以上             20.00           9.00                    6.00
- * -------------------------------------------------------------------------------------
+ *---------
  * 每件挂号费               3.00
  */
 class post_express

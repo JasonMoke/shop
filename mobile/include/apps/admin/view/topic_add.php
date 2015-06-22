@@ -15,7 +15,7 @@
     <form action="{url('add')}" method="post" name="theForm" enctype="multipart/form-data" class="form-horizontal" role="form">
       <div class="tab-content">
         <div class="tab-pane active" id="general">
-          <table id="general-table" class="table table-hover Touch-table">
+          <table id="general-table" class="table table-hover ectouch-table">
             <tr>
               <td width="200">{$lang['topic_title']}</td>
               <td><div class="col-md-4">
@@ -109,7 +109,7 @@
           </table>
         </div>
         <div class="tab-pane" id="goods">
-          <table width="90%" class="table table-hover Touch-table">
+          <table width="90%" class="table table-hover ectouch-table">
             <tr>
               <td><div class="col-md-9">{$lang['topic_class']}
                   <select name="topic_class_list" id="topic_class_list" onchange="showTargetList()">
@@ -136,7 +136,7 @@
                 </div></td>
             </tr>
             <tr>
-              <td width="100%"><table width="90%" class="table table-hover Touch-table">
+              <td width="100%"><table width="90%" class="table table-hover ectouch-table">
                   <tr height="37">
                     <th>{$lang['all_goods']}</th>
                     <th>{$lang['handler']}</th>
@@ -166,7 +166,7 @@
           <input type="hidden" name="id" value="{$info['act_id']}" />
         </div>
         <div class="tab-pane" id="desc">
-          <table width="90%" class="table table-hover Touch-table">
+          <table width="90%" class="table table-hover ectouch-table">
             <tr>
               <td><div class="col-md-9"> 
                   <script id="container" name="topic_intro" type="text/plain" style="width:810px; height:360px;"></script> 
@@ -176,7 +176,7 @@
           <input type="hidden" name="id" value="{$info['act_id']}" />
         </div>
         <div class="tab-pane" id="advanced">
-          <table width="90%" class="table table-hover Touch-table">
+          <table width="90%" class="table table-hover ectouch-table">
             <tr>
               <td width="200">{$lang['template_file']}</td>
               <td><div class="col-md-4">

@@ -1,35 +1,36 @@
 <?php
 
 /**
-  * SHOP鍗囩礆绋嬪簭瑾炶█鏂囦欢
+  * ECSHOP鍗囩礆绋嬪簭瑾炶█鏂囦欢
   * ================================================= ===========================
   *鐗堟瑠鎵€鏈?005-2011涓婃捣鍟嗘淳缍茬怠绉戞妧鏈夐檺鍏?徃锛屼甫淇濈暀鎵€鏈夋瑠鍒┿€
-  *缍茬珯鍦板潃: http://www.SHOP.com
+  *缍茬珯鍦板潃: http://www.ecshop.com
   * ------------------------------------------------- ---------------------------
   *閫欎笉鏄?竴鍊嬭嚜鐢辫粺浠讹紒鎮ㄥ彧鑳藉湪涓嶇敤鏂煎晢妤?洰鐨勭殑鍓嶆彁涓嬪皪绋嬪簭浠ｇ⒓閫茶?淇?敼鍜
   *浣跨敤锛涗笉鍏佽ū灏嶇▼搴忎唬纰间互浠讳綍褰㈠紡浠讳綍鐩?殑鐨勫啀鐧煎竷銆
-  * ================================================= =========================== * $Author: Jason $
+  * ================================================= ===========================
+  * $Author: jason $
   * $Date: 2008-07-16 14:54:08 +0800$
-  * $Id: zh_tw_utf-8.php 16882 2009-12-14 09:22:19Z Jason $
+  * $Id: zh_tw_utf-8.php 16882 2009-12-14 09:22:19Z jason $
 */
 
 $_LANG['prev_step'] = '涓婁竴姝ワ細';
 $_LANG['next_step'] = '涓嬩竴姝ワ細';
-$_LANG['select_language_title'] = 'SHOP鍗囩礆绋嬪簭绗?姝?鍏?姝ラ伕鎿囪獮瑷€绶ㄧ⒓';
-$_LANG['readme_title'] = 'SHOP鍗囩礆绋嬪簭绗?姝?鍏?姝ヨ?鏄庨爜';
-$_LANG['checking_title'] = 'SHOP鍗囩礆绋嬪簭绗?姝?鍏?姝ョ挵澧冩?娓?;
+$_LANG['select_language_title'] = 'ECSHOP鍗囩礆绋嬪簭绗?姝?鍏?姝ラ伕鎿囪獮瑷€绶ㄧ⒓';
+$_LANG['readme_title'] = 'ECSHOP鍗囩礆绋嬪簭绗?姝?鍏?姝ヨ?鏄庨爜';
+$_LANG['checking_title'] = 'ECShop鍗囩礆绋嬪簭绗?姝?鍏?姝ョ挵澧冩?娓?;
 $_LANG['check_system_environment'] = '妾㈡脯绯荤当鐠板?';
 
-$_LANG['copyright'] = '&copy; 2005-2011 <a href="http://www.SHOP.com" target="_blank">涓婃捣鍟嗘淳缍茬怠绉戞妧鏈夐檺鍏?徃</a>銆備繚鐣欐墍鏈夋瑠鍒┿€ ';
-$_LANG['is_last_version'] = '鎮ㄧ殑SHOP宸叉槸鏈€鏂扮増鏈?紝鐒￠渶鍗囩礆銆 ';
+$_LANG['copyright'] = '&copy; 2005-2011 <a href="http://www.ecshop.com" target="_blank">涓婃捣鍟嗘淳缍茬怠绉戞妧鏈夐檺鍏?徃</a>銆備繚鐣欐墍鏈夋瑠鍒┿€ ';
+$_LANG['is_last_version'] = '鎮ㄧ殑ECSHOP宸叉槸鏈€鏂扮増鏈?紝鐒￠渶鍗囩礆銆 ';
 
 $_LANG['readme_page'] = '瑾?槑闋?;
-$_LANG['notice'] = '鏈?▼搴忕敤鏂煎皣SHOP鍗囩礆鍒?strong>%s</strong>銆傝珛鍕垮繀鎸夌収浠ヤ笅鐨勫崌绱氭柟娉曢€茶?鍗囩礆锛屽惁鍓囧彲鑳界敘鐢熺劇娉曟仮寰╃殑寰屾灉銆傚?鏋滀綘宸茬稉鏁村悎浜嗚珫澹囪粺浠讹紝鏈??鍗囩礆灏囧彇娑堟暣鍚堬紝浠ュ緦鏈冨摗鏁村悎璜嬪埌ucenrer涓?€茶?鏁村悎銆 ';
+$_LANG['notice'] = '鏈?▼搴忕敤鏂煎皣ECSHOP鍗囩礆鍒?strong>%s</strong>銆傝珛鍕垮繀鎸夌収浠ヤ笅鐨勫崌绱氭柟娉曢€茶?鍗囩礆锛屽惁鍓囧彲鑳界敘鐢熺劇娉曟仮寰╃殑寰屾灉銆傚?鏋滀綘宸茬稉鏁村悎浜嗚珫澹囪粺浠讹紝鏈??鍗囩礆灏囧彇娑堟暣鍚堬紝浠ュ緦鏈冨摗鏁村悎璜嬪埌ucenrer涓?€茶?鏁村悎銆 ';
 $_LANG['usage1'] = '璜嬬⒑瑾嶅凡缍撳畨瑁濅簡UCenter锛屽惁鍓囷紝璜嬪埌<a href="http://www.discuz.com" target="_blank">Comsenz鐢㈠搧涓?績</a>涓嬭級涓︿笖瀹夎?锛岀劧寰屽啀绻肩簩銆 <br />';
 $_LANG['usage2'] = '<a href="../admin">鐧婚寗寰屽彴</a>锛孅span style="color:red;font-weight:bold;font-size:18px;">鍌欎唤</span>鏁告摎搴?硣鏂欙紱';
 $_LANG['usage3'] = '闂滈枆鐝炬湁鐨凟CSHOP %s绯荤当锛?;
 $_LANG['usage4'] = '瑕嗚搵鎬т笂鍌矱CSHOP %s鐨勫叏閮ㄦ枃浠跺埌鏈嶅嫏鍣?紱';
-$_LANG['usage5'] = '涓婂偝鏈?▼搴忓埌SHOP鎵€鍦ㄧ殑鐩?寗涓?紱';
+$_LANG['usage5'] = '涓婂偝鏈?▼搴忓埌ECSHOP鎵€鍦ㄧ殑鐩?寗涓?紱';
 $_LANG['usage6'] = '閬嬭?鏈?▼搴忥紝鐩村埌鍑虹従鍗囩礆瀹屾垚鐨勬彁绀恒€ ';
 $_LANG['method'] = '鍗囩礆鏂规硶';
 $_LANG['charset'] = '绶ㄧ⒓纰鸿獚';
@@ -59,10 +60,10 @@ $_LANG['all_are_writable'] = '鎵€鏈夋ā鏉匡紝鍏ㄩ儴鍙??';
 
 $_LANG['update_now'] = '绔嬪嵆鍗囩礆';
 $_LANG['done'] = '鎭?枩锛屾偍宸茬稉鎴愬姛鍗囩礆鍒癊CSHOP <strong>%s</strong>';
-$_LANG['upgrade_error_title'] = 'SHOP鍗囩礆绋嬪簭鍗囩礆澶辨晽';
-$_LANG['upgrade_done_title'] = 'SHOP鍗囩礆绋嬪簭鍗囩礆鎴愬姛';
-$_LANG['go_to_view_my_SHOP'] = '鍓嶅線SHOP棣栭爜';
-$_LANG['go_to_view_control_panel'] = '鍓嶅線SHOP寰屽彴绠＄悊涓?績';
+$_LANG['upgrade_error_title'] = 'ECShop鍗囩礆绋嬪簭鍗囩礆澶辨晽';
+$_LANG['upgrade_done_title'] = 'ECShop鍗囩礆绋嬪簭鍗囩礆鎴愬姛';
+$_LANG['go_to_view_my_ecshop'] = '鍓嶅線ECSHOP棣栭爜';
+$_LANG['go_to_view_control_panel'] = '鍓嶅線ECSHOP寰屽彴绠＄悊涓?績';
 $_LANG['dir_readonly'] = '%s鏂囦欢涓嶅彲瀵?紝璜嬫?鏌ユ偍鐨勬湇鍕欏櫒瑷?疆銆 ';
 $_LANG['monitor_title'] = '鍗囩礆绋嬪簭鐩ｈ?鍣?;
 $_LANG['wait_please'] = '姝ｅ湪鍗囩礆涓?紝璜嬬◢鍊欌€︹€︹€︹€?;
@@ -79,7 +80,7 @@ $_LANG['js_languages']['suspension_points'] = '鈥︹€︹€︹€?;
 $_LANG['js_languages']['initialize'] = '鍒濆?鍖?;
 $_LANG['js_languages']['wait_please'] = '姝ｅ湪鍗囩礆涓?紝璜嬬◢鍊欌€︹€︹€︹€?;
 $_LANG['js_languages']['has_been_stopped'] = '鍗囩礆閫茬▼宸蹭腑姝?;
-$_LANG['js_languages']['is_last_version'] = '鎮ㄧ殑SHOP宸叉槸鏈€鏂扮増鏈?紝鐒￠渶鍗囩礆銆 ';
+$_LANG['js_languages']['is_last_version'] = '鎮ㄧ殑ECSHOP宸叉槸鏈€鏂扮増鏈?紝鐒￠渶鍗囩礆銆 ';
 $_LANG['js_languages']['from'] = '姝ｅ湪寰?;
 $_LANG['js_languages']['to'] = '鍗囩礆鍒?;
 $_LANG['js_languages']['update_files'] = '鍗囩礆鏂囦欢';
@@ -116,18 +117,18 @@ $_LANG['user_merge_method_2'] = '灏囪垏UC鐢ㄦ埗鍚嶅拰瀵嗙⒓鐩稿悓
 $_LANG['ucenter_not_match'] = '<span style="color:#F00;font-size:1.2em;"><b>UCenter鑸嘐CShop瀛楃?绶ㄧ⒓涓嶅尮閰嶏紝鍗囩礆涓嶈兘瀹屾垚锛岃珛鑱?公绠＄悊鍝★紒 </b></span>';
 
 /*瑾炶█瀛楃?闆嗛伕鎿?/
-$_LANG['lang_title'] = 'SHOP瑾炶█绶ㄧ⒓';
+$_LANG['lang_title'] = 'ECShop瑾炶█绶ㄧ⒓';
 $_LANG['lang_description'] = '鑱叉槑';
 $_LANG['lang_charset']['zh_cn_gbk'] = '绨￠珨涓?枃GBK';
 $_LANG['lang_charset']['zh_cn_utf-8'] = '绨￠珨涓?枃UTF-8';
 $_LANG['lang_charset']['zh_tw_utf-8'] = '绻侀珨涓?枃UTF-8';
 $_LANG['lang_desc']['desc1'] = '璜嬬⒑瑾嶆偍鐨凟CShop绋嬪簭鑸囨偍閬告搰鐨勮獮瑷€绶ㄧ⒓涓€鑷达紱';
-$_LANG['lang_desc']['desc2'] = '濡傛灉鎮ㄧ殑鏁告摎搴?垏SHOP绋嬪簭绶ㄧ⒓涓嶄竴鑷达紝鍙?互鍏堥€茶?鏁告摎搴?法纰艰綁鎻涖€ ';
-$_LANG['lang_desc']['desc3'] = '<font color="red">濡傛灉鎮ㄦ槸寰濫CShop v2.6.0鐗堟湰閫茶?鍗囩礆锛屼甫閬告搰SHOP鎺ュ彛鏂瑰紡锛岃珛鍏堥€茶?鏈冨摗鏁告摎鐨勫皫鍏ワ紝鍚﹀墖鍘熸渻鍝″皣鐒℃硶鐧婚寗銆侟/font> ';
+$_LANG['lang_desc']['desc2'] = '濡傛灉鎮ㄧ殑鏁告摎搴?垏ECShop绋嬪簭绶ㄧ⒓涓嶄竴鑷达紝鍙?互鍏堥€茶?鏁告摎搴?法纰艰綁鎻涖€ ';
+$_LANG['lang_desc']['desc3'] = '<font color="red">濡傛灉鎮ㄦ槸寰濫CShop v2.6.0鐗堟湰閫茶?鍗囩礆锛屼甫閬告搰ECShop鎺ュ彛鏂瑰紡锛岃珛鍏堥€茶?鏈冨摗鏁告摎鐨勫皫鍏ワ紝鍚﹀墖鍘熸渻鍝″皣鐒℃硶鐧婚寗銆侟/font> ';
 
 /*鐢ㄦ埗鎺ュ彛鎻掍欢瑾炶█闋?/
 $_LANG['ui_title'] = '璜嬮伕鎿嘐CShop浣跨敤鐨勭敤鎴舵帴鍙ｆ彃浠?;
-$_LANG['ui_SHOP'] = 'SHOP鏂瑰紡';
+$_LANG['ui_ecshop'] = 'ECShop鏂瑰紡';
 $_LANG['ui_ucenter'] = 'UCenter鏂瑰紡';
 
 

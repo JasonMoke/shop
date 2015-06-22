@@ -1,14 +1,14 @@
 {include file="pageheader"}
 
-<script src="http://www.Touch.cn/apis/notice.html"></script>
-<script src="http://www.Touch.cn/apis/patch.html?release=<?php echo RELEASE;?>"></script>
+<script src="http://www.ectouch.cn/apis/notice.html"></script>
+<script src="http://www.ectouch.cn/apis/patch.html?release=<?php echo RELEASE;?>"></script>
 
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">{$lang['system_info']}</h3>
   </div>
   <div class="panel-body" style="padding:0;">
-    <table class="table table-hover Touch-table">
+    <table class="table table-hover ectouch-table">
       <tr>
         <td width="20%">{$lang['os']}</td>
         <td width="30%">{$sys_info['os']} ({$sys_info['ip']})</td>
@@ -58,7 +58,7 @@
   <div class="panel-heading">
     <h3 class="panel-title">安全提示</h3>
   </div>
-  <div class="panel-body Touch-line"> 强烈建议您将 data/config.php 文件属性设置为644（linux/unix）或只读权限（WinNT）<br>
+  <div class="panel-body ectouch-line"> 强烈建议您将 data/config.php 文件属性设置为644（linux/unix）或只读权限（WinNT）<br>
     强烈建议您在网站上线之后将后台入口目录 admin 重命名，可增加系统安全性<br>
     请注意定期做好数据备份，数据的定期备份可最大限度的保障您网站数据的安全 </div>
 </div>
@@ -66,10 +66,10 @@
   <div class="panel-heading">
     <h3 class="panel-title">许可协议</h3>
   </div>
-  <div class="panel-body Touch-line"> 未经商业授权，不得将本软件用于商业用途(企业网站或以盈利为目的经营性网站)，否则我们将保留追究的权力。<br>
+  <div class="panel-body ectouch-line"> 未经商业授权，不得将本软件用于商业用途(企业网站或以盈利为目的经营性网站)，否则我们将保留追究的权力。<br>
     用户自由选择是否使用本软件，在使用中出现任何问题和由此造成的一切损失官方将不承担任何责任；<br>
-    利用 Touch 构建网站的任何信息内容以及导致的任何版权纠纷和法律争议及后果，Touch 官方不承担任何责任；<br>
-    所有用户均可查看 Touch 的全部源代码，您可以对本系统进行修改和美化，但必须保留完整的版权信息;<br>
+    利用 ECTouch 构建网站的任何信息内容以及导致的任何版权纠纷和法律争议及后果，ECTouch 官方不承担任何责任；<br>
+    所有用户均可查看 ECTouch 的全部源代码，您可以对本系统进行修改和美化，但必须保留完整的版权信息;<br>
     本软件受中华人民共和国《著作权法》《计算机软件保护条例》等相关法律、法规保护，软件作者保留一切权利。 </div>
 </div>
 {include file="pagefooter"}

@@ -1,20 +1,20 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
  * 文件名称：NavigatorControoller.class.php
- * ----------------------------------------------------------------------------
+ *
  * 功能描述：菜单管理控制器
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 class NavigatorController extends AdminController {
 
@@ -47,7 +47,7 @@ class NavigatorController extends AdminController {
             }
             /* 更新图标 */
             if ($_FILES['pic']['name']) {
-                $result = $this->TouchUpload('pic', 'nav');
+                $result = $this->ectouchUpload('pic', 'nav');
                 if ($result['error'] > 0) {
                     $this->message($result['message'], NULL, 'error');
                 }
@@ -80,7 +80,7 @@ class NavigatorController extends AdminController {
             }
             /* 更新图标 */
             if ($_FILES['pic']['name']) {
-                $result = $this->TouchUpload('pic', 'nav');
+                $result = $this->ectouchUpload('pic', 'nav');
                 if ($result['error'] > 0) {
                     $this->message($result['message'], NULL, 'error');
                 }

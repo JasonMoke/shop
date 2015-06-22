@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP API 公用初始化文件
- * $Author: Jason $
- * $Id: init.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP API 公用初始化文件
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: init.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 if (!defined('IN_ECS'))
@@ -18,7 +25,7 @@ if (__FILE__ == '')
     die('Fatal error code: 0');
 }
 
-/* 取得当前SHOP所在的根目录 */
+/* 取得当前ecshop所在的根目录 */
 define('ROOT_PATH', str_replace('api', '', str_replace('\\', '/', dirname(__FILE__))));
 
 /* 初始化设置 */
@@ -65,7 +72,7 @@ if ('/' == substr($php_self, -1))
 define('PHP_SELF', $php_self);
 
 require(ROOT_PATH . 'includes/inc_constant.php');
-require(ROOT_PATH . 'includes/cls_SHOP.php');
+require(ROOT_PATH . 'includes/cls_ecshop.php');
 require(ROOT_PATH . 'includes/lib_base.php');
 require(ROOT_PATH . 'includes/lib_common.php');
 require(ROOT_PATH . 'includes/lib_time.php');
@@ -86,7 +93,7 @@ if (!get_magic_quotes_gpc())
     $_REQUEST  = addslashes_deep($_REQUEST);
 }
 
-/* 创建 SHOP 对象 */
+/* 创建 ECSHOP 对象 */
 $ecs = new ECS($db_name, $prefix);
 $data_dir = $ecs->data_dir();
 

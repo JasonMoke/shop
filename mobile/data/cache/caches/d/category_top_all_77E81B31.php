@@ -1,16 +1,16 @@
-<?php exit;?>a:3:{s:8:"template";a:4:{i:0;s:64:"D:\wamp\www\newSHOP\mobile/themes/default/category_top_all.dwt";i:1;s:67:"D:\wamp\www\newSHOP\mobile/themes/default/library/page_header.lbi";i:2;s:62:"D:\wamp\www\newSHOP\mobile/themes/default/library/search.lbi";i:3;s:67:"D:\wamp\www\newSHOP\mobile/themes/default/library/page_footer.lbi";}s:7:"expires";i:1433751285;s:8:"maketime";i:1433747685;}<!DOCTYPE html>
+<?php exit;?>a:3:{s:8:"template";a:4:{i:0;s:64:"D:\wamp\www\newecshop\mobile/themes/default/category_top_all.dwt";i:1;s:67:"D:\wamp\www\newecshop\mobile/themes/default/library/page_header.lbi";i:2;s:62:"D:\wamp\www\newecshop\mobile/themes/default/library/search.lbi";i:3;s:67:"D:\wamp\www\newecshop\mobile/themes/default/library/page_footer.lbi";}s:7:"expires";i:1433751285;s:8:"maketime";i:1433747685;}<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="Keywords" content="SHOP演示站" />
-<meta name="Description" content="SHOP演示站" />
-<title>所有分类_SHOP演示站 - Powered by Touch.cn 触屏版</title>
-<link rel="stylesheet" href="/newSHOP/mobile/data/common/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="/newSHOP/mobile/data/common/bootstrap/css/font-awesome.min.css">
-<link rel="stylesheet" href="/newSHOP/mobile/themes/default/css/Touch.css">
-<link rel="stylesheet" href="/newSHOP/mobile/themes/default/css/photoswipe.css">
+<meta name="Keywords" content="ECSHOP演示站" />
+<meta name="Description" content="ECSHOP演示站" />
+<title>所有分类_ECSHOP演示站 - Powered by ECTouch.cn 触屏版</title>
+<link rel="stylesheet" href="/newecshop/mobile/data/common/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/newecshop/mobile/data/common/bootstrap/css/font-awesome.min.css">
+<link rel="stylesheet" href="/newecshop/mobile/themes/default/css/ectouch.css">
+<link rel="stylesheet" href="/newecshop/mobile/themes/default/css/photoswipe.css">
 </head><body><div class="con">
 <header class="ect-header ect-margin-tb ect-margin-lr text-center"> <a href="javascript:history.go(-1)" class="pull-left ect-icon ect-icon1 ect-icon-history"></a>
 <span>所有分类</span>
@@ -26,7 +26,7 @@
     <header class="ect-header ect-margin-tb ect-margin-lr text-center"><span>搜索</span><a href="javascript:;" onClick="closeSearch();"><i class="icon-close pull-right"></i></a></header>
   </div>
   <div class="ect-padding-lr">
-     <form action="/newSHOP/mobile/index.php?m=default&c=category&a=index"  method="post" id="searchForm" name="searchForm">
+     <form action="/newecshop/mobile/index.php?m=default&c=category&a=index"  method="post" id="searchForm" name="searchForm">
       <div class="input-search"> <span>
         <input name="keywords" type="search" placeholder="请输入搜索关键词！" id="keywordBox">
         </span>
@@ -49,18 +49,18 @@
 	opacity: 0.6;
 }
 </style>
-<script type="text/javascript" src="/newSHOP/mobile/data/common/js/jquery.min.js" ></script> 
-<script type="text/javascript" src="/newSHOP/mobile/data/common/js/jquery.json.js" ></script> 
-<script type="text/javascript" src="/newSHOP/mobile/data/common/js/common.js"></script> 
-<script type="text/javascript" src="/newSHOP/mobile/data/common/js/jquery.more.js"></script> 
-<script type="text/javascript" src="/newSHOP/mobile/data/common/js/utils.js" ></script> 
-<script src="/newSHOP/mobile/themes/default/js/TouchSlide.1.1.js"></script> 
-<script src="/newSHOP/mobile/themes/default/js/Touch.js"></script> 
-<script src="/newSHOP/mobile/themes/default/js/simple-inheritance.min.js"></script> 
-<script src="/newSHOP/mobile/themes/default/js/code-photoswipe-1.0.11.min.js"></script> 
-<script src="/newSHOP/mobile/data/common/bootstrap/js/bootstrap.min.js"></script> 
-<script src="/newSHOP/mobile/themes/default/js/jquery.scrollUp.min.js"></script> 
-<script type="text/javascript" src="/newSHOP/mobile/data/common/js/validform.js" ></script> 
+<script type="text/javascript" src="/newecshop/mobile/data/common/js/jquery.min.js" ></script> 
+<script type="text/javascript" src="/newecshop/mobile/data/common/js/jquery.json.js" ></script> 
+<script type="text/javascript" src="/newecshop/mobile/data/common/js/common.js"></script> 
+<script type="text/javascript" src="/newecshop/mobile/data/common/js/jquery.more.js"></script> 
+<script type="text/javascript" src="/newecshop/mobile/data/common/js/utils.js" ></script> 
+<script src="/newecshop/mobile/themes/default/js/TouchSlide.1.1.js"></script> 
+<script src="/newecshop/mobile/themes/default/js/ectouch.js"></script> 
+<script src="/newecshop/mobile/themes/default/js/simple-inheritance.min.js"></script> 
+<script src="/newecshop/mobile/themes/default/js/code-photoswipe-1.0.11.min.js"></script> 
+<script src="/newecshop/mobile/data/common/bootstrap/js/bootstrap.min.js"></script> 
+<script src="/newecshop/mobile/themes/default/js/jquery.scrollUp.min.js"></script> 
+<script type="text/javascript" src="/newecshop/mobile/data/common/js/validform.js" ></script> 
 <script language="javascript">
 	/*banner滚动图片*/
 		TouchSlide({

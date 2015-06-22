@@ -1,16 +1,16 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
  * 文件名称：index.php
- * ----------------------------------------------------------------------------
+ *
  * 功能描述：登录表单语言
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 $_LANG['label_username'] = '管理用户名：';
 $_LANG['label_password'] = '管理员密码：';
@@ -104,7 +104,7 @@ $_LANG['php_version'] = 'PHP 版本:';
 $_LANG['mysql_version'] = 'MySQL 版本:';
 $_LANG['gd_version'] = 'GD 版本:';
 $_LANG['zlib'] = 'Zlib 支持:';
-$_LANG['ecs_version'] = 'Touch版本:';
+$_LANG['ecs_version'] = 'ECTouch版本:';
 $_LANG['install_date'] = '安装日期:';
 $_LANG['ip_version'] = 'IP 库版本:';
 $_LANG['max_filesize'] = '文件上传的最大大小:';
@@ -139,9 +139,9 @@ $_LANG['caches_cleared'] = '缓存已经清除成功。';
 /* ------------------------------------------------------ */
 //-- 关于我们
 /* ------------------------------------------------------ */
-$_LANG['about_us'] = '关于 Touch 程序';
+$_LANG['about_us'] = '关于 ECTouch 程序';
 $_LANG['team_member'] = '团队成员';
-$_LANG['before_team_member'] = 'Touch 贡献者';
+$_LANG['before_team_member'] = 'ECTouch 贡献者';
 
 $_LANG['director'] = '项目策划';
 $_LANG['programmer'] = '程序开发';

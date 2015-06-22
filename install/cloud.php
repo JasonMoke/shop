@@ -1,21 +1,22 @@
 <?php
 
 /**
- * SHOP 浜戞湇鍔℃帴鍙
+ * ECSHOP 浜戞湇鍔℃帴鍙
  * ============================================================================
  * * 鐗堟潈鎵€鏈 2005-2012 涓婃捣鍟嗘淳缃戠粶绉戞妧鏈夐檺鍏?徃锛屽苟淇濈暀鎵€鏈夋潈鍒┿€
- * 缃戠珯鍦板潃: http://www.SHOP.com锛
- * ----------------------------------------------------------------------------
+ * 缃戠珯鍦板潃: http://www.ecshop.com锛
+ *
  * 杩欎笉鏄?竴涓?嚜鐢辫蒋浠讹紒鎮ㄥ彧鑳藉湪涓嶇敤浜庡晢涓氱洰鐨勭殑鍓嶆彁涓嬪?绋嬪簭浠ｇ爜杩涜?淇?敼鍜
  * 浣跨敤锛涗笉鍏佽?瀵圭▼搴忎唬鐮佷互浠讳綍褰㈠紡浠讳綍鐩?殑鐨勫啀鍙戝竷銆
- * ============================================================================ * $Author: Jason $
- * $Id: cloud.php 17217 2011-01-19 06:29:08Z Jason $
+ * ============================================================================
+ * $Author: jason $
+ * $Id: cloud.php 17217 2011-01-19 06:29:08Z jason $
  */
 
 define('IN_ECS', true);
 require(dirname(__FILE__) . '/includes/init.php');
 session_start();
-require(ROOT_PATH . 'includes/cls_SHOP.php');
+require(ROOT_PATH . 'includes/cls_ecshop.php');
 require(ROOT_PATH . 'includes/cls_transport.php');
 $t = new transport('-1',5);
 
@@ -125,7 +126,7 @@ elseif ($step == 'active')
 function api_request($apiget)
 {
     global $t,$ecs_charset;
-    $api_comment = $t->request('http://cloud.SHOP.com/install_api.php', $apiget);
+    $api_comment = $t->request('http://cloud.ecshop.com/install_api.php', $apiget);
     $api_str = $api_comment["body"];
     include_once(ROOT_PATH . 'includes/cls_json.php');
     $json = new JSON;

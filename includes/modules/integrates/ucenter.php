@@ -3,13 +3,14 @@
 /**
  * UCenter 会员数据处理类
  * ============================================================================
- * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
- * 网站地址: http://www.SHOP.com
- * ----------------------------------------------------------------------------
+ *
+ * 网站地址: http://www.ecshop.com
+ *
  * 这是一个免费开源的软件；这意味着您可以在不用于商业目的的前提下对程序代码
  * 进行修改、使用和再发布。
- * ============================================================================ * $Author: Jason $
- * $Id: ucenter.php 17217 2011-01-19 06:29:08Z Jason $
+ * ============================================================================
+ * $Author: jason $
+ * $Id: ucenter.php 17217 2011-01-19 06:29:08Z jason $
  */
 
 if (!defined('IN_ECS'))
@@ -32,10 +33,10 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['version'] = '1.x';
 
     /* 插件的作者 */
-    $modules[$i]['author']  = 'SHOP R&D TEAM';
+    $modules[$i]['author']  = 'ECSHOP R&D TEAM';
 
     /* 插件作者的官方网站 */
-    $modules[$i]['website'] = 'http://www.SHOP.com';
+    $modules[$i]['website'] = 'http://www.ecshop.com';
 
     /* 插件的初始的默认值 */
     $modules[$i]['default']['db_host'] = 'localhost';
@@ -83,7 +84,7 @@ class ucenter extends integrate
         $this->field_bday = 'birthday';
         $this->field_reg_date = 'reg_time';
         $this->need_sync = false;
-        $this->is_SHOP = 1;
+        $this->is_ecshop = 1;
 
         /* 初始化UC需要常量 */
         if (!defined('UC_CONNECT') && isset($cfg['uc_id']) && isset($cfg['db_host']) && isset($cfg['db_user']) && isset($cfg['db_name']))
@@ -554,7 +555,7 @@ class ucenter extends integrate
             $post_id = $id;
         }
 
-        /* 如果需要同步或是SHOP插件执行这部分代码 */
+        /* 如果需要同步或是ecshop插件执行这部分代码 */
         $sql = "SELECT user_id FROM "  . $GLOBALS['ecs']->table('users') . " WHERE ";
         $sql .= (is_array($post_id)) ? db_create_in($post_id, 'user_name') : "user_name='". $post_id . "' LIMIT 1";
         $col = $GLOBALS['db']->getCol($sql);
@@ -595,9 +596,9 @@ class ucenter extends integrate
             $GLOBALS['db']->query($sql);
         }
 
-        if (isset($this->SHOP) && $this->SHOP)
+        if (isset($this->ecshop) && $this->ecshop)
         {
-            /* 如果是SHOP插件直接退出 */
+            /* 如果是ecshop插件直接退出 */
             return;
         }
 

@@ -1,7 +1,7 @@
 <?php
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 /**
  * 解压缩类
@@ -15,7 +15,7 @@ class Zip {
     protected $total_files = 0;
     protected $total_folders = 0;
 
-    public function compress($zip_filename = 'Touch.zip', $dir = './', $path_replace = '') {
+    public function compress($zip_filename = 'ecTouch.zip', $dir = './', $path_replace = '') {
         if (function_exists('gzcompress')) {
             $filelist = $this->GetFileList($dir);
 
@@ -39,7 +39,7 @@ class Zip {
         return false;
     }
 
-    public function decompress($zip_filename = 'Touch.zip', $dir = './') {
+    public function decompress($zip_filename = 'ecTouch.zip', $dir = './') {
         $index = array(-1);
         $ok = 0;
         $zip_fp = @fopen($zip_filename, 'rb');

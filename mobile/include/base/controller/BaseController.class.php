@@ -1,20 +1,20 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
  * 文件名称：BaseController.class.php
- * ----------------------------------------------------------------------------
+ *
  * 功能描述：基础函数控制器
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 class BaseController extends Controller {
 
@@ -73,8 +73,8 @@ class BaseController extends Controller {
             $_COOKIE = addslashes_deep($_COOKIE);
             $_REQUEST = addslashes_deep($_REQUEST);
         }
-        //创建 SHOP 对象
-        self::$ecs = new EcsSHOP(C('DB_NAME'), C('DB_PREFIX'));
+        //创建 ECSHOP 对象
+        self::$ecs = new EcsEcshop(C('DB_NAME'), C('DB_PREFIX'));
         //初始化数据库类
         self::$db = new EcsMysql(C('DB_HOST'), C('DB_USER'), C('DB_PWD'), C('DB_NAME'));
         //创建错误处理对象

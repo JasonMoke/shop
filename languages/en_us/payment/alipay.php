@@ -1,23 +1,24 @@
 <?php
 
 /**
- * SHOP Alipay language file
+ * ECSHOP Alipay language file
  * ============================================================================
  * All right reserved (C) 2005-2011 Beijing Yi Shang Interactive Technology
  * Development Ltd.
- * Web site: http://www.SHOP.com
- * ----------------------------------------------------------------------------
+ * Web site: http://www.ecshop.com
+ *
  * This is a free/open source software；it means that you can modify, use and
  * republish the program code, on the premise of that your behavior is not for
  * commercial purposes.
- * ============================================================================ * $Author: Jason $
- * $Id: alipay.php 17217 2011-01-19 06:29:08Z Jason $
+ * ============================================================================
+ * $Author: jason $
+ * $Id: alipay.php 17217 2011-01-19 06:29:08Z jason $
  */
 
 global $_LANG;
 
 $_LANG['alipay']            = 'Alipay';
-$_LANG['alipay_desc']       = 'Alipay web (www.alipay.com) is an advanced platform for online payment. <br/> SHOP pay packages offered by United Package: No pre-paid/annual fee, single rate of 1.5%, no flow restrictions.<br/><a href="http://cloud.SHOP.com/payment_apply.php?mod=alipay" target="_blank"><font color="red">Immediately online application</font></a>';
+$_LANG['alipay_desc']       = 'Alipay web (www.alipay.com) is an advanced platform for online payment. <br/> ECShop pay packages offered by United Package: No pre-paid/annual fee, single rate of 1.5%, no flow restrictions.<br/><a href="http://cloud.ecshop.com/payment_apply.php?mod=alipay" target="_blank"><font color="red">Immediately online application</font></a>';
 $_LANG['alipay_account']    = 'Alipay accounts';
 $_LANG['alipay_key']        = 'Verification code for safe dealings';
 $_LANG['alipay_partner']    = 'Partner ID';

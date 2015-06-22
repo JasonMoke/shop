@@ -4,13 +4,14 @@
  * ============================================================================
  * All right reserved (C) 2005-2011 Beijing Yi Shang Interactive Technology 
  * Development Ltd.
- * Web site: http://www.SHOP.com
- * ----------------------------------------------------------------------------
+ * Web site: http://www.ecshop.com
+ *
  * This is a free/open source software；it mean that you can modify, use and 
  * republish the program code, on the premise of that your behavior is not for 
  * commercial purposes.
- * ============================================================================ * $Author: Jason $
- * $Id: shopex46.php 17217 2011-01-19 06:29:08Z Jason $
+ * ============================================================================
+ * $Author: jason $
+ * $Id: shopex46.php 17217 2011-01-19 06:29:08Z jason $
  */
 
 $_LANG['shopex46_desc']     = 'Shopex Single V4.6';

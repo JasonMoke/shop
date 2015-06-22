@@ -81,7 +81,7 @@ a.fcolor {
 <form method="post" action="{url('forget')}" name='theForm'>
   <table cellspacing="0" cellpadding="0" align="center" class="loginbg">
     <tr>
-      <td height="100" align="center" valign="middle"><a href="http://www.Touch.cn" target="_blank"><img src="__ASSETS__/images/logo.jpg" class="loginlogo" /></a></td>
+      <td height="100" align="center" valign="middle"><a href="http://www.ectouch.cn" target="_blank"><img src="__ASSETS__/images/logo.jpg" class="loginlogo" /></a></td>
     </tr>
     <tr>
       <td height="200" align="center"><table cellspacing="0" cellpadding="5" width="320" class="loginbox">

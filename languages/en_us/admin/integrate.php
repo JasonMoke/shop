@@ -1,17 +1,18 @@
 <?php
 
 /**
- * The SHOP Control panel member the data integration plug-in management program language file
+ * The ECSHOP Control panel member the data integration plug-in management program language file
  * ============================================================================
  * All right reserved (C) 2005-2011 Beijing Yi Shang Interactive Technology
  * Development Ltd.
- * Web site: http://www.SHOP.com
- * ----------------------------------------------------------------------------
+ * Web site: http://www.ecshop.com
+ *
  * This is a free/open source software;it mean that you can modify, use and
  * republish the program code, on the premise of that your behavior is not for
  * commercial purposes.
- * ============================================================================ * $Author: Jason $
- * $Id: integrate.php 17217 2011-01-19 06:29:08Z Jason $
+ * ============================================================================
+ * $Author: jason $
+ * $Id: integrate.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 $_LANG['integrate_name'] ='Name';
@@ -21,9 +22,9 @@ $_LANG['integrate_author'] ='Author';
 /* Hint an information*/
 $_LANG['update_success'] ='Member data integration plug-in is configed successfully.';
 $_LANG['install_confirm'] ="Please don\'t edit integration plug-in in use. \nMember data will be cleared if you switch integration plug-in, and include:\n member information, member account datails, member address of receipt, member bonus, order information, cart. \r\n Are you sure install the member data integration plug-in?";
-$_LANG['need_not_setup'] = 'You needn\`t set wehn you use SHOP systerm';
-$_LANG['neednot_sync'] ='You needn\'t synchronous operation, beacuse the SHOP member system is in use now.';
-$_LANG['different_domain'] ='The integration object and SHOP of[with] your setup is not under same area.<Br/>you member\'s data that can share that system, but can\'t carry out to register in the meantime.';
+$_LANG['need_not_setup'] = 'You needn\`t set wehn you use ECSHOP systerm';
+$_LANG['neednot_sync'] ='You needn\'t synchronous operation, beacuse the ECSHOP member system is in use now.';
+$_LANG['different_domain'] ='The integration object and ECSHOP of[with] your setup is not under same area.<Br/>you member\'s data that can share that system, but can\'t carry out to register in the meantime.';
 $_LANG['points_set'] = 'Redeem settings';
 $_LANG['view_user_list'] = 'View Forum User';
 $_LANG['view_install_log'] = 'See the installation log';
@@ -36,7 +37,7 @@ Usage:
      1:If the users need to integrate other systems, you can install the appropriate plug-ins to integrate the version number.
      2:If you need to replace the user\'s system integration, plug-ins can be installed directly target the integration at
        the same time automatically uninstall an integrated plug-ins on.
-     3:If you do not need any user\'s system integration, please select SHOP installed plug-ins, you can uninstall all of
+     3:If you do not need any user\'s system integration, please select ecshop installed plug-ins, you can uninstall all of
        the integration of plug-ins.
                            </pre>';
 /* 查看安装日志 */
@@ -175,12 +176,12 @@ $_LANG['ucenter_opt_database'] = 'Database approach';
 $_LANG['ucenter_opt_interface'] = 'Interface mode';
 
 $_LANG['ucenter_notice_id'] = 'The value for the current store in UCenter Application ID, please do not change the general situation';
-$_LANG['ucenter_notice_key'] = 'Communication key for UCenter and SHOP information between the transmission of encrypted, can contain any letters and numbers, please UCenter with identical settings SHOP communication key to ensure that the two systems, normal communication can';
+$_LANG['ucenter_notice_key'] = 'Communication key for UCenter and ECShop information between the transmission of encrypted, can contain any letters and numbers, please UCenter with identical settings ECShop communication key to ensure that the two systems, normal communication can';
 $_LANG['ucenter_notice_url'] = 'The value after you finish installing UCenter will be initialized in your address or directory UCenter changing circumstances, to change this, please do not change the general situation such as: http://www.sitename.com/uc_server (Finally do not increase"/")';
 $_LANG['ucenter_notice_ip'] = 'If your server can not access through the domain name UCenter, can enter the IP address of the server UCenter';
 $_LANG['ucenter_notice_connect'] = 'Depending on your server network environment to choose the appropriate connection method';
 $_LANG['ucenter_notice_db_host'] = 'Can be local can also be a remote database server, if instead of the default MySQL port 3306, please fill out the following form: 127.0.0.1:6033';
-$_LANG['uc_notice_ip'] = 'Some effort to connect the process of problem, please fill out the server IP address, if you have UC and SHOP mounted on the same server, we recommend that you try to fill in 127.0.0.1';
+$_LANG['uc_notice_ip'] = 'Some effort to connect the process of problem, please fill out the server IP address, if you have UC and ECShop mounted on the same server, we recommend that you try to fill in 127.0.0.1';
 
 $_LANG['uc_lab_url'] = 'UCenter of URL:';
 $_LANG['uc_lab_pass'] = 'UCenter Founder password:';

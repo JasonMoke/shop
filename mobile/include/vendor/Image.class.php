@@ -1,7 +1,7 @@
 <?php
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 /**
  * 生成图像缩略图和生成验证码
@@ -15,7 +15,7 @@ class Image {
      * @param type $randval
      * @param type $verifyName
      */
-    static public function buildImageVerify($width = 48, $height = 22, $randval = NULL, $verifyName = 'Touch_verify') {
+    static public function buildImageVerify($width = 48, $height = 22, $randval = NULL, $verifyName = 'ectouch_verify') {
         if (!isset($_SESSION)) {
             session_start(); //如果没有开启，session，则开启session
         }

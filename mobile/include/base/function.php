@@ -1,7 +1,7 @@
 <?php
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 /**
  * 获得当前格林威治时间的时间戳
@@ -309,7 +309,7 @@ function send_mail($name, $email, $subject, $content, $type = 0, $notification =
         $res = @mail($email, '=?' . $charset . '?B?' . base64_encode($subject) . '?=', $content, implode("\r\n", $headers));
 
         if (!$res) {
-            Touch::err()->add(L('sendemail_false'));
+            ECTouch::err()->add(L('sendemail_false'));
 
             return false;
         } else {
@@ -344,14 +344,14 @@ function send_mail($name, $email, $subject, $content, $type = 0, $notification =
 
         if (empty($params['host']) || empty($params['port'])) {
             // 如果没有设置主机和端口直接返回 false
-            Touch::err()->add(L('smtp_setting_error'));
+            ECTouch::err()->add(L('smtp_setting_error'));
 
             return false;
         } else {
             // 发送邮件
             if (!function_exists('fsockopen')) {
                 //如果fsockopen被禁用，直接返回
-                Touch::err()->add(L('disabled_fsockopen'));
+                ECTouch::err()->add(L('disabled_fsockopen'));
 
                 return false;
             }
@@ -372,16 +372,16 @@ function send_mail($name, $email, $subject, $content, $type = 0, $notification =
             } else {
                 $err_msg = $smtp->error_msg();
                 if (empty($err_msg)) {
-                    Touch::err()->add('Unknown Error');
+                    ECTouch::err()->add('Unknown Error');
                 } else {
                     if (strpos($err_msg, 'Failed to connect to server') !== false) {
-                        Touch::err()->add(sprintf(L('smtp_connect_failure'), $params['host'] . ':' . $params['port']));
+                        ECTouch::err()->add(sprintf(L('smtp_connect_failure'), $params['host'] . ':' . $params['port']));
                     } else if (strpos($err_msg, 'AUTH command failed') !== false) {
-                        Touch::err()->add(L('smtp_login_failure'));
+                        ECTouch::err()->add(L('smtp_login_failure'));
                     } elseif (strpos($err_msg, 'bad sequence of commands') !== false) {
-                        Touch::err()->add(L('smtp_refuse'));
+                        ECTouch::err()->add(L('smtp_refuse'));
                     } else {
-                        Touch::err()->add($err_msg);
+                        ECTouch::err()->add($err_msg);
                     }
                 }
 
@@ -1127,16 +1127,16 @@ function assign_query_info() {
     } else {
         $query_time = number_format(microtime(true) - M()->queryTime, 6);
     }
-    Touch::view()->assign('query_info', sprintf(L('query_info'), M()->queryCount, $query_time));
+    ECTouch::view()->assign('query_info', sprintf(L('query_info'), M()->queryCount, $query_time));
 
     /* 内存占用情况 */
     if (L('memory_info') && function_exists('memory_get_usage')) {
-        Touch::view()->assign('memory_info', sprintf(L('memory_info'), memory_get_usage() / 1048576));
+        ECTouch::view()->assign('memory_info', sprintf(L('memory_info'), memory_get_usage() / 1048576));
     }
 
     /* 是否启用了 gzip */
     $gzip_enabled = gzip_enabled() ? L('gzip_enabled') : L('gzip_disabled');
-    Touch::view()->assign('gzip_enabled', $gzip_enabled);
+    ECTouch::view()->assign('gzip_enabled', $gzip_enabled);
 }
 
 /**
@@ -2067,7 +2067,7 @@ function make_shopex_ac($post_params, $token) {
 }
 
 /**
- * 功能：与 SHOP 交换数据
+ * 功能：与 ECShop 交换数据
  *
  * @param   array     $certi    登录参数
  * @param   array     $license  网店license信息
@@ -2134,12 +2134,12 @@ function process_login_license($cert_auth) {
 function license_login($certi_added = '') {
     // 登录信息配置
     $certi['certi_app'] = ''; // 证书方法
-    $certi['app_id'] = 'Touch_free'; // 说明客户端来源
+    $certi['app_id'] = 'ectouch_free'; // 说明客户端来源
     $certi['app_instance_id'] = ''; // 应用服务ID
     $certi['version'] = LICENSE_VERSION; // license接口版本号
     $certi['shop_version'] = VERSION . '#' . RELEASE; // 网店软件版本号
     $certi['certi_url'] = sprintf(__URL__); // 网店URL
-    $certi['certi_session'] = Touch::sess()->get_session_id(); // 网店SESSION标识
+    $certi['certi_session'] = ECTouch::sess()->get_session_id(); // 网店SESSION标识
     $certi['certi_validate_url'] = sprintf(__URL__ . url('api/certi')); // 网店提供于官方反查接口
     $certi['format'] = 'json'; // 官方返回数据格式
     $certi['certificate_id'] = ''; // 网店证书ID
@@ -2238,7 +2238,8 @@ function get_template_info($template_name, $template_style = '') {
         $template_uri = explode(': ', $arr[2]);
         $template_desc = explode(': ', $arr[3]);
         $template_version = explode(': ', $arr[4]);
-        $template_author = explode(': ', $arr[5]); * $Author_uri = explode(': ', $arr[6]);
+        $template_author = explode(': ', $arr[5]);
+        $author_uri = explode(': ', $arr[6]);
         $logo_filename = explode(': ', $arr[7]);
         $template_type = explode(': ', $arr[8]);
 

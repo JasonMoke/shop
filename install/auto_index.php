@@ -1,7 +1,14 @@
 <?php
 
 /**
- * SHOP 自动安装程序
+ * ECSHOP 自动安装程序
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
  * $Author: testyang $
  * $Id: index.php 15013 2008-10-23 09:31:42Z testyang $
  */
@@ -109,7 +116,7 @@ if (file_exists(ROOT_PATH . 'data/install.lock'))
 
 
     $admin_name         = isset($_POST['admin_name'])       ? json_str_iconv(trim($_POST['admin_name'])) : 'admin';
-    $admin_password     = isset($_POST['password'])   ? trim($_POST['password']) : '549c6dd086d5c7127745';  //SHOP123654
+    $admin_password     = isset($_POST['password'])   ? trim($_POST['password']) : '549c6dd086d5c7127745';  //ecshop123654
     $admin_password2    = isset($_POST['admin_password2'])  ? trim($_POST['admin_password2']) : '549c6dd086d5c7127745';
     $admin_email        = isset($_POST['admin_email'])      ? trim($_POST['admin_email']) : '';
 
@@ -124,7 +131,7 @@ if (file_exists(ROOT_PATH . 'data/install.lock'))
     $system_lang = isset($_POST['system_lang'])     ? $_POST['system_lang'] : 'zh_cn';
     $captcha = isset($_POST['disable_captcha'])     ? intval($_POST['disable_captcha']) : '0';
     $install_demo = isset($_POST['data'])           ? $_POST['data'] : 1;
-    $integrate = isset($_POST['userinterface'])   ? trim($_POST['userinterface']) : 'SHOP';
+    $integrate = isset($_POST['userinterface'])   ? trim($_POST['userinterface']) : 'ecshop';
     $goods_types = empty($install_demo)     ? array() : array('book','book','movie','mobile','notebook','dc','dv','cosmetics','mobile2');
 
     $result = do_others($system_lang, $captcha, $goods_types, $install_demo, $integrate);

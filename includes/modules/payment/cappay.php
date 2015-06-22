@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP 首信易支付插件
- * $Author: Jason $
- * $Id: cappay.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP 首信易支付插件
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: cappay.php 17217 2011-01-19 06:29:08Z jason $
  */
 
 if (!defined('IN_ECS'))
@@ -39,7 +46,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['is_online']  = '1';
 
     /* 作者 */
-    $modules[$i]['author']  = 'SHOP TEAM';
+    $modules[$i]['author']  = 'ECSHOP TEAM';
 
     /* 网址 */
     $modules[$i]['website'] = 'http://www.beijing.com.cn';

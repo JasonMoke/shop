@@ -1,20 +1,20 @@
 <?php
 
 /**
- * Touch Open Source Project
+ * ECTouch Open Source Project
  * ============================================================================
- * Copyright (c) 2012-2014 http://Touch.cn All rights reserved.
- * ----------------------------------------------------------------------------
+ * Copyright (c) 2012-2014 http://ectouch.cn All rights reserved.
+ *
  * 文件名称：common.php
- * ----------------------------------------------------------------------------
+ *
  * 功能描述：公共函数文件
- * ----------------------------------------------------------------------------
- * Licensed (  )
- * ----------------------------------------------------------------------------
+ *
+ * Licensed ( http://www.ectouch.cn/docs/license.txt )
+ *
  */
 
 /* 访问控制 */
-defined('IN_Touch') or die('Deny Access');
+defined('IN_ECTOUCH') or die('Deny Access');
 
 /**
  * 记录和统计时间（微秒）和内存使用情况
@@ -1225,7 +1225,7 @@ function to_guid_string($mix) {
  * @param string $encoding 数据编码
  * @return string
  */
-function xml_encode($data, $root = 'Touch', $item = 'item', $attr = '', $id = 'id', $encoding = 'utf-8') {
+function xml_encode($data, $root = 'ectouch', $item = 'item', $attr = '', $id = 'id', $encoding = 'utf-8') {
     if (is_array($attr)) {
         $_attr = array();
         foreach ($attr as $key => $value) {
@@ -1416,7 +1416,7 @@ function cookie($name = '', $value = '', $option = null) {
     if ('' === $value) {
         if (isset($_COOKIE[$name])) {
             $value = $_COOKIE[$name];
-            if (0 === strpos($value, 'Touch:')) {
+            if (0 === strpos($value, 'ectouch:')) {
                 $value = substr($value, 6);
                 return array_map('urldecode', json_decode(MAGIC_QUOTES_GPC ? stripslashes($value) : $value, true));
             } else {
@@ -1432,7 +1432,7 @@ function cookie($name = '', $value = '', $option = null) {
         } else {
             // 设置cookie
             if (is_array($value)) {
-                $value = 'Touch:' . json_encode(array_map('urlencode', $value));
+                $value = 'ectouch:' . json_encode(array_map('urlencode', $value));
             }
             $expire = !empty($config['expire']) ? time() + intval($config['expire']) : 0;
             setcookie($name, $value, $expire, $config['path'], $config['domain']);
@@ -1511,7 +1511,7 @@ function write_static_cache($cache_name, $caches) {
  * @param string $act
  * @param string $appid
  */
-function site_info($appid = Touch_AUTH_KEY){
+function site_info($appid = ECTOUCH_AUTH_KEY){
     C('CFG', model('Base')->load_config());
     $shop_country = model('RegionBase')->get_region_name(C('shop_country'));
     $shop_province = model('RegionBase')->get_region_name(C('shop_province'));

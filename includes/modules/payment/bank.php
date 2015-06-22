@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP 银行汇款（转帐）插件
- * $Author: Jason $
- * $Id: bank.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP 银行汇款（转帐）插件
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: bank.php 17217 2011-01-19 06:29:08Z jason $
  */
 
 if (!defined('IN_ECS'))
@@ -38,10 +45,10 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['is_online']  = '0';
 
     /* 作者 */
-    $modules[$i]['author']  = 'SHOP TEAM';
+    $modules[$i]['author']  = 'ECSHOP TEAM';
 
     /* 网址 */
-    $modules[$i]['website'] = 'http://www.SHOP.com';
+    $modules[$i]['website'] = 'http://www.ecshop.com';
 
     /* 版本号 */
     $modules[$i]['version'] = '1.0.0';

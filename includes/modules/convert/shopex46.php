@@ -2,8 +2,15 @@
 
 /**
  * shopex4.6转换程序插件
- * $Author: Jason $
- * $Id: shopex46.php 17217 2011-01-19 06:29:08Z Jason $
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: shopex46.php 17217 2011-01-19 06:29:08Z jason $
  */
 
 if (!defined('IN_ECS'))
@@ -25,7 +32,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['desc'] = 'shopex46_desc';
 
     /* 作者 */
-    $modules[$i]['author'] = 'SHOP R&D TEAM';
+    $modules[$i]['author'] = 'ECSHOP R&D TEAM';
 
     return;
 }

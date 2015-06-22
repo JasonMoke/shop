@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP 会员管理程序
- * $Author: Jason $
- * $Id: users.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP 会员管理程序
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: users.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 define('IN_ECS', true);
@@ -473,7 +480,7 @@ elseif ($_REQUEST['act'] == 'edit_username')
 
     if ($users->edit_user($id, $username))
     {
-        if ($_CFG['integrate_code'] != 'SHOP')
+        if ($_CFG['integrate_code'] != 'ecshop')
         {
             /* 更新商城会员表 */
             $db->query('UPDATE ' .$ecs->table('users'). " SET user_name = '$username' WHERE user_id = '$id'");

@@ -1,17 +1,18 @@
 <?php
 
 /**
- * SHOP
+ * ECSHOP
  * ============================================================================
  * All right reserved (C) 2005-2011 Beijing Yi Shang Interactive Technology
  * Development Ltd.
- * Web site: http://www.SHOP.com
- * ----------------------------------------------------------------------------
+ * Web site: http://www.ecshop.com
+ *
  * This is a free/open source software；it means that you can modify, use and
  * republish the program code, on the premise of that your behavior is not for
  * commercial purposes.
- * ============================================================================ * $Author: Jason $
- * $Id: database.php 17217 2011-01-19 06:29:08Z Jason $
+ * ============================================================================
+ * $Author: jason $
+ * $Id: database.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 $_LANG['db_manage'] ='Database management';
@@ -68,12 +69,12 @@ $_LANG['fail_remove'] ='Delete file failure.';
 $_LANG['fail_get_content'] ='Obtain the datasheet contents failure.';
 $_LANG['fail_upload'] ='Upload file failure.';
 $_LANG['fail_upload_move'] ='Upload to move file failure.';
-$_LANG['unrecognize_version'] ='Can\'t identify the SHOP version of the backup sql.';
+$_LANG['unrecognize_version'] ='Can\'t identify the ECShop version of the backup sql.';
 $_LANG['unrecognize_mysql_version'] ='Can\'t identify the mysql version of the backup sql.';
 $_LANG['mysql_version_error'] ='Current mysql version the %s and the mysql version of the backup data the %s is different, may appear a problem, are you sure import it?';
 $_LANG['confirm_ver'] = 'Yes, please import it!';
 $_LANG['unconfirm_ver'] = 'Cancel!';
-$_LANG['version_error'] ='SHOP current version the %s and the backup data version the %s is different, the backup restore failure.';
+$_LANG['version_error'] ='ECShop current version the %s and the backup data version the %s is different, the backup restore failure.';
 $_LANG['not_sql_file'] ='This isn\'t a sql file, if the file is true, please change the file suffixal name as .sql.';
 $_LANG['sqlfile_error'] ='You upload the file failure, the backup restore failure.';
 $_LANG['restore_success'] ='Restore successfully.';

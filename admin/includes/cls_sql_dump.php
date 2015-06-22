@@ -1,9 +1,16 @@
 <?php
 
 /**
- * SHOP 数据库导出类
- * $Author: Jason $
- * $Id: cls_sql_dump.php 17217 2011-01-19 06:29:08Z Jason $
+ * ECSHOP 数据库导出类
+ * ============================================================================
+ *
+ *
+ *
+ *
+ *
+ * ============================================================================
+ * $Author: jason $
+ * $Id: cls_sql_dump.php 17217 2011-01-19 06:29:08Z jason $
 */
 
 if (!defined('IN_ECS'))
@@ -300,7 +307,7 @@ class cls_sql_dump
             }
         }
 
-        $this->dump_sql .= '-- END SHOP v2.x SQL Dump Program ';
+        $this->dump_sql .= '-- END ecshop v2.x SQL Dump Program ';
         $this->put_tables_list($path, $tables);
 
         return $tables;
@@ -323,13 +330,13 @@ class cls_sql_dump
         $sys_info['mysql_ver']  = $this->db->version();
         $sys_info['date']       = date('Y-m-d H:i:s');
 
-        $head = "-- SHOP v2.x SQL Dump Program\r\n".
+        $head = "-- ecshop v2.x SQL Dump Program\r\n".
                  "-- " . $sys_info['web_server'] . "\r\n".
                  "-- \r\n".
                  "-- DATE : ".$sys_info["date"]."\r\n".
                  "-- MYSQL SERVER VERSION : ".$sys_info['mysql_ver']."\r\n".
                  "-- PHP VERSION : ".$sys_info['php_ver']."\r\n".
-                 "-- SHOP VERSION : ".VERSION."\r\n".
+                 "-- ECShop VERSION : ".VERSION."\r\n".
                  "-- Vol : " . $vol . "\r\n";
 
         return $head;
@@ -371,7 +378,7 @@ class cls_sql_dump
                 {
                     $sql_info['php_ver'] = $value;
                 }
-                elseif ($type == 'SHOP VERSION')
+                elseif ($type == 'ECShop VERSION')
                 {
                     $sql_info['ecs_ver'] = $value;
                 }

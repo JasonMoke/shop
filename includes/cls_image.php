@@ -1,7 +1,7 @@
 <?php
 
 /**
- * ECSHOP 后台对上传文件的处理类(实现图片上传，图片缩小， 增加水印)
+ * SHOP 后台对上传文件的处理类(实现图片上传，图片缩小， 增加水印)
  * 需要定义以下常量
  *  define('ERR_INVALID_IMAGE',             1);
  *  define('ERR_NO_GD',                     2);
@@ -12,15 +12,8 @@
  *  define('ERR_INVALID_IMAGE_TYPE',        7);
  *  define('ROOT_PATH',                     '网站根目录')
  *
- * ============================================================================
- *
- *
- *
- *
- *
- * ============================================================================
- * $Author: jason $
- * $Id: cls_image.php 17217 2011-01-19 06:29:08Z jason $
+ * $Author: Jason $
+ * $Id: cls_image.php 17217 2011-01-19 06:29:08Z Jason $
 */
 
 if (!defined('IN_ECS'))
@@ -574,8 +567,7 @@ class cls_image
 
     /**
      * 生成随机的数字串
-     *
-     * @author: weber liu
+     * * @author: weber liu
      * @return string
      */
     function random_filename()

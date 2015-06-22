@@ -1,14 +1,7 @@
 <?php
 
 /**
- * ECSHOP ips支付系统插件
- * ============================================================================
- *
- *
- *
- *
- *
- * ============================================================================
+ * SHOP ips支付系统插件
  * @author:     xuan yan <xuanyan1983@gmail.com>
  * @version:    v1.0
  * ---------------------------------------------
@@ -45,7 +38,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['is_online']  = '1';
 
     /* 作者 */
-    $modules[$i]['author']  = 'ECSHOP TEAM';
+    $modules[$i]['author']  = 'SHOP TEAM';
 
     /* 网址 */
     $modules[$i]['website'] = 'http://www.ips.com.cn';

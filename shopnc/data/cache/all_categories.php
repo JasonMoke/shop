@@ -2119,7 +2119,7 @@
         'brands' => NULL,
       ),
     ),
-    'pic' => 'http://localhost/shopnc/data/upload/shop/common/category-pic-1.jpg',
+    'pic' => 'http://localhost/data/upload/shop/common/category-pic-1.jpg',
     'class3' => 
     array (
       12 => 
@@ -2902,7 +2902,7 @@
         'brands' => NULL,
       ),
     ),
-    'pic' => 'http://localhost/shopnc/data/upload/shop/common/category-pic-2.jpg',
+    'pic' => 'http://localhost/data/upload/shop/common/category-pic-2.jpg',
     'class3' => 
     array (
       156 => 
@@ -3801,7 +3801,7 @@
         'brands' => NULL,
       ),
     ),
-    'pic' => 'http://localhost/shopnc/data/upload/shop/common/category-pic-3.jpg',
+    'pic' => 'http://localhost/data/upload/shop/common/category-pic-3.jpg',
     'class3' => 
     array (
       206 => 
@@ -5742,7 +5742,7 @@
         'brands' => NULL,
       ),
     ),
-    'pic' => 'http://localhost/shopnc/data/upload/shop/common/category-pic-256.jpg',
+    'pic' => 'http://localhost/data/upload/shop/common/category-pic-256.jpg',
     'class3' => 
     array (
       264 => 
@@ -6987,7 +6987,7 @@
         'brands' => NULL,
       ),
     ),
-    'pic' => 'http://localhost/shopnc/data/upload/shop/common/category-pic-308.jpg',
+    'pic' => 'http://localhost/data/upload/shop/common/category-pic-308.jpg',
     'class3' => 
     array (
       314 => 
@@ -7932,7 +7932,7 @@
         'brands' => NULL,
       ),
     ),
-    'pic' => 'http://localhost/shopnc/data/upload/shop/common/category-pic-470.jpg',
+    'pic' => 'http://localhost/data/upload/shop/common/category-pic-470.jpg',
     'class3' => 
     array (
       478 => 
@@ -8917,7 +8917,7 @@
         'brands' => NULL,
       ),
     ),
-    'pic' => 'http://localhost/shopnc/data/upload/shop/common/category-pic-530.jpg',
+    'pic' => 'http://localhost/data/upload/shop/common/category-pic-530.jpg',
     'class3' => 
     array (
       541 => 
@@ -10000,7 +10000,7 @@
         'brands' => NULL,
       ),
     ),
-    'pic' => 'http://localhost/shopnc/data/upload/shop/common/category-pic-593.jpg',
+    'pic' => 'http://localhost/data/upload/shop/common/category-pic-593.jpg',
     'class3' => 
     array (
       604 => 
@@ -11061,7 +11061,7 @@
         'brands' => NULL,
       ),
     ),
-    'pic' => 'http://localhost/shopnc/data/upload/shop/common/category-pic-662.jpg',
+    'pic' => 'http://localhost/data/upload/shop/common/category-pic-662.jpg',
     'class3' => 
     array (
       671 => 

@@ -144,7 +144,7 @@ select option { line-height: 20px; height: 20px; padding: 4px;}
 /*店铺代金券列表*/
 .ncp-voucher-list { background-color: #F9F9F9;}
 .ncp-voucher-list li { width: 372px; margin: 20px 0 20px 20px;}
-.ncp-voucher { background-color: #FFFBF3; display: block; height: 212px; border: dotted 1px #FFCFBF; position: relative; z-index: 1;}
+.ncp-voucher { background-color: #FFFBF3; display: block; height: 212px; border: dotted 1px #ffffff; position: relative; z-index: 1;}
 .ncp-voucher .cut { background: url(../images/point_bg.png) no-repeat -140px 0; width: 20px; height: 18px; position: absolute; z-index: 2; top: -9px; left: 5px;}
 .ncp-voucher .info { background: url(../images/point_voucher_bg.png) repeat-y right 0; width: 120px; height: 192px; padding: 20px 30px 0 25px; position: absolute; z-index: 1; top: 0; left: 0;}
 .ncp-voucher .store { font-weight: 600; text-align: center; display: block; height: 20px;}

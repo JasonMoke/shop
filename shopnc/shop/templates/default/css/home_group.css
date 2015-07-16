@@ -39,14 +39,14 @@ a:hover.ncg-btn-black { background-color: #222222; border-color: #1F1F1F #1F1F1F
 /*抢购顶部内容*/
 .ncg-topbar { background-color: #0D7054; height: 40px; margin:0 auto; }
 .ncg-topbar-wrapper { color: #FFF; width: 1200px; margin: 0 auto; position: relative; z-index: 2;}
-.ncg-topbar-wrapper .title { font-family: Arial, "microsoft yahei"; font-size: 0; line-height: 36px; color: #FFCFBF; *word-spacing:-1px/*IE6、7*/; height: 36px; float: left; padding: 4px 0 0 5px; }
+.ncg-topbar-wrapper .title { font-family: Arial, "microsoft yahei"; font-size: 0; line-height: 36px; color: #ffffff; *word-spacing:-1px/*IE6、7*/; height: 36px; float: left; padding: 4px 0 0 5px; }
 .ncg-topbar-wrapper .title h2,
 .ncg-topbar-wrapper .title .city { font-size: 22px; letter-spacing: normal; word-spacing: normal; display: inline-block; *display: inline/*IE7*/; *zoom: 1;}
 .ncg-topbar-wrapper .title .city { font-size: 14px; margin-left: 8px; *zoom: 1; cursor: pointer;}
-.ncg-topbar-wrapper .title .city a h3 { color: #FFCFBF; display: inline-block; *display: inline/*IE7*/; *zoom: 1;}
+.ncg-topbar-wrapper .title .city a h3 { color: #ffffff; display: inline-block; *display: inline/*IE7*/; *zoom: 1;}
 .ncg-topbar-wrapper .title .city a:hover { text-decoration: none;}
 .ncg-topbar-wrapper .title .city a:hover h3 { color: #FFF;}
-.ncg-topbar-wrapper .title .city a i.arrow { font-size: 0; line-height: 0; vertical-align: middle; display: inline-block; *display: inline/*IE7*/ width: 0; height: 0; margin: 0 2px; border-style: solid dashed dashed; border-width: 5px; border-color: #FFCFBF transparent transparent; *zoom: 1;}
+.ncg-topbar-wrapper .title .city a i.arrow { font-size: 0; line-height: 0; vertical-align: middle; display: inline-block; *display: inline/*IE7*/ width: 0; height: 0; margin: 0 2px; border-style: solid dashed dashed; border-width: 5px; border-color: #ffffff transparent transparent; *zoom: 1;}
 .ncg-topbar-wrapper .list { background-color: #FFF; width: 300px; border: 2px solid #0D7054; position: absolute; z-index: 2; top: 42px; left: 0;}
 .ncg-topbar-wrapper .list a.close { font: bold 12px/14px Verdana; color: #0D7054; text-align: center; float: right; width: 14px; height: 14px; margin: 2px 2px 0 0;}
 .ncg-topbar-wrapper .list a.close:hover { text-decoration: none;}
@@ -54,9 +54,9 @@ a:hover.ncg-btn-black { background-color: #222222; border-color: #1F1F1F #1F1F1F
 .ncg-topbar-wrapper .list ul li { font: 14px/20px "microsoft yahei"; text-align: center; width: 60px; display: inline-block; *display: inline/*IE7*/; padding: 6px 3px; *zoom: 1;}
 .ncg-topbar-wrapper .nav-menu { font-size: 0; *word-spacing:-1px/*IE6、7*/; height: 24px; float: left; margin: 10px 0 6px 15px; overflow: hidden;}
 .ncg-topbar-wrapper .nav-menu li { font-size: 14px; line-height: 20px; letter-spacing: normal; word-spacing: normal; display: inline-block; *display: inline/*IE7*/; padding-left: 14px; margin-right: 15px; border-left: dotted 1px #0D7054; *zoom: 1;}
-.ncg-topbar-wrapper .nav-menu li a { font-weight: 600; color: #FFCFBF; display: block; padding: 2px 8px; border-radius: 14px;}
+.ncg-topbar-wrapper .nav-menu li a { font-weight: 600; color: #ffffff; display: block; padding: 2px 8px; border-radius: 14px;}
 .ncg-topbar-wrapper .nav-menu li a.current,
-.ncg-topbar-wrapper .nav-menu li a:hover { color: #085E47; text-decoration: none; background-color: #FFCFBF;}
+.ncg-topbar-wrapper .nav-menu li a:hover { color: #085E47; text-decoration: none; background-color: #ffffff;}
 
 .ncg-container { width: 1200px; margin: 0 auto 10px auto; }
 .ncg-banner { width: 100%;}
